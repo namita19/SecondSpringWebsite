@@ -251,6 +251,14 @@
     gap: 0.6rem;
     margin-bottom: 1rem;
   }
+
+  .feature-body p {
+    color: var(--charcoal);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+  }
   
   .logo {
     height: 45px;
@@ -413,10 +421,9 @@
   }
   
   .feature-header h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: var(--plum);
-    font-weight: 600;
+    color: var(--charcoal);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
   }
   
   .feature-card p {
@@ -515,50 +522,57 @@
   .contact { background: var(--white); }
   
   /* Footer */
+.footer {
+  background: var(--plum);
+  color: var(--cream);
+  padding: 4rem 0 2rem 0;
+  border-top: 2px solid var(--light-gold);
+  border-bottom: 2px solid var(--light-gold);
+  text-align: center;
+}
 
-  .footer {
-    background: var(--plum);
-    color: var(--cream);
-    padding: 3rem 0 1rem;
-    border-top: 2px solid var(--light-gold);
-   
-  }
-  
-  .footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 2rem;
-  }
-  
-  .footer-section h3,
-  .footer-section h4 {
-    margin-bottom: 1rem;
-    color: var(--gold);
-  }
-  
-.footer-section p,
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.footer-section p {
+  color: var(--cream);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto 1.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.6rem;
+}
+
 .footer-section a,
 .footer-section ul li a {
-  color: var(--cream); /* Override charcoal */
+  color: var(--cream);
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.footer-section a:hover {
-    color: var(--gold); /* Keep hover elegant and visible */
-  }
-  
-  .footer-section ul { list-style: none; }
-  .footer-section ul li { margin-bottom: 0.5rem; }
-  
+.footer-section a:hover,
+.footer-section ul
 
-  .footer-section ul li a:hover { color: var(--gold); }
-  
-  .footer-bottom {
-    border-top: 1px solid var(--gold);
-    color: var(--gold); /* Matches your brand gold accent */
-  }
   
   /* Responsive */
   @media (max-width: 768px) {
@@ -880,6 +894,9 @@
     color: var(--white) !important;
   }
   
+  .section-taupe .feature-body p {
+    color: var(--cream); /* Light text for taupe background */
+  }
   /* Ensure headings and paragraphs inherit correctly */
   .section-plum h2,
   .section-gold h2,
@@ -927,6 +944,12 @@
     background-color: var(--cream) !important;
     color: var(--charcoal) !important;
   }
+
+  .section-cream .feature-body p,
+.section-gold .feature-body p {
+  color: var(--charcoal); /* Keep darker text for light backgrounds */
+}
+
   .section-taupe {
     background-color: var(--taupe) !important;
     color: var(--cream) !important;
@@ -1105,7 +1128,22 @@
   .evidence {
     text-align: center;
   }
+  .evidence-card p {
+    color: var(--charcoal);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .evidence.section-taupe .feature-body p {
+    color: var(--cream);
+  }
+
+  .evidence .feature-body p {
+    color: var(--charcoal) !important;
+  }
   
+
+
   .evidence-cards {
     display: flex;
     flex-wrap: wrap;
@@ -1116,20 +1154,28 @@
   
   .evidence-card {
     background: var(--cream);
-    color: var(--charcoal);
-    border-radius: 15px;
-    padding: 2rem;
-    max-width: 300px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  flex: 1 1 300px;
+  max-width: 340px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
+  .evidence-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
   .evidence-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+   transform: translateY(-6px);
+   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
+
+
   
   /* Join Section */
   .join h2 {
@@ -1145,16 +1191,97 @@
   }
   
   .btn-green {
-    background: var(--green);
+    display: inline-block;
+    background-color: var(--green);
     color: var(--white);
-    border: 2px solid var(--green);
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
     transition: all 0.3s ease;
   }
   
   .btn-green:hover {
-    background: #5ea47b; /* slightly lighter tone for hover */
-    border-color: #5ea47b;
+    background: #57a077; /* slightly lighter tone for hover */
+    border-color: #57a077;
+    color: var(--plum);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(104, 176, 136, 0.3);
   }
   
+  /* Updated CTA button: Green version */
+.btn-gold {
+  display: inline-block;
+  background-color: #4C8C6D; /* dark calming green */
+  color: var(--cream);
+  padding: 0.9rem 2rem;
+  border: 2px solid #4C8C6D;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(76, 140, 109, 0.25);
+}
+
+.btn-gold:hover {
+  background-color: var(--cream);
+  color: var(--plum);
+  border-color: var(--plum);
+  box-shadow: 0 8px 18px rgba(91, 75, 104, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Force Footer Colors */
+.footer,
+.footer * {
+  color: var(--cream) !important;
+}
+
+.footer h3,
+.footer h4 {
+  color: var(--gold) !important;
+}
+
+.footer a:hover,
+.footer-section ul li a:hover {
+  color: var(--gold) !important;
+}
+
+/* FloDesk Form Styling */
+.flodesk-form {
+  max-width: 700px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 2.5rem;
+  background-color: var(--cream);
+  border: 2px solid var(--gold);
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flodesk-form h3 {
+  color: var(--plum);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.flodesk-form p {
+  color: var(--charcoal);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}

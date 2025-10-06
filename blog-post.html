@@ -1,260 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="pageTitle">Blog Post - Second Spring</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .blog-post-page {
-            padding: 8rem 0 4rem;
-            background: var(--white);
-        }
-        
-        .blog-post-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .blog-post-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .blog-post-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-        }
-        
-        .blog-post-date {
-            color: var(--taupe);
-        }
-        
-        .blog-post-category {
-            color: var(--plum);
-            font-weight: 500;
-        }
-        
-        .blog-post-title {
-            font-size: 2.5rem;
-            color: var(--plum);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-        
-        .blog-post-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-        }
-        
-        .blog-post-content {
-            color: var(--charcoal);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .blog-post-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .blog-post-navigation {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--taupe);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-link {
-            color: var(--plum);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--gold);
-        }
-        
-        .back-to-blog {
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .back-to-blog .btn {
-            background: var(--plum);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-blog .btn:hover {
-            background: var(--gold);
-            transform: translateY(-2px);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post | Second Spring</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* --- Blog Post Template Styles --- */
+
+    .blog-hero {
+      background: var(--white);
+      text-align: center;
+      padding: 6rem 2rem 3rem;
+    }
+
+    .blog-hero h1 {
+      font-size: 2.8rem;
+      color: var(--plum);
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-meta {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .blog-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Sidebar (Categories) */
+    .blog-sidebar {
+      flex: 1 1 250px;
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 2rem;
+      height: fit-content;
+    }
+
+    .blog-sidebar h3 {
+      color: var(--plum);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .category-tag {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--plum);
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      margin: 0.3rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .category-tag:hover {
+      background: var(--green);
+      color: var(--cream);
+    }
+
+    /* Blog Content */
+    .blog-content {
+      flex: 3 1 700px;
+      color: var(--charcoal);
+      line-height: 1.8;
+    }
+
+    .blog-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 2rem 0;
+      object-fit: contain;
+    }
+
+    .blog-content h2 {
+      color: var(--plum);
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .blog-content p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* CTA - Join the Movement */
+    .cta-join {
+      background: var(--plum);
+      color: var(--cream);
+      text-align: center;
+      padding: 5rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .cta-join h2 {
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+      background: var(--gold);
+      color: var(--cream);
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--green);
+      color: var(--plum);
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      background: var(--cream);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .newsletter h2 {
+      color: var(--plum);
+      margin-bottom: 1rem;
+    }
+
+    .newsletter p {
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Related Posts */
+    .related-posts {
+      background: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .related-card {
+      background: var(--cream);
+      border-radius: 15px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .related-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .related-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .related-card h4 {
+      color: var(--plum);
+      margin-bottom: 0.5rem;
+    }
+
+    .related-card p {
+      color: var(--charcoal);
+      font-size: 0.95rem;
+    }
+
+    .back-to-blog {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .back-to-blog a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-to-blog a:hover {
+      color: var(--plum);
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html">
-                    <img src="images/logos/secondspring-logo.png" alt="SecondSpring" class="logo">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Blog Post Content -->
-    <section class="blog-post-page">
-        <div class="blog-post-container">
-            <div class="blog-post-header">
-                <div class="blog-post-meta">
-                    <span class="blog-post-date" id="postDate">December 2024</span>
-                    <span class="blog-post-category" id="postCategory">Wellness</span>
-                </div>
-                <h1 class="blog-post-title" id="postTitle">Blog Post Title</h1>
-            </div>
-            
-            <img src="" alt="Blog post image" class="blog-post-image" id="postImage">
-            
-            <div class="blog-post-content" id="postContent">
-                <!-- Blog post content will be loaded here -->
-            </div>
-            
-            <div class="blog-post-navigation">
-                <a href="#" class="nav-link" id="prevPost">← Previous Post</a>
-                <a href="#" class="nav-link" id="nextPost">Next Post →</a>
-            </div>
-            
-            <div class="back-to-blog">
-                <a href="blog.html" class="btn">Back to All Posts</a>
-            </div>
-        </div>
-    </section>
+  <!-- Navigation -->
+  <script src="navigation.js"></script>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Second Spring</h3>
-                    <p>Empowering women through perimenopause with personalized wellness solutions.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Namita Mankad LLC. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <!-- Hero -->
+  <section class="blog-hero">
+    <h1>Perimenopause and Exercise: What Really Works</h1>
+    <p class="blog-meta">October 2, 2025</p>
+  </section>
 
-    <script src="blog-posts.js"></script>
-    <script src="script.js"></script>
+  <!-- Blog Content Layout -->
+  <div class="blog-container">
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <h3>Explore Topics</h3>
+      <a href="#" class="category-tag">Ayurveda</a>
+      <a href="#" class="category-tag">TCM</a>
+      <a href="#" class="category-tag">Mind-Body</a>
+      <a href="#" class="category-tag">Leadership</a>
+      <a href="#" class="category-tag">Nutrition</a>
+    </aside>
+
+    <!-- Main Blog Content -->
+    <article class="blog-content">
+      <!-- Replace these placeholders with your content -->
+      <img src="images/blog-image-placeholder.jpg" alt="Blog Image Placeholder" />
+      <p>
+        Perimenopause isn’t an ending — it’s a time of profound transformation. Your hormones shift, energy changes, and what worked before may no longer feel aligned. In this post, we’ll explore evidence-based ways to stay active, energized, and connected to your body’s rhythm.
+      </p>
+
+      <h2>Understanding the Shift</h2>
+      <p>
+        As estrogen levels fluctuate, your body’s response to exercise evolves. High-intensity workouts may drain rather than uplift you. Ayurveda and Traditional Chinese Medicine teach us to balance this shift — through mindful movement, breath, and nourishment.
+      </p>
+
+      <img src="images/blog-photo-2.jpg" alt="Perimenopause Wellness" />
+
+      <h2>What Works</h2>
+      <p>
+        Gentle strength training, walking, yoga, and restorative routines keep your metabolism and mood balanced. Remember — it’s not about pushing harder, but aligning deeper.
+      </p>
+    </article>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-join">
+    <h2>Ready to Start Your Journey?</h2>
+    <a href="login.html" class="cta-button">Join the Movement</a>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Stay in Flow with Second Spring</h2>
+    <p>Sign up for research-backed insights, holistic tips, and wellness wisdom — delivered straight to your inbox.</p>
+    <!-- FloDesk Form Embed Placeholder -->
+    <!-- FloDesk Form Embed -->
+<div class="flodesk-form">
+    <div id="fd-form-67e1ed35ef9d1ced7c8c3e7d"></div>
     <script>
-        // Load blog post content based on URL parameter
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const postId = urlParams.get('id');
-            
-            if (postId) {
-                const post = getBlogPostById(parseInt(postId));
-                if (post) {
-                    loadBlogPost(post);
-                } else {
-                    // Post not found, redirect to blog
-                    window.location.href = 'blog.html';
-                }
-            } else {
-                // No ID provided, redirect to blog
-                window.location.href = 'blog.html';
-            }
-        });
-
-        function loadBlogPost(post) {
-            // Update page title
-            document.getElementById('pageTitle').textContent = post.title + ' - Second Spring';
-            
-            // Update post content
-            document.getElementById('postTitle').textContent = post.title;
-            document.getElementById('postDate').textContent = post.date;
-            document.getElementById('postCategory').textContent = post.category;
-            document.getElementById('postImage').src = post.image;
-            document.getElementById('postImage').alt = post.title;
-            
-            // Update post content with proper formatting
-            const contentDiv = document.getElementById('postContent');
-            const paragraphs = post.content.split('\n\n');
-            contentDiv.innerHTML = paragraphs.map(paragraph => 
-                `<p>${paragraph}</p>`
-            ).join('');
-            
-            // Update navigation links
-            updateNavigationLinks(post.id);
-        }
-
-        function updateNavigationLinks(currentId) {
-            const currentIndex = blogPosts.findIndex(post => post.id === currentId);
-            
-            // Previous post
-            if (currentIndex > 0) {
-                const prevPost = blogPosts[currentIndex - 1];
-                const prevLink = document.getElementById('prevPost');
-                prevLink.href = `blog-post.html?id=${prevPost.id}`;
-                prevLink.textContent = `← ${prevPost.title}`;
-            } else {
-                document.getElementById('prevPost').style.display = 'none';
-            }
-            
-            // Next post
-            if (currentIndex < blogPosts.length - 1) {
-                const nextPost = blogPosts[currentIndex + 1];
-                const nextLink = document.getElementById('nextPost');
-                nextLink.href = `blog-post.html?id=${nextPost.id}`;
-                nextLink.textContent = `${nextPost.title} →`;
-            } else {
-                document.getElementById('nextPost').style.display = 'none';
-            }
-        }
+      window.fd('form', {
+        formId: '67e1ed35ef9d1ced7c8c3e7d',
+        containerEl: '#fd-form-67e1ed35ef9d1ced7c8c3e7d'
+      });
     </script>
+  </div>
+  
+  </section>
+
+  <!-- Related Posts -->
+  <section class="related-posts">
+    <h2>Keep Learning</h2>
+    <div class="related-grid">
+      <div class="related-card">
+        <img src="images/blog-thumb-1.jpg" alt="Ayurveda and Hormones" />
+        <h4>Balancing Hormones Naturally</h4>
+        <p>Discover how ancient wisdom meets modern science in restoring your hormonal health.</p>
+      </div>
+      <div class="related-card">
+        <img src="images/blog-thumb-2.jpg" alt="Mindful Leadership" />
+        <h4>Mindful Leadership in Midlife</h4>
+        <p>Transform stress into clarity and lead with intuition during your Second Spring.</p>
+      </div>
+      <div class="related-card">
+        <img src="images/blog-thumb-3.jpg" alt="Nutrition for Energy" />
+        <h4>Nutrition that Nurtures</h4>
+        <p>Foods that fuel balance, beauty, and vitality through every phase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="back-to-blog">
+    <a href="blog.html">← Back to All Articles</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <script src="footer.js"></script>
+  </footer>
+
 </body>
 </html>

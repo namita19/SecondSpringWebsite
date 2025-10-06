@@ -37,7 +37,7 @@ function createNavigation() {
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="product.html">Product</a></li>
-              <li><a href="blog.html">Blog</a></li>
+              <li><a href="blog.html">Articles</a></li>
             </ul>
           </div>
   
@@ -45,9 +45,9 @@ function createNavigation() {
             <h4>Connect</h4>
             <ul>
               <li><a href="#contact">Join the Movement</a></li>
-              <li><a href="mailto:hello@secondspring.com">Email Us</a></li>
-              <li><a href="#">LinkedIn</a></li>
-              <li><a href="#">Instagram</a></li>
+              <li><a href="mailto:namita@namitamankad.com">Email Us</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html">Terms of Service</a></li>
             </ul>
           </div>
         </div>
