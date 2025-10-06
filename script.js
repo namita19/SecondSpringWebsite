@@ -211,6 +211,38 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 
+// Blog functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Render blog posts on homepage
+    if (typeof renderBlogPosts !== 'undefined') {
+        renderBlogPosts();
+    }
+});
+
+// Email signup form handling
+const emailSignupForm = document.getElementById('emailSignup');
+if (emailSignupForm) {
+    emailSignupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = this.querySelector('input[type="email"]').value;
+        
+        if (!email) {
+            showNotification('Please enter your email address.', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Simulate email signup
+        showNotification('Thank you for subscribing! Check your email for confirmation.', 'success');
+        this.reset();
+    });
+}
+
 // Add CSS for loading animation
 const style = document.createElement('style');
 style.textContent = `

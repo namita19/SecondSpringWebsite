@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Second Spring</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="images/logos/secondspring-logo.png" alt="SecondSpring" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>Latest Insights & Tips</h1>
+            <p>Expert guidance and personal stories to support your perimenopause journey.</p>
+        </div>
+    </section>
+
+    <!-- Blog Filters -->
+    <section class="blog-filters">
+        <div class="container">
+            <div class="filter-buttons" id="filterButtons">
+                <!-- Filter buttons will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog posts will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-signup">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Connected</h2>
+                <p>Get the latest insights, tips, and updates delivered to your inbox.</p>
+                <form class="signup-form" id="newsletterSignup">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Second Spring</h3>
+                    <p>Empowering women through perimenopause with personalized wellness solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Second Spring. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog-posts.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Blog page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate filter buttons
+            generateFilterButtons();
+            
+            // Render all blog posts initially
+            renderBlogPosts(blogPosts, blogPosts.length);
+            
+            // Add filter functionality
+            setupFilterHandlers();
+        });
+
+        function generateFilterButtons() {
+            const filterContainer = document.getElementById('filterButtons');
+            const categories = getAllCategories();
+            const totalPosts = blogPosts.length;
+            
+            // Create "All Topics" button
+            const allButton = document.createElement('button');
+            allButton.className = 'filter-btn active';
+            allButton.textContent = `All Topics (${totalPosts})`;
+            allButton.setAttribute('data-category', 'all');
+            filterContainer.appendChild(allButton);
+            
+            // Create category buttons
+            categories.forEach(category => {
+                const count = getBlogPostsByCategory(category).length;
+                const button = document.createElement('button');
+                button.className = 'filter-btn';
+                button.textContent = `${category} (${count})`;
+                button.setAttribute('data-category', category);
+                filterContainer.appendChild(button);
+            });
+        }
+
+        function setupFilterHandlers() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Filter posts
+                    const category = this.getAttribute('data-category');
+                    let filteredPosts;
+                    
+                    if (category === 'all') {
+                        filteredPosts = blogPosts;
+                    } else {
+                        filteredPosts = getBlogPostsByCategory(category);
+                    }
+                    
+                    // Render filtered posts
+                    renderBlogPosts(filteredPosts, filteredPosts.length);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Second Spring</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="navigation.css" />
+</head>
+
+<body class="about-page">
+
+  <!-- Navigation -->
+  <div id="navigation-placeholder"></div>
+
+  <!-- About Hero -->
+  <section class="section-plum our-story">
+      <h2>A movement created by women, for women</h2>
+      <p>
+        Second Spring was born from a simple truth. Women deserve clarity and confidence as they move through every stage of life.
+        We blend modern science with ancient wisdom to help women reconnect with their natural rhythm, restore balance, and rediscover joy.
+      </p>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="section-gold mission block">
+    <h2>Our Mission</h2>
+      <p>
+          To build a movement that empowers women to lead their health with confidence and peace.
+      </p>
+  </section>
+
+
+  <section class="section-cream vision-block">
+    <h2>Our Vision</h2>
+    <p>
+    To create a world where women navigate every stage of life with peace and joy.
+    </p>
+  </section>
+
+  <!-- Approach -->
+  <section class="section-taupe approach">
+    <h2>Our Approach</h2>
+      <p>
+        We believe healing happens when we listen to the body, honor its wisdom, and combine timeless traditions like Ayurveda and Traditional Chinese Medicine with evidence-based modern science.
+        Through education, technology, and compassion, Second Spring creates a personalized wellness journey for every woman, one that’s rooted in trust and guided by balance.
+      </p>
+  </section>
+
+  <section class="founders">
+    <h2>Founders</h2>
+    <div class="founders-grid">
+      <!-- Namita -->
+      <div class="founder-card">
+        <img src="images/namita.jpg" alt="Namita Mankad" class="founder-photo">
+        <h3>Namita Mankad</h3>
+        <p class="founder-title">Co-Founder & CEO</p>
+        <p class="founder-bio">Namita Mankad is a visionary leader with over 15 years of experience leading global programs with product mindset across healthtech, legaltech, and digital transformation. Guided by a mission to bring peace and purpose, she founded Second Spring, a women’s health platform merging modern science with ancient wisdom to reimagine perimenopause as a season of renewal. Known for blending data with intuition, Namita builds products and movements that empower to rise in wisdom, freedom, and confidence, inspiring change where technology meets humanity. Her work reflects a lifelong belief that transformation begins when we turn pain into purpose and create from a place of renewal.</p>
+        <a href="https://www.linkedin.com/in/namitamankad" class="linkedin-link" target="_blank">LinkedIn</a>
+      </div>
+  
+      <!-- Neelam -->
+      <div class="founder-card">
+        <img src="images/neelam.jpg" alt="Neelam Kharod Sell" class="founder-photo">
+        <h3>Neelam Kharod Sell</h3>
+        <p class="founder-title">Co-Founder & Chief Medical Officer</p>
+        <p class="founder-bio">Dr. Neelam Kharod Sell is a physician and visionary leader with over 9 years as the founder of The Milestones Center, where she specialized in developmental-behavioral pediatrics and holistic child care. Throughout her career, she’s combined evidence-based medicine with compassion, addressing conditions like Autism, ADHD, and learning differences through both clinical precision and human understanding. Today, she brings that same empathy and integrative approach to women’s health as co-founder of Second Spring, where her mission is to raise awareness about perimenopause and help women navigate this life stage with knowledge, balance, and grace.</p>
+        <a href="https://www.linkedin.com/in/neelam-kharod-sell-9a29979/" class="linkedin-link" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('navigation-placeholder').innerHTML = createNavigation();
+      document.getElementById('footer-placeholder').innerHTML = createFooter();
+      initializeNavigation();
+    });
+  </script>
+</body>
+</html>

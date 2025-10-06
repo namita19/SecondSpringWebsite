@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Second Spring | Product</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation Placeholder -->
+  <div id="navigation-placeholder"></div>
+
+  <!-- Hero Section -->
+  <section class="product-hero section-white">
+    <div class="container">
+      <h1 class="hero-title">Your Second Spring starts here.</h1>
+      <p class="hero-subtitle">
+        A holistic health companion that helps you track, understand, and nurture your body through perimenopause.
+      </p>
+      <a href="#join" class="btn btn-green">Start Exploring</a>
+    </div>
+  </section>
+
+  <!-- Symptom Tracking -->
+  <section class="symptom-tracking section-plum">
+    <div class="container two-column">
+      <div class="text-block">
+        <h2>Track What You Feel</h2>
+        <p>Log your symptoms and patterns with ease.  
+          Discover how your hormones, emotions, and habits intertwine across your cycle.</p>
+      </div>
+      <div class="image-block">
+        <img src="images/screenshots/symptom-tracking.png" alt="Symptom Tracking Interface" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalized Insights -->
+  <section class="insights section-cream">
+    <div class="container two-column reverse">
+      <div class="image-block">
+        <img src="images/screenshots/personalized-insights.png" alt="Personalized Insights" />
+      </div>
+      <div class="text-block">
+        <h2>Your Rhythm. Your Insights.</h2>
+        <p>Every woman’s rhythm is unique.  
+          Second Spring interprets your data through the lens of ancient wisdom and modern science to bring meaningful clarity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooted in Evidence -->
+  <section class="evidence section-taupe">
+    <div class="container">
+      <h2>Rooted in Evidence. Guided by Wisdom.</h2>
+      <p>
+        Drawing from Ayurvedic and Traditional Chinese Medicine texts, verified by modern research.  
+        Each insight is cross-referenced for safety, balance, and authenticity.
+      </p>
+      <div class="evidence-cards">
+        <div class="evidence-card">🪷 Ayurveda: Balance your doshas with simple routines.</div>
+        <div class="evidence-card">☯️ TCM: Restore your energy flow through harmony and breath.</div>
+        <div class="evidence-card">🔬 Science: Data-backed insights meet ancient intuition.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join the Movement -->
+  <section id="join" class="join section-cream">
+    <div class="container">
+      <h2>Be Among the First 1,000 Women Shaping This Movement</h2>
+      <p>
+        Join our beta program to experience personalized wellness redefined for women’s midlife transition.  
+        Your journey begins here — secure, evidence-based, and made with heart.
+      </p>
+      <div id="fd-form-67e1ed35ef9d1ced7c8c3e7d"></div>
+      <script>
+        window.fd('form', {
+          formId: '67e1ed35ef9d1ced7c8c3e7d',
+          containerEl: '#fd-form-67e1ed35ef9d1ced7c8c3e7d'
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script src="navigation.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('navigation-placeholder').innerHTML = createNavigation();
+      document.getElementById('footer-placeholder').innerHTML = createFooter();
+      initializeNavigation();
+    });
+  </script>
+</body>
+</html>

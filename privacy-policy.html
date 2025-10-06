@@ -1,261 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - SecondSpring</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .legal-page {
-            padding: 8rem 0 4rem;
-            background: #f9fafb;
-            min-height: 100vh;
-        }
-        .legal-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            padding: 3rem;
-        }
-        .legal-content h1 {
-            color: #1f2937;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        .legal-content h2 {
-            color: #6366f1;
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 0.5rem;
-        }
-        .legal-content h3 {
-            color: #374151;
-            font-size: 1.2rem;
-            margin: 1.5rem 0 0.5rem;
-        }
-        .legal-content p {
-            color: #6b7280;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        .legal-content ul {
-            color: #6b7280;
-            margin: 1rem 0;
-            padding-left: 2rem;
-        }
-        .legal-content li {
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #6366f1;
-            text-decoration: none;
-            margin-bottom: 2rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .back-link:hover {
-            color: #4f46e5;
-        }
-        .last-updated {
-            text-align: center;
-            color: #9ca3af;
-            font-style: italic;
-            margin-bottom: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Second Spring</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #222222;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .legal-page {
+      padding: 6rem 0 4rem;
+    }
+
+    .legal-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .legal-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+
+    .effective-date {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .legal-section {
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .legal-section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      text-align: left;
+    }
+
+    .legal-section h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+      text-align: left;
+    }
+
+    .legal-section div {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info {
+      background: #f5f5f5;
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin: 2rem 0;
+      text-align: left;
+    }
+
+    .back-to-home {
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .back-to-home a {
+      color: #222222;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: 1px solid #222222;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .back-to-home a:hover {
+      background: #222222;
+      color: #ffffff;
+    }
+
+    .footer {
+      background: #fafafa;
+      padding: 2rem 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      text-align: left;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 200px;
+      text-align: left;
+    }
+
+    .footer-section h3,
+    .footer-section h4 {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      text-align: left;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a {
+      color: #222222;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      max-width: 1000px;
+      margin: 2rem auto 0;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2><a href="index.html" style="text-decoration: none; color: inherit;">SecondSpring</a></h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#services" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand">
+        <a href="index.html">
+          <img src="images/logos/secondspring-logo.png" alt="Second Spring" class="logo">
+        </a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
+  </header>
 
+  <main class="main-content">
     <section class="legal-page">
-        <div class="legal-content">
-            <a href="index.html" class="back-link">
-                <i class="fas fa-arrow-left"></i>
-                Back to Home
-            </a>
-            
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">Last updated: December 2024</p>
-
-            <h2>1. Introduction</h2>
-            <p>Welcome to SecondSpring ("we," "our," or "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://secondspringhealth.ai" style="color: #6366f1;">https://secondspringhealth.ai</a> or use our services.</p>
-            
-            <p>Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
-
-            <h2>2. Information We Collect</h2>
-            
-            <h3>2.1 Personal Information</h3>
-            <p>We may collect personal information that you voluntarily provide to us when you:</p>
-            <ul>
-                <li>Register for an account</li>
-                <li>Use our services</li>
-                <li>Contact us through our website</li>
-                <li>Subscribe to our newsletter</li>
-                <li>Participate in surveys or promotions</li>
-            </ul>
-            
-            <p>This information may include:</p>
-            <ul>
-                <li>Name and contact information (email address, phone number, mailing address)</li>
-                <li>Account credentials (username, password)</li>
-                <li>Payment information (credit card details, billing address)</li>
-                <li>Health-related information (if applicable to our services)</li>
-                <li>Communication preferences</li>
-            </ul>
-
-            <h3>2.2 Automatically Collected Information</h3>
-            <p>We may automatically collect certain information about your device and usage patterns, including:</p>
-            <ul>
-                <li>IP address and location data</li>
-                <li>Browser type and version</li>
-                <li>Operating system</li>
-                <li>Pages visited and time spent on our site</li>
-                <li>Referring website</li>
-                <li>Device identifiers</li>
-            </ul>
-
-            <h2>3. How We Use Your Information</h2>
-            <p>We use the information we collect to:</p>
-            <ul>
-                <li>Provide, operate, and maintain our services</li>
-                <li>Improve, personalize, and expand our services</li>
-                <li>Understand and analyze how you use our services</li>
-                <li>Develop new products, services, features, and functionality</li>
-                <li>Communicate with you, including for customer service and support</li>
-                <li>Process transactions and send related information</li>
-                <li>Send you technical notices, updates, security alerts, and support messages</li>
-                <li>Respond to your comments and questions</li>
-                <li>Comply with legal obligations</li>
-            </ul>
-
-            <h2>4. Information Sharing and Disclosure</h2>
-            <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:</p>
-            
-            <h3>4.1 Service Providers</h3>
-            <p>We may share your information with third-party service providers who assist us in operating our website, conducting our business, or serving our users.</p>
-
-            <h3>4.2 Legal Requirements</h3>
-            <p>We may disclose your information if required to do so by law or in response to valid requests by public authorities.</p>
-
-            <h3>4.3 Business Transfers</h3>
-            <p>In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</p>
-
-            <h2>5. Data Security</h2>
-            <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
-
-            <h2>6. Data Retention</h2>
-            <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
-
-            <h2>7. Your Rights and Choices</h2>
-            <p>Depending on your location, you may have certain rights regarding your personal information, including:</p>
-            <ul>
-                <li>The right to access your personal information</li>
-                <li>The right to correct inaccurate information</li>
-                <li>The right to delete your personal information</li>
-                <li>The right to restrict or object to processing</li>
-                <li>The right to data portability</li>
-                <li>The right to withdraw consent</li>
-            </ul>
-
-            <h2>8. Cookies and Tracking Technologies</h2>
-            <p>We use cookies and similar tracking technologies to enhance your experience on our website. You can control cookie settings through your browser preferences.</p>
-
-            <h2>9. Third-Party Links</h2>
-            <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies.</p>
-
-            <h2>10. Children's Privacy</h2>
-            <p>Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
-
-            <h2>11. International Data Transfers</h2>
-            <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place for such transfers.</p>
-
-            <h2>12. Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
-
-            <h2>13. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-            <ul>
-                <li>Email: privacy@secondspringhealth.ai</li>
-                <li>Address: San Francisco, CA</li>
-                <li>Phone: +1 (555) 123-4567</li>
-            </ul>
+      <div class="legal-container">
+        <div class="legal-header">
+          <div class="legal-title">Privacy Policy</div>
+          <div class="effective-date">Effective Date: October 3, 2025</div>
         </div>
+
+        <div class="legal-section">
+          <h2>1. Introduction</h2>
+          <div>Namita Mankad LLC (“we,” “our,” or “us”) operates the Second Spring website and mobile application (the “Service”). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Service.</div>
+          <div>Although we are not a HIPAA-covered entity, we align our privacy and security practices with HIPAA standards by encrypting data, enforcing strict access controls, and applying industry best practices to protect health-related information.</div>
+          <div>This policy applies to all users of our Service, including visitors to our website and users of our mobile application.</div>
+        </div>
+
+        <div class="legal-section">
+          <h2>2. Information We Collect</h2>
+          <h3>2.1 Personal Information</h3>
+          <ul>
+            <li>Name and contact information (email address, phone number)</li>
+            <li>Date of birth and age</li>
+            <li>Location information (city, state, country)</li>
+            <li>Account credentials and profile information</li>
+          </ul>
+
+          <h3>2.2 Health Information</h3>
+          <ul>
+            <li>Menstrual cycle data and symptoms</li>
+            <li>Health metrics and wellness tracking data</li>
+            <li>Lifestyle information (diet, exercise, sleep patterns)</li>
+            <li>Health goals and preferences</li>
+          </ul>
+
+          <h3>2.3 Usage Information</h3>
+          <ul>
+            <li>App usage patterns and feature interactions</li>
+            <li>Device information (type, operating system, unique identifiers)</li>
+            <li>Log data (IP address, browser type, pages visited)</li>
+            <li>Cookies and similar tracking technologies</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>3. How We Use Your Information</h2>
+          <h3>3.1 Service Provision</h3>
+          <ul>
+            <li>Provide personalized health insights and recommendations</li>
+            <li>Track and analyze health patterns</li>
+            <li>Deliver relevant content and features</li>
+            <li>Maintain and improve our Service</li>
+          </ul>
+
+          <h3>3.2 Communication</h3>
+          <ul>
+            <li>Send important service updates and notifications</li>
+            <li>Provide customer support</li>
+            <li>Share educational content and wellness tips</li>
+            <li>Respond to inquiries and feedback</li>
+          </ul>
+
+          <h3>3.3 Research and Development</h3>
+          <ul>
+            <li>Analyze aggregated, anonymized data for research purposes</li>
+            <li>Improve our algorithms and recommendations</li>
+            <li>Develop new features and services</li>
+            <li>Conduct user experience research</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>4. Information Sharing and Disclosure</h2>
+          <h3>4.1 We Do Not Sell Your Data</h3>
+          <div>We do not sell, rent, or trade your personal information to third parties for marketing purposes.</div>
+
+          <h3>4.2 Limited Sharing</h3>
+          <ul>
+            <li><strong>Service Providers:</strong> With trusted third-party vendors who assist in operating our Service</li>
+            <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
+            <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+            <li><strong>Consent:</strong> When you explicitly consent to sharing</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>5. Data Security</h2>
+          <ul>
+            <li>Encryption of data in transit and at rest</li>
+            <li>Secure authentication and access controls</li>
+            <li>Regular security audits and updates</li>
+            <li>Employee training on data protection</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>6. Your Rights and Choices</h2>
+          <h3>6.1 Access and Control</h3>
+          <ul>
+            <li>Access your personal information</li>
+            <li>Update or correct your data</li>
+            <li>Download your data in a portable format</li>
+            <li>Delete your account and associated data</li>
+          </ul>
+
+          <h3>6.2 Communication Preferences</h3>
+          <ul>
+            <li>Opt out of marketing communications</li>
+            <li>Manage notification settings</li>
+            <li>Control data sharing preferences</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>7. Data Retention</h2>
+          <div>We retain your information only as long as necessary to provide our Service and fulfill the purposes outlined in this policy. Retention periods vary by data type:</div>
+          <ul>
+            <li>Health and wellness logs: deleted upon account deletion</li>
+            <li>Account data: deleted within 30 days after account deletion</li>
+            <li>Transactional/payment data: retained for up to 7 years for tax and legal compliance</li>
+          </ul>
+        </div>
+
+        <div class="legal-section">
+          <h2>8. International Data Transfers</h2>
+          <div>Your information may be transferred to and processed in countries other than your own. For transfers from the European Economic Area (EEA), United Kingdom, or Switzerland, we rely on Standard Contractual Clauses approved by the European Commission to ensure appropriate safeguards.</div>
+        </div>
+
+        <div class="legal-section">
+          <h2>9. Children’s Privacy</h2>
+          <div>Our Service is not intended for children under 13 years of age (or the minimum age of digital consent in your jurisdiction, which may be between 13–16). We do not knowingly collect personal information from children under this age. If you are a parent or guardian and believe your child has provided personal information, please contact us immediately.</div>
+        </div>
+
+        <div class="legal-section">
+          <h2>10. Cookies and Tracking</h2>
+          <div>We use cookies and similar technologies to improve user experience and analyze trends. You may manage your cookie preferences through your browser settings or our cookie banner. Certain features may not function properly if cookies are disabled.</div>
+        </div>
+
+        <div class="legal-section">
+          <h2>11. California Residents (CPRA Notice)</h2>
+          <div>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA/CPRA), including the right to:</div>
+          <ul>
+            <li>Know what personal data we collect and how it is used</li>
+            <li>Request deletion of your data</li>
+            <li>Correct inaccurate data</li>
+            <li>Opt out of certain data sharing</li>
+            <li>Receive equal service and price regardless of exercising these rights</li>
+          </ul>
+          <div>To exercise your rights, please contact us at the details below.</div>
+        </div>
+
+        <div class="legal-section">
+          <h2>12. Changes to This Policy</h2>
+          <div>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the new Privacy Policy on this page and updating the “Effective Date.” Your continued use of the Service after such changes constitutes acceptance of the updated policy.</div>
+        </div>
+
+        <div class="legal-section">
+          <h2>13. Contact Information</h2>
+          <div class="contact-info">
+            <div><strong>Namita Mankad LLC</strong></div>
+            <div>1050 N Stuart St #915, Arlington, VA 22201</div>
+            <div>Email: namita@namitamankad.com</div>
+            <div>Website: secondspringhealth.ai</div>
+          </div>
+        </div>
+
+        <div class="back-to-home">
+          <a href="index.html">← Back to Home</a>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>SecondSpring</h3>
-                    <p>Creating digital experiences that inspire and transform.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 SecondSpring. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Second Spring</h3>
+        <div>Empowering women through their Second Spring journey with personalized wellness tools and ancient wisdom.</div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2025 Namita Mankad LLC. All rights reserved.</div>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
