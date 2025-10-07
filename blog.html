@@ -380,7 +380,10 @@
             if (!masonryGrid) return;
 
             // Remove any existing column classes
-            masonryGrid.classList.remove('few-posts', 'single-post');
+            masonryGrid.classList.remove('few-posts', 'single-post', 'filtered-grid');
+            
+            // For filtered content, use horizontal grid layout
+            masonryGrid.classList.add('filtered-grid');
             
             if (postCount === 1) {
                 masonryGrid.classList.add('single-post');
@@ -394,7 +397,7 @@
             const masonryGrid = document.getElementById('masonryGrid');
             if (!masonryGrid) return;
             
-            masonryGrid.classList.remove('few-posts', 'single-post');
+            masonryGrid.classList.remove('few-posts', 'single-post', 'filtered-grid');
         }
 
 

@@ -1856,21 +1856,44 @@
   }
 }
 
-/* Dynamic column adjustments for filtered content */
-.masonry-grid.few-posts {
-  columns: 2 !important;
+/* Filtered content uses horizontal grid layout */
+.masonry-grid.filtered-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  columns: unset !important;
+}
+
+.masonry-grid.filtered-grid.few-posts {
+  grid-template-columns: repeat(2, 1fr);
   max-width: 800px;
 }
 
-.masonry-grid.single-post {
-  columns: 1 !important;
+.masonry-grid.filtered-grid.single-post {
+  grid-template-columns: 1fr;
   max-width: 500px;
 }
 
+/* Make filtered grid items work with grid layout */
+.masonry-grid.filtered-grid .masonry-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 0;
+  break-inside: unset;
+}
+
+.masonry-grid.filtered-grid .masonry-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 @media (max-width: 768px) {
-  .masonry-grid.few-posts,
-  .masonry-grid.single-post {
-    columns: 1 !important;
+  .masonry-grid.filtered-grid.few-posts,
+  .masonry-grid.filtered-grid.single-post {
+    grid-template-columns: 1fr !important;
     max-width: none;
   }
 }
