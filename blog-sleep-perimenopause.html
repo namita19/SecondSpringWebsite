@@ -1,139 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sleep During Perimenopause: Finding Rest When Your Body Won't Let You - SecondSpring</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep During Perimenopause: Finding Rest When Your Body Won't Let You | Second Spring</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <!-- Navigation and Dynamic Elements -->
+  <script src="navigation.js" defer></script>
+  <script src="blog-posts.js" defer></script>
+
+  <!-- FloDesk Script -->
+  <script src="https://assets.flodesk.com/universal.js"></script>
+
+  <style>
+    /* Inline image style */
+    .blog-inline-img {
+      display: block;
+      max-width: 90%;
+      margin: 2.5rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
-<body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html"><img src="images/logos/secondspring-logo.png" alt="SecondSpring" class="logo"></a>
-            </header>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </header>
-        </header>
-    </header>
 
-    <main class="main-content">
-        <article class="blog-post">
-            <div class="container">
-                <div class="blog-post-header">
-                    <div class="blog-meta">
-                        <span class="blog-date">December 2024</span>
-                        <span class="blog-category">Lifestyle</span>
-                    </header>
-                    <h1>Sleep During Perimenopause: Finding Rest When Your Body Won't Let You</h1>
-                </header>
+<body class="blog-post-page">
+  <!-- Header Placeholder -->
+  <div id="navigation-placeholder"></div>
 
-                <div class="blog-post-content">
-                    <p>For many women, perimenopause brings a nightly battle with disrupted sleep. </p>
+  <main class="blog-layout">
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <section class="search-section">
+        <h3>Search Articles</h3>
+        <div class="search-box">
+          <div class="search-input-container">
+            <input type="text" id="search-input" placeholder="Search by topic, category, or keyword...">
+            <button type="button" id="search-btn" class="search-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+          <div id="search-suggestions" class="search-suggestions"></div>
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </section>
 
-                    <p>Hot flashes, night sweats, and unpredictable hormone shifts can leave you staring at the ceiling at 2 a.m., feeling wired yet exhausted. If you've noticed your sleep quality unraveling during this transition, you're not alone. Up to 47% of women in perimenopause report regular sleep disturbances.</p>
+      <!-- Topics & Categories -->
+      <section class="topics">
+        <h3>Browse by Topic</h3>
+        <hr class="topic-divider">
+        <ul id="topics-list">
+          <li>
+            <a href="#" data-topic="Nourish – Food & Nutrition">
+              <span class="topic-title">Nourish</span>
+              <span class="topic-subtitle">Food & Nutrition <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Flow – Lifestyle Harmony">
+              <span class="topic-title">Flow</span>
+              <span class="topic-subtitle">Lifestyle Harmony <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Rest – Sleep & Recovery">
+              <span class="topic-title">Rest</span>
+              <span class="topic-subtitle">Sleep & Recovery <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Move – Movement & Strength">
+              <span class="topic-title">Move</span>
+              <span class="topic-subtitle">Movement & Strength <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Thrive – Healthcare & Support">
+              <span class="topic-title">Thrive</span>
+              <span class="topic-subtitle">Healthcare & Support <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </aside>
 
-                    <p>The good news? </p>
-                    <p>While hormonal fluctuations play a big role, there are practical ways to improve rest and reclaim your nights.</p>
+    <!-- Blog Article -->
+    <article class="blog-article">
+      <h1 class="blog-title">Sleep During Perimenopause: Finding Rest When Your Body Won't Let You</h1>
+      <div class="blog-meta">
+        <span class="blog-date">Published on October 2025</span>
+      </div>
 
-                    <h3>Why Sleep Suffers During Perimenopause</h3>
+      <div class="blog-content-text">
+        <p>For many women, perimenopause brings a nightly battle with disrupted sleep.</p>
 
-                    <p>Hormones are powerful regulators of sleep. Estrogen and progesterone both support restorative rest: estrogen helps you fall asleep faster and stay asleep longer, while progesterone has a natural calming effect.</p>
+        <p>Hot flashes, night sweats, and unpredictable hormone shifts can leave you staring at the ceiling at 2 a.m., feeling wired yet exhausted. If you've noticed your sleep quality unraveling during this transition, you're not alone. Up to 47% of women in perimenopause report regular sleep disturbances.</p>
 
-                    <p>As these hormones fluctuate and decline, women often face insomnia, night waking, or lighter, restless sleep. A big driver of this disruption is what doctors call vasomotor symptoms (better known as hot flashes and night sweats). These are sudden changes in body temperature that can leave you overheated, sweaty, and jolted awake at night. For many, they are the number one sleep disruptor during this stage.</p>
+        <p>The good news? While hormonal fluctuations play a big role, there are practical ways to improve rest and reclaim your nights.</p>
 
-                    <p>Other contributors include:</p>
+        <img src="images/blog/Sleep and Hormone Changes Flowchart.png" alt="Sleep and Hormone Changes Flowchart" class="blog-inline-img">
 
-                    <p>Shifts in circadian rhythms and natural melatonin production with age.</p>
+        <h2>Why Sleep Suffers During Perimenopause</h2>
+        <p>Hormones are powerful regulators of sleep. Estrogen and progesterone both support restorative rest: estrogen helps you fall asleep faster and stay asleep longer, while progesterone has a natural calming effect.</p>
 
-                    <p>Restless leg syndrome and other movement disorders that peak in midlife.</p>
+        <p>As these hormones fluctuate and decline, women often face insomnia, night waking, or lighter, restless sleep. A big driver of this disruption is what doctors call vasomotor symptoms (better known as hot flashes and night sweats). These are sudden changes in body temperature that can leave you overheated, sweaty, and jolted awake at night. For many, they are the number one sleep disruptor during this stage.</p>
 
-                    <p>Anxiety or low mood, which are strongly tied to poor sleep quality</p>
+        <p>Other contributors include:</p>
+        <ul>
+          <li>Shifts in circadian rhythms and natural melatonin production with age.</li>
+          <li>Restless leg syndrome and other movement disorders that peak in midlife.</li>
+          <li>Anxiety or low mood, which are strongly tied to poor sleep quality</li>
+        </ul>
 
-                    <h3>Practical Tips for Better Sleep</h3>
+        <h2>Practical Tips for Better Sleep</h2>
 
-                    <h4>1. Cool your environment</h4>
-                    <p>Since night sweats are a main culprit, set your bedroom up for comfort. Keep it cool, choose breathable cotton sheets, and try a cooling pillow or moisture-wicking sleepwear. Small changes can prevent big disruptions.</p>
+        <h3>1. Cool your environment</h3>
+        <p>Since night sweats are a main culprit, set your bedroom up for comfort. Keep it cool, choose breathable cotton sheets, and try a cooling pillow or moisture-wicking sleepwear. Small changes can prevent big disruptions.</p>
 
-                    <h4>2. Create a steady bedtime rhythm</h4>
-                    <p>An eight-week program of cognitive-behavioral therapy for insomnia (CBT-I) has been shown to reduce perimenopausal insomnia and hot-flash awakenings. Even simple routines, such as the same bedtime, dim lights, and no late-night screens, signal your body it's time to rest.</p>
+        <h3>2. Create a steady bedtime rhythm</h3>
+        <p>An eight-week program of cognitive-behavioral therapy for insomnia (CBT-I) has been shown to reduce perimenopausal insomnia and hot-flash awakenings. Even simple routines, such as the same bedtime, dim lights, and no late-night screens, signal your body it's time to rest.</p>
 
-                    <h4>3. Watch what you eat and drink</h4>
-                    <p>Alcohol, caffeine, and spicy foods can trigger hot flashes. Swap these for lighter evening meals, hydration, and herbal teas. Daily movement, from strength training to a brisk walk, also improves sleep depth and resilience.</p>
+        <h3>3. Watch what you eat and drink</h3>
+        <p>Alcohol, caffeine, and spicy foods can trigger hot flashes. Swap these for lighter evening meals, hydration, and herbal teas. Daily movement, from strength training to a brisk walk, also improves sleep depth and resilience.</p>
 
-                    <h4>4. Practice mind-body techniques</h4>
-                    <p>Yoga, meditation, or gentle breathwork calms the nervous system and reduces the intensity of hot flashes. Guided meditations designed for sleep can make it easier to drift off.</p>
+        <h3>4. Practice mind-body techniques</h3>
+        <p>Yoga, meditation, or gentle breathwork calms the nervous system and reduces the intensity of hot flashes. Guided meditations designed for sleep can make it easier to drift off.</p>
 
-                    <h4>5. Explore tailored therapies</h4>
+        <h3>5. Explore tailored therapies</h3>
+        <ul>
+          <li><strong>Medical evaluation:</strong> Conditions like sleep apnea or restless legs are often overlooked in women, but are treatable once diagnosed.</li>
+          <li><strong>Hormone therapy (HT):</strong> Estrogen therapy can reduce hot flashes and improve sleep, though it isn't suitable for everyone.</li>
+          <li><strong>Non-hormonal approaches:</strong> Supplements like soy isoflavones, acupuncture, and herbal remedies show mixed results, but some women find relief.</li>
+        </ul>
 
-                    <p>Medical evaluation: Conditions like sleep apnea or restless legs are often overlooked in women, but are treatable once diagnosed.</p>
-                    <p>Hormone therapy (HT): Estrogen therapy can reduce hot flashes and improve sleep, though it isn't suitable for everyone.</p>
-                    <p>Non-hormonal approaches: Supplements like soy isoflavones, acupuncture, and herbal remedies show mixed results, but some women find relief.</p>
+        <img src="images/blog/tips for improving sleep.png" alt="Tips for improving sleep" class="blog-inline-img">
 
-                    <h3>Music and sound therapy</h3>
+        <h2>Music and sound therapy</h2>
+        <p>Beyond traditional sleep strategies, research suggests that music can be a powerful ally. Surveys reveal many women instinctively turn to music for stress relief and mood balance, with some finding improvements in sleep. Clinical trials now back this up; structured music interventions have been shown to improve sleep quality and reduce depressive symptoms during menopause. And when combined with therapeutic touch, music may further reduce nighttime awakenings and support overall well-being. While responses vary, incorporating soothing playlists, live music, or even mindful humming before bedtime could offer a natural, safe way to invite rest.</p>
 
-                    <p>Beyond traditional sleep strategies, research suggests that music can be a powerful ally. Surveys reveal many women instinctively turn to music for stress relief and mood balance, with some finding improvements in sleep. Clinical trials now back this up; structured music interventions have been shown to improve sleep quality and reduce depressive symptoms during menopause. And when combined with therapeutic touch, music may further reduce nighttime awakenings and support overall well-being. While responses vary, incorporating soothing playlists, live music, or even mindful humming before bedtime could offer a natural, safe way to invite rest.</p>
+        <img src="images/blog/music and sleep during perimenopause.png" alt="Music and sleep during perimenopause" class="blog-inline-img">
 
-                    <h3>Restoring More Than Just Sleep</h3>
+        <h2>Restoring More Than Just Sleep</h2>
+        <p>Poor sleep during perimenopause doesn't just cause fatigue. It worsens brain fog, mood swings, and even long-term cardiovascular risks.</p>
 
-                    <p>Poor sleep during perimenopause doesn't just cause fatigue. It worsens brain fog, mood swings, and even long-term cardiovascular risks.</p>
+        <p>By addressing sleep, you're improving more than your nights; you're protecting your health for years ahead.</p>
 
-                    <p>By addressing sleep, you're improving more than your nights; you're protecting your health for years ahead.</p>
+        <p>And here's the rehook to bring it home: Imagine waking up refreshed, not drenched. Imagine reclaiming the kind of sleep that leaves you steady, clear, and ready for the day. That is possible—even in the middle of this transition.</p>
 
-                    <p>And here's the rehook to bring it home: Imagine waking up refreshed, not drenched. Imagine reclaiming the kind of sleep that leaves you steady, clear, and ready for the day. That is possible—even in the middle of this transition.</p>
+        <p>Perimenopause may bring unpredictable changes, but it's also an opportunity to rewrite your routines and create new rhythms of self-care. With the right strategies, restful nights are possible, and they become the foundation for thriving in your Second Spring.</p>
+      </div>
+    </article>
+  </main>
 
-                    <p>Perimenopause may bring unpredictable changes, but it's also an opportunity to rewrite your routines and create new rhythms of self-care. With the right strategies, restful nights are possible, and they become the foundation for thriving in your Second Spring.</p>
-                </header>
+  <!-- Related Posts Section -->
+  <section class="related-posts" id="related-posts">
+    <div class="related-posts-header">
+      <h3>Related Articles</h3>
+      <p class="related-posts-subtitle">Discover more insights to support your Second Spring journey</p>
+    </div>
 
-                <div class="blog-navigation">
-                    <a href="blog.html" class="back-to-blog">← Back to Blog</a>
-                </header>
-            </header>
-        </article>
-    </main>
+    <div class="related-posts-grid">
+      <div class="related-post-card">
+        <h4 class="related-post-title">Perimenopause and Exercise: What Really Works</h4>
+        <p class="related-post-featured-text">
+          Gentle movement, strength training, and mindful rhythm can restore vitality and balance during hormonal shifts.
+        </p>
+        <a href="blog-perimenopause-exercise.html" class="related-post-link">Read More →</a>
+      </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>SecondSpring</h3>
-                    <p>Empowering women through their Second Spring journey with personalized wellness tools and ancient wisdom.</p>
-                </header>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </header>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </header>
-            </header>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Namita Mankad LLC. All rights reserved.</p>
-            </header>
-        </header>
-    </footer>
+      <div class="related-post-card">
+        <h4 class="related-post-title">Perimenopause Nutrition Tips: Eating for Energy, Balance, and Hormone Health</h4>
+        <p class="related-post-featured-text">
+          From symptom management to personalized insights, we merge research-backed knowledge with ancient systems to help women thrive today.
+        </p>
+        <a href="blog-nutrition-tips.html" class="related-post-link">Read More →</a>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Highlight the relevant topic chip based on current post
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentTopic = "Rest – Sleep & Recovery";
+      const topicLinks = document.querySelectorAll('#topics-list a[data-topic]');
+      
+      topicLinks.forEach(link => {
+        if (link.getAttribute('data-topic') === currentTopic) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
