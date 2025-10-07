@@ -1018,7 +1018,7 @@
   }
   
   .section-taupe {
-    background-color: var(--taupe) !important;
+    background-color: rgba(104, 176, 136, 0.12) !important; /* light green band */
     color: var(--charcoal) !important;
   }
   
@@ -1089,7 +1089,7 @@
 }
 
   .section-taupe {
-    background-color: var(--taupe) !important;
+    background-color: rgba(104, 176, 136, 0.12) !important; /* light green band */
     color: var(--charcoal) !important;
   }
   
@@ -1324,8 +1324,8 @@
     margin-top: 3rem;
   }
   
-  .evidence-card {
-    background: var(--cream);
+.evidence-card {
+  background: var(--blue);
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 2rem;
@@ -1333,6 +1333,8 @@
   max-width: 340px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+.evidence-card .feature-header h3 { color: var(--white); }
+.evidence-card .feature-body p { color: var(--white) !important; }
   .evidence-grid {
     display: flex;
     justify-content: center;
@@ -1354,6 +1356,11 @@
     font-size: 2.5rem;
     color: var(--plum);
   }
+
+/* Ensure product page Join heading is plum */
+.join.section-cream h2 {
+  color: var(--plum) !important;
+}
   
   .join p {
     font-size: 1.1rem;
@@ -2035,3 +2042,40 @@
   }
 }
 
+/* =========================
+   Homepage explicit overrides (strong specificity)
+   ========================= */
+/* Headings */
+#product h2 { color: var(--blue) !important; }
+.impact-section h2 { color: var(--blue) !important; }
+.privacy-highlight h3 { color: var(--green) !important; }
+
+/* Homepage product feature cards: green with white text */
+#product .features-grid .feature-card { background: #68B088 !important; color: var(--white) !important; border: none !important; box-shadow: 0 6px 18px rgba(0,0,0,0.12) !important; }
+#product .features-grid .feature-card p { color: var(--white) !important; }
+#product .features-grid .feature-card .feature-header .feature-icon { color: var(--white) !important; }
+#product .features-grid .feature-card .feature-header h3 { color: var(--white) !important; }
+#product .features-grid .feature-card:hover { filter: brightness(0.95) !important; transform: translateY(-5px) !important; }
+
+/* =========================
+   Blog page theming (blue primary, dark green accent)
+   ========================= */
+.blog-page .latest-posts-header h2 { color: var(--blue) !important; }
+.blog-page .latest-posts-header p { color: var(--charcoal); }
+
+.blog-page .masonry-title a, 
+.blog-page .masonry-read-more { color: var(--blue) !important; border-bottom-color: var(--blue) !important; }
+.blog-page .masonry-read-more:hover { color: #1e6a89 !important; border-bottom-color: #1e6a89 !important; }
+
+.blog-page .category-title { color: var(--blue) !important; }
+.blog-page .category-link { color: var(--blue) !important; border-color: var(--blue) !important; }
+.blog-page .category-link:hover { background: var(--blue) !important; color: var(--white) !important; }
+
+.blog-page .category-icon { background: var(--blue) !important; }
+.blog-page .category-box:hover .category-icon { background: var(--green) !important; }
+
+.blog-page .category-count { border: 1px solid var(--green); }
+.blog-page .masonry-category { color: var(--blue) !important; }
+
+.blog-page .latest-blog-posts { background: var(--white); }
+.blog-page .blog-categories .category-section { background-color: var(--cream); }
