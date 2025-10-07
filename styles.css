@@ -902,6 +902,50 @@
     background: var(--plum);
     color: var(--cream);
   }
+
+  /* === About Page – New Accent Colors (Blue/Green/Orange) === */
+  /* Subtle underline accent for Our Story heading */
+  .about-page .our-story h2 {
+    position: relative;
+  }
+  .about-page .our-story h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    width: 80px;
+    height: 3px;
+    background: var(--orange);
+    border-radius: 2px;
+  }
+
+  /* Vision card edge emphasizes clarity */
+  .about-page .vision-block {
+    border: 2px solid var(--blue);
+    box-shadow: 0 6px 18px rgba(36, 123, 160, 0.08);
+    background: var(--white);
+  }
+
+  /* Approach section with modern blue heading and green accent bar */
+  .about-page .approach {
+    background: var(--white) !important;
+    color: var(--charcoal) !important;
+    border-top: 3px solid var(--green);
+  }
+  .about-page .approach h2 {
+    color: var(--blue) !important;
+  }
+
+  /* LinkedIn button reflects connectivity (blue) with strong contrast */
+  .about-page .linkedin-link {
+    background: var(--blue);
+    color: var(--white);
+  }
+  .about-page .linkedin-link:hover {
+    background: var(--orange);
+    color: var(--white);
+  }
   
   /* --- Override Global Section Rules for About Page --- */
 .section-plum, .section-gold, .section-cream, .section-taupe {
