@@ -1,156 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Hot Flashes Don't Have to Rule Your Life - SecondSpring</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Hot Flashes Don't Have to Rule Your Life | Second Spring</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <!-- Navigation and Dynamic Elements -->
+  <script src="navigation.js" defer></script>
+  <script src="blog-posts.js" defer></script>
+
+  <!-- FloDesk Script -->
+  <script src="https://assets.flodesk.com/universal.js"></script>
+
+  <style>
+    /* Inline image style */
+    .blog-inline-img {
+      display: block;
+      max-width: 90%;
+      margin: 2.5rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
-<body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html"><img src="images/logos/secondspring-logo.png" alt="SecondSpring" class="logo"></a>
-            </header>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </header>
-        </header>
-    </header>
 
-    <main class="main-content">
-        <article class="blog-post">
-            <div class="container">
-                <div class="blog-post-header">
-                    <div class="blog-meta">
-                        <span class="blog-date">December 2024</span>
-                        <span class="blog-category">Symptoms</span>
-                    </header>
-                    <h1>Why Hot Flashes Don't Have to Rule Your Life</h1>
-                </header>
+<body class="blog-post-page">
+  <!-- Header Placeholder -->
+  <div id="navigation-placeholder"></div>
 
-                <div class="blog-post-content">
-                    <p>It begins with a rush. One moment you're fine, and the next your face is flushed, your heart is racing, and heat floods your body as if someone lit a fire under your skin. For many women, this is the unmistakable arrival of hot flashes, a hallmark of perimenopause and menopause.</p>
+  <main class="blog-layout">
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <section class="search-section">
+        <h3>Search Articles</h3>
+        <div class="search-box">
+          <div class="search-input-container">
+            <input type="text" id="search-input" placeholder="Search by topic, category, or keyword...">
+            <button type="button" id="search-btn" class="search-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+          <div id="search-suggestions" class="search-suggestions"></div>
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </section>
 
-                    <p>Some women experience them lightly; others find them debilitating. They may wake you at night, steal your concentration at work, and leave you feeling worn down and out of control. And yet, here's the empowering truth: hot flashes are not inevitable in their intensity. </p>
+      <!-- Topics & Categories -->
+      <section class="topics">
+        <h3>Browse by Topic</h3>
+        <hr class="topic-divider">
+        <ul id="topics-list">
+          <li>
+            <a href="#" data-topic="Nourish – Food & Nutrition">
+              <span class="topic-title">Nourish</span>
+              <span class="topic-subtitle">Food & Nutrition <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Flow – Lifestyle Harmony">
+              <span class="topic-title">Flow</span>
+              <span class="topic-subtitle">Lifestyle Harmony <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Rest – Sleep & Recovery">
+              <span class="topic-title">Rest</span>
+              <span class="topic-subtitle">Sleep & Recovery <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Move – Movement & Strength">
+              <span class="topic-title">Move</span>
+              <span class="topic-subtitle">Movement & Strength <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Thrive – Healthcare & Support">
+              <span class="topic-title">Thrive</span>
+              <span class="topic-subtitle">Healthcare & Support <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </aside>
 
-                    <p>Around the world, women experience them very differently. In Western countries, up to 80% of women report hot flashes. In East Asia, only about 10% do.</p>
+    <!-- Blog Article -->
+    <article class="blog-article">
+      <h1 class="blog-title">Why Hot Flashes Don't Have to Rule Your Life</h1>
+      <div class="blog-meta">
+        <span class="blog-date">Published on October 2025</span>
+      </div>
 
-                    <p>That gap tells us something crucial: lifestyle, diet, and cultural perspective shape the way we experience menopause. This blog has practical strategies and lifestyle changes during your perimenopause stage to reduce the frequency and intensity of hot flashes.</p>
+      <div class="blog-content-text">
+        <p>It begins with a rush. One moment you're fine, and the next your face is flushed, your heart is racing, and heat floods your body as if someone lit a fire under your skin. For many women, this is the unmistakable arrival of hot flashes, a hallmark of perimenopause and menopause.</p>
 
-                    <h3>Why the East–West Difference Matters</h3>
-                    <p>Researchers point to several reasons for the striking difference:</p>
+        <p>Some women experience them lightly; others find them debilitating. They may wake you at night, steal your concentration at work, and leave you feeling worn down and out of control. And yet, here's the empowering truth: hot flashes are not inevitable in their intensity.</p>
 
-                    <p>Diet: Soy, flax, chickpeas, and legumes are common in Asian diets. These foods are rich in phytoestrogens, plant-based compounds that can gently mimic estrogen and buffer hormonal swings.</p>
+        <p>Around the world, women experience them very differently. In Western countries, up to 80% of women report hot flashes. In East Asia, only about 10% do.</p>
 
-                    <p>Cultural framing: In Japan, menopause (konenki) is seen as a natural stage of renewal, not decline. This influences how women interpret and report symptoms.</p>
+        <p>That gap tells us something crucial: lifestyle, diet, and cultural perspective shape the way we experience menopause. This blog has practical strategies and lifestyle changes during your perimenopause stage to reduce the frequency and intensity of hot flashes.</p>
 
-                    <p>Genetics: More Asian women are "equol producers," meaning their gut bacteria convert soy isoflavones into equol, a powerful metabolite linked with fewer hot flashes.</p>
+        <img src="images/blog/Hot Flash Reporting Comparison.png" alt="Hot Flash Reporting Comparison" class="blog-inline-img">
 
-                    <p>Lifestyle: Historically, lower obesity rates and more daily movement have reduced risk.</p>
+        <h2>Why the East–West Difference Matters</h2>
+        <p>Researchers point to several reasons for the striking difference:</p>
 
-                    <p>For women in the West, this means opportunity. By adapting these habits earlier in perimenopause, before symptoms peak, you can reduce both the severity and frequency of hot flashes. </p>
+        <p><strong>Diet:</strong> Soy, flax, chickpeas, and legumes are common in Asian diets. These foods are rich in phytoestrogens, plant-based compounds that can gently mimic estrogen and buffer hormonal swings.</p>
 
-                    <h3>Food as Medicine: What to Eat and What to Limit</h3>
+        <p><strong>Cultural framing:</strong> In Japan, menopause (konenki) is seen as a natural stage of renewal, not decline. This influences how women interpret and report symptoms.</p>
 
-                    <p>Nutrition is a cornerstone of natural management:</p>
+        <p><strong>Genetics:</strong> More Asian women are "equol producers," meaning their gut bacteria convert soy isoflavones into equol, a powerful metabolite linked with fewer hot flashes.</p>
 
-                    <p>Add phytoestrogens: Incorporate soy foods, flaxseeds, lentils, and chickpeas.</p>
+        <p><strong>Lifestyle:</strong> Historically, lower obesity rates and more daily movement have reduced risk.</p>
 
-                    <p>Boost bone and heart health: Get enough calcium, vitamin D, magnesium, and protein.</p>
+        <p>For women in the West, this means opportunity. By adapting these habits earlier in perimenopause, before symptoms peak, you can reduce both the severity and frequency of hot flashes.</p>
 
-                    <p>Balance blood sugar: Favor whole grains, vegetables, and lean protein to prevent insulin spikes that may worsen hot flashes.</p>
+        <h2>Food as Medicine: What to Eat and What to Limit</h2>
+        <p>Nutrition is a cornerstone of natural management:</p>
 
-                    <p>Stay hydrated: Water helps regulate body temperature.</p>
+        <ul>
+          <li><strong>Add phytoestrogens:</strong> Incorporate soy foods, flaxseeds, lentils, and chickpeas.</li>
+          <li><strong>Boost bone and heart health:</strong> Get enough calcium, vitamin D, magnesium, and protein.</li>
+          <li><strong>Balance blood sugar:</strong> Favor whole grains, vegetables, and lean protein to prevent insulin spikes that may worsen hot flashes.</li>
+          <li><strong>Stay hydrated:</strong> Water helps regulate body temperature.</li>
+          <li><strong>Avoid triggers:</strong> Limit alcohol, caffeine, hot drinks, and spicy foods, which dilate blood vessels and can trigger heat surges.</li>
+        </ul>
 
-                    <p>Avoid triggers: Limit alcohol, caffeine, hot drinks, and spicy foods, which dilate blood vessels and can trigger heat surges.</p>
+        <img src="images/blog/Western vs. Eastern Lifestyle Choices.png" alt="Western vs. Eastern Lifestyle Choices" class="blog-inline-img">
 
-                    <h3>Supplements That May Help</h3>
-                    <p>While not a replacement for lifestyle, some supplements provide added support (always check with your provider):</p>
+        <h2>Supplements That May Help</h2>
+        <p>While not a replacement for lifestyle, some supplements provide added support (always check with your provider):</p>
 
-                    <p>Vitamin E: Modest relief reported in some studies.</p>
-                    <p>Soy isoflavones and red clover: For plant-based estrogen support.</p>
-                    <p>Black cohosh: Mixed results, but some women find relief.</p>
-                    <p>Omega-3 fatty acids: Support mood and cardiovascular health.</p>
+        <ul>
+          <li><strong>Vitamin E:</strong> Modest relief reported in some studies.</li>
+          <li><strong>Soy isoflavones and red clover:</strong> For plant-based estrogen support.</li>
+          <li><strong>Black cohosh:</strong> Mixed results, but some women find relief.</li>
+          <li><strong>Omega-3 fatty acids:</strong> Support mood and cardiovascular health.</li>
+        </ul>
 
-                    <h3>Lifestyle Strategies That Work</h3>
+        <h2>Lifestyle Strategies That Work</h2>
+        <ul>
+          <li><strong>Exercise regularly:</strong> Aerobic activity and strength training support weight, mood, and sleep - all linked to hot flash severity</li>
+          <li><strong>Practice paced breathing:</strong> Deep, slow breaths at the onset of a hot flash may shorten its duration.</li>
+          <li><strong>Dress smart:</strong> Layer clothing and choose natural fabrics.</li>
+          <li><strong>Cool your environment:</strong> Fans, cooling pillows, and light blankets help at night.</li>
+          <li><strong>Prioritize sleep:</strong> Consistent bedtime, reduced screen time, and mindfulness techniques can ease nighttime flashes</li>
+        </ul>
 
-                    <p>Exercise regularly: Aerobic activity and strength training support weight, mood, and sleep - all linked to hot flash severity</p>
-                    <p>Practice paced breathing: Deep, slow breaths at the onset of a hot flash may shorten its duration.</p>
-                    <p>Dress smart: Layer clothing and choose natural fabrics.</p>
-                    <p>Cool your environment: Fans, cooling pillows, and light blankets help at night.</p>
-                    <p>Prioritize sleep: Consistent bedtime, reduced screen time, and mindfulness techniques can ease nighttime flashes</p>
+        <h2>Integrative and Mind–Body Approaches</h2>
+        <ul>
+          <li><strong>Acupuncture:</strong> More effective than no treatment, though results are mixed compared to hormone therapy</li>
+          <li><strong>Yoga, tai chi, and meditation:</strong> Support nervous system regulation and reduce perceived symptom severity.</li>
+          <li><strong>Mindfulness:</strong> Helps reframe the experience and calm the body's stress response.</li>
+        </ul>
 
-                    <h3>Integrative and Mind–Body Approaches</h3>
+        <img src="images/blog/Lifestyle.png" alt="Lifestyle" class="blog-inline-img">
 
-                    <p>Acupuncture: More effective than no treatment, though results are mixed compared to hormone therapy</p>
-                    <p>Yoga, tai chi, and meditation: Support nervous system regulation and reduce perceived symptom severity.</p>
-                    <p>Mindfulness: Helps reframe the experience and calm the body's stress response.</p>
+        <h2>When to Seek Medical Support</h2>
+        <p>If hot flashes become severe and disruptive, talk to your healthcare provider. Options include:</p>
 
-                    <h3>When to Seek Medical Support</h3>
+        <ul>
+          <li>Non-hormonal medications like SSRIs, SNRIs, or gabapentin, which can reduce vasomotor symptoms</li>
+          <li>Low-dose hormone therapy (short-term use, tailored).</li>
+        </ul>
 
-                    <p>If hot flashes become severe and disruptive, talk to your healthcare provider. Options include:</p>
+        <h2>The Bigger Picture</h2>
+        <p>Hot flashes are more than heat; they are signals of your body's transition. Left unmanaged, they can erode sleep, strain the heart, and drain your energy. But they don't have to.</p>
 
-                    <p>Non-hormonal medications like SSRIs, SNRIs, or gabapentin, which can reduce vasomotor symptoms</p>
-                    <p>Low-dose hormone therapy (short-term use, tailored). like SSRIs, SNRIs, or gabapentin, which can reduce vasomotor symptoms</p>
+        <p>The experience of women worldwide shows us that symptoms can be shaped by what you eat, how you move, and even how you view this life stage. The earlier you embrace supportive habits, the gentler your transition can be.</p>
 
-                    <h3>The Bigger Picture</h3>
+        <p>Your Second Spring is about renewal, not decline. By blending science, tradition, and self-care, you can move through perimenopause with strength and clarity. Share this knowledge with the women in your circle, because when we replace silence with wisdom, we all rise together.</p>
+      </div>
+    </article>
+  </main>
 
-                    <p>Hot flashes are more than heat; they are signals of your body's transition. Left unmanaged, they can erode sleep, strain the heart, and drain your energy. But they don't have to.</p>
+  <!-- Related Posts Section -->
+  <section class="related-posts" id="related-posts">
+    <div class="related-posts-header">
+      <h3>Related Articles</h3>
+      <p class="related-posts-subtitle">Discover more insights to support your Second Spring journey</p>
+    </div>
 
-                    <p>The experience of women worldwide shows us that symptoms can be shaped by what you eat, how you move, and even how you view this life stage. The earlier you embrace supportive habits, the gentler your transition can be.</p>
+    <div class="related-posts-grid">
+      <div class="related-post-card">
+        <h4 class="related-post-title">Hormone Therapy in Perimenopause: What You Need to Know</h4>
+        <p class="related-post-featured-text">
+          Explore the benefits, risks, and alternatives to hormone therapy for managing perimenopausal symptoms.
+        </p>
+        <a href="blog-hormone-therapy.html" class="related-post-link">Read More →</a>
+      </div>
 
-                    <p>Your Second Spring is about renewal, not decline. By blending science, tradition, and self-care, you can move through perimenopause with strength and clarity. Share this knowledge with the women in your circle, because when we replace silence with wisdom, we all rise together.</p>
-                </header>
+      <div class="related-post-card">
+        <h4 class="related-post-title">Sleep During Perimenopause: Finding Rest When Your Body Won't Let You</h4>
+        <p class="related-post-featured-text">
+          From symptom management to personalized insights, we merge research-backed knowledge with ancient systems to help women thrive today.
+        </p>
+        <a href="blog-sleep-perimenopause.html" class="related-post-link">Read More →</a>
+      </div>
+    </div>
+  </section>
 
-                <div class="blog-navigation">
-                    <a href="blog.html" class="back-to-blog">← Back to Blog</a>
-                </header>
-            </header>
-        </article>
-    </main>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>SecondSpring</h3>
-                    <p>Empowering women through their Second Spring journey with personalized wellness tools and ancient wisdom.</p>
-                </header>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </header>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </header>
-            </header>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Namita Mankad LLC. All rights reserved.</p>
-            </header>
-        </header>
-    </footer>
-
-    <script src="script.js"></script>
+  <script>
+    // Highlight the relevant topic chip based on current post
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentTopic = "Thrive – Healthcare & Support";
+      const topicLinks = document.querySelectorAll('#topics-list a[data-topic]');
+      
+      topicLinks.forEach(link => {
+        if (link.getAttribute('data-topic') === currentTopic) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
