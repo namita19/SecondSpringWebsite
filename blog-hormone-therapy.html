@@ -1,182 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hormone Therapy in Perimenopause: What You Need to Know - SecondSpring</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hormone Therapy in Perimenopause: What You Need to Know | Second Spring</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <!-- Navigation and Dynamic Elements -->
+  <script src="navigation.js" defer></script>
+  <script src="blog-posts.js" defer></script>
+
+  <!-- FloDesk Script -->
+  <script src="https://assets.flodesk.com/universal.js"></script>
+
+  <style>
+    /* Inline image style */
+    .blog-inline-img {
+      display: block;
+      max-width: 90%;
+      margin: 2.5rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
-<body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html">
-                    <img src="images/logos/secondspring-logo.png" alt="SecondSpring" class="logo">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </header>
-        </header>
-    </header>
 
-    <main class="main-content">
-        <article class="blog-post">
-            <div class="container">
-                <div class="blog-post-header">
-                    <div class="blog-meta">
-                        <span class="blog-date">December 2024</span>
-                        <span class="blog-category">Treatment</span>
-                    </header>
-                    <h1>Hormone Therapy in Perimenopause: What You Need to Know</h1>
-                </header>
+<body class="blog-post-page">
+  <!-- Header Placeholder -->
+  <div id="navigation-placeholder"></div>
 
-                <div class="blog-post-content">
-                    <p>Perimenopause is the body's long goodbye to reproductive cycles. Unlike menopause, which is a defined endpoint, perimenopause is a turbulent transition that can last for years. Hormones rise and crash unpredictably, leaving many women facing hot flashes, insomnia, mood swings, brain fog, and joint aches. For some, the experience is manageable; for others, it erodes health, relationships, and quality of life.</p>
+  <main class="blog-layout">
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <section class="search-section">
+        <h3>Search Articles</h3>
+        <div class="search-box">
+          <div class="search-input-container">
+            <input type="text" id="search-input" placeholder="Search by topic, category, or keyword...">
+            <button type="button" id="search-btn" class="search-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+          <div id="search-suggestions" class="search-suggestions"></div>
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </section>
 
-                    <p>Hormone therapy (HT), also called hormone replacement therapy (HRT), is often considered the "gold standard" for treating severe perimenopausal symptoms. Yet, because perimenopause is defined by fluctuation, not just steady decline, research into when, how, and for whom HT works is still evolving. This blog explores what we know from clinical studies about HT in perimenopause: its benefits, risks, and emerging alternatives.</p>
+      <!-- Topics & Categories -->
+      <section class="topics">
+        <h3>Browse by Topic</h3>
+        <hr class="topic-divider">
+        <ul id="topics-list">
+          <li>
+            <a href="#" data-topic="Nourish – Food & Nutrition">
+              <span class="topic-title">Nourish</span>
+              <span class="topic-subtitle">Food & Nutrition <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Flow – Lifestyle Harmony">
+              <span class="topic-title">Flow</span>
+              <span class="topic-subtitle">Lifestyle Harmony <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Rest – Sleep & Recovery">
+              <span class="topic-title">Rest</span>
+              <span class="topic-subtitle">Sleep & Recovery <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Move – Movement & Strength">
+              <span class="topic-title">Move</span>
+              <span class="topic-subtitle">Movement & Strength <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-topic="Thrive – Healthcare & Support">
+              <span class="topic-title">Thrive</span>
+              <span class="topic-subtitle">Healthcare & Support <span class="post-count">(0)</span></span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </aside>
 
-                    <h3>What Makes Perimenopause Different?</h3>
+    <!-- Blog Article -->
+    <article class="blog-article">
+      <h1 class="blog-title">Hormone Therapy in Perimenopause: What You Need to Know</h1>
+      <div class="blog-meta">
+        <span class="blog-date">Published on October 2025</span>
+      </div>
 
-                    <p>Perimenopause usually begins in the early to mid-40s and can last 4–8 years. It is marked not by the absence of hormones but by erratic swings in estrogen and progesterone. These fluctuations affect the brain, cardiovascular system, bones, and mood-regulating neurotransmitters</p>
+      <div class="blog-content-text">
+        <p>Perimenopause is the body's long goodbye to reproductive cycles. Unlike menopause, which is a defined endpoint, perimenopause is a turbulent transition that can last for years. Hormones rise and crash unpredictably, leaving many women facing hot flashes, insomnia, mood swings, brain fog, and joint aches. For some, the experience is manageable; for others, it erodes health, relationships, and quality of life.</p>
 
-                    <p>Symptoms can include:</p>
+        <p>Hormone therapy (HT), also called hormone replacement therapy (HRT), is often considered the "gold standard" for treating severe perimenopausal symptoms. Yet, because perimenopause is defined by fluctuation, not just steady decline, research into when, how, and for whom HT works is still evolving. This blog explores what we know from clinical studies about HT in perimenopause: its benefits, risks, and emerging alternatives.</p>
 
-                    <p>Hot flashes and night sweats</p>
+        <img src="images/blog/Stages of Menopause Infographic.png" alt="Stages of Menopause Infographic" class="blog-inline-img">
 
-                    <p>Sleep disturbances (affecting up to 59% of women several nights per week)</p>
+        <h2>What Makes Perimenopause Different?</h2>
+        <p>Perimenopause usually begins in the early to mid-40s and can last 4–8 years. It is marked not by the absence of hormones but by erratic swings in estrogen and progesterone. These fluctuations affect the brain, cardiovascular system, bones, and mood-regulating neurotransmitters</p>
 
-                    <p>Cognitive difficulties such as memory lapses and reduced attention</p>
+        <p>Symptoms can include:</p>
+        <ul>
+          <li>Hot flashes and night sweats</li>
+          <li>Sleep disturbances (affecting up to 59% of women several nights per week)</li>
+          <li>Cognitive difficulties such as memory lapses and reduced attention</li>
+          <li>Mood disorders, especially anxiety and perimenopausal depression (PMD), which affect nearly 30% of women</li>
+        </ul>
 
-                    <p>Mood disorders, especially anxiety and perimenopausal depression (PMD), which affect nearly 30% of women</p>
+        <p>Because these symptoms often overlap with midlife stressors, perimenopause is a particularly vulnerable stage that demands nuanced treatment approaches.</p>
 
-                    <p>Because these symptoms often overlap with midlife stressors, perimenopause is a particularly vulnerable stage that demands nuanced treatment approaches.</p>
+        <h2>How Hormone Therapy Works in Perimenopause</h2>
+        <p>HT supplements estrogen (with or without progestogen) to stabilize hormone fluctuations. During perimenopause, this can help in several ways:</p>
 
-                    <h3>How Hormone Therapy Works in Perimenopause</h3>
+        <p><strong>Mood and Depression:</strong> Estrogen modulates serotonin, dopamine, and the HPA axis. Studies show HT can reduce depressive symptoms in perimenopausal women by enhancing serotonin transmission and reducing inflammasome activity. However, symptoms often recur after discontinuation, and risks must be weighed carefully.</p>
 
-                    <p>HT supplements estrogen (with or without progestogen) to stabilize hormone fluctuations. During perimenopause, this can help in several ways:</p>
+        <p><strong>Sleep and Vasomotor Symptoms:</strong> HT reduces sleep latency, nighttime awakenings, and hot flash frequency.</p>
 
-                    <p>Mood and Depression: Estrogen modulates serotonin, dopamine, and the HPA axis. Studies show HT can reduce depressive symptoms in perimenopausal women by enhancing serotonin transmission and reducing inflammasome activity. However, symptoms often recur after discontinuation, and risks must be weighed carefully.</p>
+        <p><strong>Cognition:</strong> Small clinical trials suggest estrogen therapy may protect verbal memory and processing speed during perimenopause, though guidelines caution against using HT solely for cognition.</p>
 
-                    <p>Sleep and Vasomotor Symptoms: HT reduces sleep latency, nighttime awakenings, and hot flash frequency.</p>
+        <h2>Benefits of Hormone Therapy in Perimenopause</h2>
 
-                    <p>Cognition: Small clinical trials suggest estrogen therapy may protect verbal memory and processing speed during perimenopause, though guidelines caution against using HT solely for cognition.</p>
+        <h3>Relief of Vasomotor Symptoms</h3>
+        <p>Hot flashes and night sweats remain the leading reason women seek HT. Randomized trials consistently show estrogen is the most effective treatment.</p>
 
-                    <h3>Benefits of Hormone Therapy in Perimenopause</h3>
+        <h3>Mood and Emotional Health</h3>
+        <p>Perimenopausal depression is distinct from general depression. It is often tied to vasomotor instability, sleep loss, and estrogen fluctuations. Estrogen therapy has demonstrated antidepressant-like effects, especially when initiated early. Bioidentical hormone therapy (BHT) is under study as a potentially safer option.</p>
 
-                    <h4>Relief of Vasomotor Symptoms</h4>
+        <h3>Cognitive Stability</h3>
+        <p>While not a cure-all, some evidence suggests that timely estrogen therapy can stabilize cognitive decline in verbal memory and attention during perimenopause.</p>
 
-                    <p>Hot flashes and night sweats remain the leading reason women seek HT. Randomized trials consistently show estrogen is the most effective treatment.</p>
+        <h2>Risks and Limitations</h2>
 
-                    <h4>Mood and Emotional Health</h4>
+        <h3>Cancer and Cardiovascular Concerns</h3>
+        <p>The major debates around HT stem from its risks. Long-term use increases the risks of breast, ovarian, and endometrial cancers, especially with synthetic progestins. Oral estrogen also carries higher risks of blood clots and stroke compared to transdermal delivery.</p>
 
-                    <p>Perimenopausal depression is distinct from general depression. It is often tied to vasomotor instability, sleep loss, and estrogen fluctuations. Estrogen therapy has demonstrated antidepressant-like effects, especially when initiated early. Bioidentical hormone therapy (BHT) is under study as a potentially safer option.</p>
+        <h3>Timing Matters</h3>
+        <p>Evidence supports a "window of opportunity": HT is more effective and safer when started in early perimenopause or early postmenopause. Late initiation (>60 years) is associated with cardiovascular harm and no cognitive benefit.</p>
 
-                    <h4>Cognitive Stability</h4>
+        <h3>Symptom Recurrence</h3>
+        <p>HT does not permanently resolve perimenopausal depression or vasomotor symptoms. Withdrawal often leads to relapse, requiring careful planning for tapering or combining therapies.</p>
 
-                    <p>While not a cure-all, some evidence suggests that timely estrogen therapy can stabilize cognitive decline in verbal memory and attention during perimenopause.</p>
+        <h2>Alternatives and Complementary Therapies</h2>
+        <p>Because not all women are candidates for HT, alternatives are critical.</p>
 
-                    <h3>Risks and Limitations</h3>
+        <h3>Pharmacological</h3>
+        <ul>
+          <li><strong>SSRIs and SNRIs:</strong> Effective for hot flashes and perimenopausal depression.</li>
+          <li><strong>Gabapentin and Oxybutynin:</strong> Helpful for vasomotor symptoms when estrogen is contraindicated.</li>
+        </ul>
 
-                    <h4>Cancer and Cardiovascular Concerns</h4>
+        <h3>Traditional Chinese Medicine (TCM)</h3>
+        <ul>
+          <li><strong>Kuntai Capsule:</strong> A formula of six herbs shown in meta-analysis to improve perimenopausal symptoms and blood estradiol levels with fewer adverse events than HT.</li>
+          <li><strong>Acupuncture:</strong> Randomized controlled trials and meta-analyses show significant improvements in hot flashes, insomnia, and perimenopausal depression.</li>
+        </ul>
 
-                    <p>The major debates around HT stem from its risks. Long-term use increases the risks of breast, ovarian, and endometrial cancers, especially with synthetic progestins. Oral estrogen also carries higher risks of blood clots and stroke compared to transdermal delivery.</p>
+        <h3>Lifestyle</h3>
+        <ul>
+          <li>Sleep hygiene, stress management, and exercise can moderate symptoms and improve resilience.</li>
+          <li>Diet rich in calcium, vitamin D, and phytoestrogens (soy, flax, legumes) may help hormone balance.</li>
+        </ul>
 
-                    <h4>Timing Matters</h4>
+        <img src="images/blog/Treatment Options for Perimenopausal Symptoms.png" alt="Treatment Options for Perimenopausal Symptoms" class="blog-inline-img">
 
-                    <p>Evidence supports a "window of opportunity": HT is more effective and safer when started in early perimenopause or early postmenopause. Late initiation (>60 years) is associated with cardiovascular harm and no cognitive benefit.</p>
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li>Perimenopause is a dynamic transition, not just a prelude to menopause, and requires different treatment considerations.</li>
+          <li>Hormone therapy is the most effective option for vasomotor and sleep symptoms, and may help with mood and cognition when started early.</li>
+          <li>Risks include cancer, cardiovascular events, and relapse after withdrawal.</li>
+          <li>Alternatives such as SSRIs, acupuncture, and herbal formulas like Kuntai Capsule offer promising options, particularly for women who cannot take hormones.</li>
+          <li>Personalized care based on age, health history, and symptom severity is essential.</li>
+        </ul>
 
-                    <h4>Symptom Recurrence</h4>
+        <h2>Final Thought</h2>
+        <p>Perimenopause doesn't need to be a silent struggle. Hormone therapy, while powerful, is not the only pathway. From integrative medicine to tailored pharmacology, women today have more tools than ever to shape how they experience this life stage. The goal isn't just to survive perimenopause, but to enter the next chapter of life healthier, clearer, and stronger.</p>
+      </div>
+    </article>
+  </main>
 
-                    <p>HT does not permanently resolve perimenopausal depression or vasomotor symptoms. Withdrawal often leads to relapse, requiring careful planning for tapering or combining therapies.</p>
+  <!-- Related Posts Section -->
+  <section class="related-posts" id="related-posts">
+    <div class="related-posts-header">
+      <h3>Related Articles</h3>
+      <p class="related-posts-subtitle">Discover more insights to support your Second Spring journey</p>
+    </div>
 
-                    <h3>Alternatives and Complementary Therapies</h3>
+    <div class="related-posts-grid">
+      <div class="related-post-card">
+        <h4 class="related-post-title">Sleep During Perimenopause: Finding Rest When Your Body Won't Let You</h4>
+        <p class="related-post-featured-text">
+          From symptom management to personalized insights, we merge research-backed knowledge with ancient systems to help women thrive today.
+        </p>
+        <a href="blog-sleep-perimenopause.html" class="related-post-link">Read More →</a>
+      </div>
 
-                    <p>Because not all women are candidates for HT, alternatives are critical.</p>
+      <div class="related-post-card">
+        <h4 class="related-post-title">Perimenopause Nutrition Tips: Eating for Energy, Balance, and Hormone Health</h4>
+        <p class="related-post-featured-text">
+          From symptom management to personalized insights, we merge research-backed knowledge with ancient systems to help women thrive today.
+        </p>
+        <a href="blog-nutrition-tips.html" class="related-post-link">Read More →</a>
+      </div>
+    </div>
+  </section>
 
-                    <h4>Pharmacological</h4>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 
-                    <p>SSRIs and SNRIs: Effective for hot flashes and perimenopausal depression.</p>
-
-                    <p>Gabapentin and Oxybutynin: Helpful for vasomotor symptoms when estrogen is contraindicated.</p>
-
-                    <h4>Traditional Chinese Medicine (TCM)</h4>
-
-                    <p>Kuntai Capsule: A formula of six herbs shown in meta-analysis to improve perimenopausal symptoms and blood estradiol levels with fewer adverse events than HT.</p>
-
-                    <p>Acupuncture: Randomized controlled trials and meta-analyses show significant improvements in hot flashes, insomnia, and perimenopausal depression.</p>
-
-                    <h4>Lifestyle</h4>
-
-                    <p>Sleep hygiene, stress management, and exercise can moderate symptoms and improve resilience.</p>
-
-                    <p>Diet rich in calcium, vitamin D, and phytoestrogens (soy, flax, legumes) may help hormone balance.</p>
-
-                    <h3>Key Takeaways</h3>
-
-                    <p>Perimenopause is a dynamic transition, not just a prelude to menopause, and requires different treatment considerations.</p>
-
-                    <p>Hormone therapy is the most effective option for vasomotor and sleep symptoms, and may help with mood and cognition when started early.</p>
-
-                    <p>Risks include cancer, cardiovascular events, and relapse after withdrawal.</p>
-
-                    <p>Alternatives such as SSRIs, acupuncture, and herbal formulas like Kuntai Capsule offer promising options, particularly for women who cannot take hormones.</p>
-
-                    <p>Personalized care based on age, health history, and symptom severity is essential.</p>
-
-                    <h3>Final Thought</h3>
-
-                    <p>Perimenopause doesn't need to be a silent struggle. Hormone therapy, while powerful, is not the only pathway. From integrative medicine to tailored pharmacology, women today have more tools than ever to shape how they experience this life stage. The goal isn't just to survive perimenopause, but to enter the next chapter of life healthier, clearer, and stronger.</p>
-                </header>
-
-                <div class="blog-navigation">
-                    <a href="blog.html" class="back-to-blog">← Back to Blog</a>
-                </header>
-            </header>
-        </article>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>SecondSpring</h3>
-                    <p>Empowering women through their Second Spring journey with personalized wellness tools and ancient wisdom.</p>
-                </header>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </header>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </header>
-            </header>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Namita Mankad LLC. All rights reserved.</p>
-            </header>
-        </header>
-    </footer>
-
-    <script src="script.js"></script>
+  <script>
+    // Highlight the relevant topic chip based on current post
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentTopic = "Thrive – Healthcare & Support";
+      const topicLinks = document.querySelectorAll('#topics-list a[data-topic]');
+      
+      topicLinks.forEach(link => {
+        if (link.getAttribute('data-topic') === currentTopic) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
