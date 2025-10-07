@@ -183,7 +183,7 @@ const blogPosts = [
     {
         id: 3,
         title: "Hormone Therapy in Perimenopause: What You Need to Know",
-        excerpt: "Perimenopause is the body's long goodbye to reproductive cycles. Unlike menopause, which is a defined endpoint, perimenopause is a turbulent transition that can last for years. Hormones rise and crash unpredictably, leaving many women facing hot flashes, insomnia, mood swings, brain fog, and joint aches.",
+        excerpt: "Explore the benefits, risks, and alternatives to hormone therapy for managing perimenopausal symptoms. Learn when HT is most effective and discover complementary approaches.",
         topic: "Thrive – Healthcare & Support",
         category: "Hormone Therapy Options",
         tags: ["hormone therapy", "perimenopause", "estrogen", "progesterone", "medical treatment", "symptoms", "health", "wellness"],

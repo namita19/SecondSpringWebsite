@@ -1826,11 +1826,11 @@
   line-height: 1.6;
 }
 
-/* Masonry Grid - Horizontal First, Then Vertical */
+/* Masonry Grid - True Masonry with CSS Columns */
 .masonry-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  columns: 1;
+  column-gap: 2rem;
+  column-fill: balance;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -1839,20 +1839,19 @@
 /* Responsive breakpoints for different screen sizes */
 @media (min-width: 1200px) {
   .masonry-grid {
-    grid-template-columns: repeat(3, 1fr);
+    columns: 3;
   }
 }
 
 @media (max-width: 1199px) and (min-width: 769px) {
   .masonry-grid {
-    grid-template-columns: repeat(2, 1fr);
+    columns: 2;
   }
 }
 
 @media (max-width: 768px) {
   .masonry-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    columns: 1;
     padding: 0 1rem;
   }
 }
@@ -1876,9 +1875,10 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2rem;
+  break-inside: avoid;
 }
 
 .masonry-item:hover {
@@ -1938,10 +1938,6 @@
 /* Masonry Content */
 .masonry-content {
   padding: 1.25rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .masonry-title {
@@ -1967,7 +1963,6 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex-grow: 1;
 }
 
 .masonry-read-more {
