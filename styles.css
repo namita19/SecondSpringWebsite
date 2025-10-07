@@ -831,15 +831,16 @@
     z-index: 1;
   }
   
-  .about-page .founders-grid {
+.about-page .founders-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    grid-template-columns: repeat(2, minmax(480px, 1fr));
     gap: 2rem;
+    justify-content: center;
     justify-items: center;
     align-items: stretch;
     position: relative;
     z-index: 1;
-  }
+}
   
   /* elegant contrast cards */
 .about-page .founder-card {
@@ -847,8 +848,8 @@
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    width: 100%;
-    max-width: 640px;
+    width: 100% !important;
+    max-width: 720px !important;
     padding: 2rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -943,12 +944,12 @@
 
   /* LinkedIn button reflects connectivity (blue) with strong contrast */
   .about-page .linkedin-link {
-    background: var(--blue);
-    color: var(--white);
+    background: var(--blue) !important;
+    color: var(--white) !important;
   }
   .about-page .linkedin-link:hover {
-    background: var(--orange);
-    color: var(--white);
+    background: var(--orange) !important;
+    color: var(--white) !important;
   }
   
   /* --- Override Global Section Rules for About Page --- */
