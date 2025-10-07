@@ -2095,3 +2095,59 @@
 .blog-post-page .related-posts .related-post-title a,
 .blog-post-page .related-posts .related-post-link { color: var(--blue); }
 .blog-post-page .related-posts .related-post-link:hover { color: #1e6a89; }
+
+/* Blog post page: sidebar (search + topics) */
+.blog-post-page .blog-sidebar .search-section h3,
+.blog-post-page .blog-sidebar .topics h3,
+.blog-post-page .blog-sidebar .topics .categories-subsection h4 { color: var(--blue); }
+
+.blog-post-page .blog-sidebar .topic-divider { border: 0; border-top: 2px solid var(--green); margin: 0.75rem 0 1rem; }
+
+.blog-post-page .blog-sidebar .search-input-container input#search-input {
+  background: var(--white);
+  color: var(--charcoal);
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+}
+.blog-post-page .blog-sidebar .search-input-container input#search-input::placeholder { color: var(--taupe); }
+.blog-post-page .blog-sidebar .search-input-container input#search-input:focus {
+  outline: 3px solid rgba(36, 123, 160, 0.25);
+  box-shadow: 0 0 0 4px rgba(36, 123, 160, 0.12);
+}
+.blog-post-page .blog-sidebar .search-input-container .search-icon-btn {
+  background: var(--blue);
+  color: var(--white);
+  border: 2px solid var(--blue);
+}
+.blog-post-page .blog-sidebar .search-input-container .search-icon-btn:hover {
+  background: #1e6a89;
+  border-color: #1e6a89;
+}
+
+/* Topic chips */
+.blog-post-page .blog-sidebar #topics-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.blog-post-page .blog-sidebar #topics-list li { list-style: none; }
+.blog-post-page .blog-sidebar #topics-list li a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 16px;
+  border: 2px solid var(--blue);
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.blog-post-page .blog-sidebar #topics-list li a:hover,
+.blog-post-page .blog-sidebar #topics-list li a:focus {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+.blog-post-page .blog-sidebar #topics-list li a.active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* Related Articles section light green band and header colors */
+.blog-post-page .related-posts { background: rgba(104, 176, 136, 0.08); padding: 2rem 0; }
+.blog-post-page .related-posts .related-posts-header h3 { color: var(--blue); }
+.blog-post-page .related-posts .related-posts-header .related-posts-subtitle { color: var(--plum); }
