@@ -78,10 +78,9 @@
     <script>
         // Blog page specific functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Check URL parameters for topic or category filtering
+            // Check URL parameters for topic filtering
             const urlParams = new URLSearchParams(window.location.search);
             const topicParam = urlParams.get('topic');
-            const categoryParam = urlParams.get('category');
             
             // Load category sections
             loadCategorySections();
@@ -172,7 +171,7 @@
                         <div class="category-meta">
                             <span class="category-count">${item.count} article${item.count !== 1 ? 's' : ''}</span>
                         </div>
-                        <a href="blog.html?category=${encodeURIComponent(item.category)}" class="category-link">Explore Articles</a>
+                        <a href="blog.html?topic=${encodeURIComponent(item.topic)}" class="category-link">Explore Articles</a>
                     </div>
                 `;
             }).join('');
