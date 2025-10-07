@@ -8,166 +8,289 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html">
-                    <img src="images/logos/secondspring-logo.png" alt="SecondSpring" class="logo">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <!-- Header Placeholder (auto-loaded from navigation.js) -->
+    <div id="navigation-placeholder"></div>
 
-    <!-- Blog Header -->
-    <section class="blog-header">
+    <!-- Latest Blog Posts - Masonry Style -->
+    <section class="latest-blog-posts">
         <div class="container">
-            <h1>Latest Insights & Tips</h1>
-            <p>Expert guidance and personal stories to support your perimenopause journey.</p>
-        </div>
-    </section>
-
-    <!-- Blog Filters -->
-    <section class="blog-filters">
-        <div class="container">
-            <div class="filter-buttons" id="filterButtons">
-                <!-- Filter buttons will be dynamically generated -->
+            <div class="latest-posts-header">
+                <h2>Latest Wellness Wisdom</h2>
+                <p>Stories, science, and ancient practices to help you find your rhythm</p>
+            </div>
+            <div class="masonry-grid" id="masonryGrid">
+                <!-- Latest blog posts will be dynamically loaded here -->
             </div>
         </div>
     </section>
 
-    <!-- Blog Posts -->
-    <section class="blog-posts">
+    <!-- Category Sections -->
+    <section class="blog-categories">
         <div class="container">
-            <div class="blog-grid" id="blogGrid">
-                <!-- Blog posts will be dynamically loaded here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="newsletter-signup">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Connected</h2>
-                <p>Get the latest insights, tips, and updates delivered to your inbox.</p>
-                <form class="signup-form" id="newsletterSignup">
-                    <div class="form-group">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </div>
-                    <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Second Spring</h3>
-                    <p>Empowering women through perimenopause with personalized wellness solutions.</p>
+            <!-- Popular Categories -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2>Popular Categories</h2>
+                    <p>Explore our most popular wellness topics</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
+                <div class="category-grid" id="popularCategories">
+                    <!-- Popular categories will be dynamically loaded here -->
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Second Spring. All rights reserved.</p>
+
+            <!-- All Topics -->
+            <div class="category-section">
+                <div class="category-header">
+                    <h2>All Topics</h2>
+                    <p>Browse articles by wellness focus area</p>
+                </div>
+                <div class="category-grid" id="allTopics">
+                    <!-- All topics will be dynamically loaded here -->
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
+
+
+    <!-- Footer Placeholder (auto-loaded from navigation.js) -->
+    <div id="footer-placeholder"></div>
 
     <script src="blog-posts.js"></script>
+    <script src="navigation.js"></script>
     <script src="script.js"></script>
     <script>
         // Blog page specific functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Generate filter buttons
-            generateFilterButtons();
+            // Check URL parameters for topic or category filtering
+            const urlParams = new URLSearchParams(window.location.search);
+            const topicParam = urlParams.get('topic');
+            const categoryParam = urlParams.get('category');
             
-            // Render all blog posts initially
-            renderBlogPosts(blogPosts, blogPosts.length);
+            // Load category sections
+            loadCategorySections();
             
-            // Add filter functionality
-            setupFilterHandlers();
+            // Load masonry-style latest posts
+            loadMasonryPosts();
         });
 
-        function generateFilterButtons() {
-            const filterContainer = document.getElementById('filterButtons');
-            const categories = getAllCategories();
-            const totalPosts = blogPosts.length;
-            
-            // Create "All Topics" button
-            const allButton = document.createElement('button');
-            allButton.className = 'filter-btn active';
-            allButton.textContent = `All Topics (${totalPosts})`;
-            allButton.setAttribute('data-category', 'all');
-            filterContainer.appendChild(allButton);
-            
-            // Create category buttons
-            categories.forEach(category => {
-                const count = getBlogPostsByCategory(category).length;
-                const button = document.createElement('button');
-                button.className = 'filter-btn';
-                button.textContent = `${category} (${count})`;
-                button.setAttribute('data-category', category);
-                filterContainer.appendChild(button);
-            });
+
+        // Load category sections
+        function loadCategorySections() {
+            loadPopularCategories();
+            loadAllTopics();
         }
 
-        function setupFilterHandlers() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Filter posts
-                    const category = this.getAttribute('data-category');
-                    let filteredPosts;
-                    
-                    if (category === 'all') {
-                        filteredPosts = blogPosts;
-                    } else {
-                        filteredPosts = getBlogPostsByCategory(category);
+        function loadPopularCategories() {
+            const popularContainer = document.getElementById('popularCategories');
+            const VALID_CATEGORIES = {
+                "Nourish – Food & Nutrition": [
+                    "Hormone-Friendly Nutrition",
+                    "Ayurveda & TCM Food Wisdom",
+                    "Gut Health",
+                    "Functional Foods & Herbs",
+                    "Metabolism & Energy"
+                ],
+                "Flow – Lifestyle Harmony": [
+                    "Stress & Energy Balance",
+                    "Morning & Evening Rituals",
+                    "Emotional Regulation",
+                    "Work-Life Harmony",
+                    "Seasonal & Cycle-Based Living"
+                ],
+                "Rest – Sleep & Recovery": [
+                    "Sleep Hygiene",
+                    "Night Sweats & Temperature Regulation",
+                    "Mindful Wind-Down Practices",
+                    "Restorative Breathing & Meditation",
+                    "Sound & Music Therapy"
+                ],
+                "Move – Movement & Strength": [
+                    "Strength & Mobility",
+                    "Mindful Movement (Yoga, Tai Chi, Qigong)",
+                    "Hormone-Safe Workouts",
+                    "Core & Pelvic Health",
+                    "Somatic Movement for Emotional Release"
+                ],
+                "Thrive – Healthcare & Support": [
+                    "What to Ask Your Doctor",
+                    "Lab Tests & Biomarkers",
+                    "Hormone Therapy Options",
+                    "Emotional Support & Mentorship",
+                    "Integrative Care Approaches"
+                ]
+            };
+
+            // Get categories with posts and sort by post count
+            const categoriesWithPosts = [];
+            Object.entries(VALID_CATEGORIES).forEach(([topic, categories]) => {
+                categories.forEach(category => {
+                    const count = getBlogPostsByCategory(category).length;
+                    if (count > 0) {
+                        categoriesWithPosts.push({ category, count, topic });
                     }
-                    
-                    // Render filtered posts
-                    renderBlogPosts(filteredPosts, filteredPosts.length);
                 });
             });
+
+            // Sort by post count and take top 6
+            const popularCategories = categoriesWithPosts
+                .sort((a, b) => b.count - a.count)
+                .slice(0, 6);
+
+            popularContainer.innerHTML = popularCategories.map(item => {
+                const icon = getTopicIcon(item.topic);
+                const featuredText = getFeaturedText(item.topic);
+                
+                return `
+                    <div class="category-box" data-category="${item.category}">
+                        <div class="category-icon">
+                            ${icon}
+                        </div>
+                        <h3 class="category-title">${item.category}</h3>
+                        <p class="category-featured-text">${featuredText}</p>
+                        <div class="category-meta">
+                            <span class="category-count">${item.count} article${item.count !== 1 ? 's' : ''}</span>
+                        </div>
+                        <a href="blog.html?category=${encodeURIComponent(item.category)}" class="category-link">Explore Articles</a>
+                    </div>
+                `;
+            }).join('');
         }
+
+        function loadAllTopics() {
+            const allTopicsContainer = document.getElementById('allTopics');
+            const VALID_TOPICS = [
+                "Nourish – Food & Nutrition",
+                "Flow – Lifestyle Harmony", 
+                "Rest – Sleep & Recovery",
+                "Move – Movement & Strength",
+                "Thrive – Healthcare & Support"
+            ];
+
+            allTopicsContainer.innerHTML = VALID_TOPICS.map(topic => {
+                const count = getBlogPostsByTopic(topic).length;
+                const icon = getTopicIcon(topic);
+                const featuredText = getFeaturedText(topic);
+                
+                return `
+                    <div class="category-box" data-topic="${topic}">
+                        <div class="category-icon">
+                            ${icon}
+                        </div>
+                        <h3 class="category-title">${topic}</h3>
+                        <p class="category-featured-text">${featuredText}</p>
+                        <div class="category-meta">
+                            <span class="category-count">${count} article${count !== 1 ? 's' : ''}</span>
+                        </div>
+                        <a href="blog.html?topic=${encodeURIComponent(topic)}" class="category-link">Explore Articles</a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Helper function to get topic icon (same as in blog-post.html)
+        function getTopicIcon(topic) {
+            const icons = {
+                "Nourish – Food & Nutrition": `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                    <path d="M21 3v5h-5"></path>
+                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                    <path d="M3 21v-5h5"></path>
+                </svg>`,
+                "Flow – Lifestyle Harmony": `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>`,
+                "Rest – Sleep & Recovery": `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3 4-3 9-3 9 1.34 9 3z"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>`,
+                "Move – Movement & Strength": `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6.5 6.5h11v11h-11z"></path>
+                    <path d="M6.5 6.5L12 12l5.5-5.5"></path>
+                    <path d="M12 12l5.5 5.5"></path>
+                </svg>`,
+                "Thrive – Healthcare & Support": `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>`
+            };
+            return icons[topic] || `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+            </svg>`;
+        }
+
+        // Helper function to get featured text (same as in blog-post.html)
+        function getFeaturedText(topic) {
+            const featuredTexts = {
+                "Nourish – Food & Nutrition": "Discover balance through the 'Second Spring' philosophy, where renewal replaces decline, and energy flows with wisdom.",
+                "Flow – Lifestyle Harmony": "Personalized daily rhythms, nutrition, and practices that restore harmony across mind, body, and hormones.",
+                "Rest – Sleep & Recovery": "From symptom management to personalized insights, we merge research-backed knowledge with ancient systems to help women thrive today.",
+                "Move – Movement & Strength": "Gentle activities like walking or yoga are enough on low-energy days. Strength training and cardio build resilience when energy is higher.",
+                "Thrive – Healthcare & Support": "From symptom management to personalized insights, we merge research-backed knowledge with ancient systems to help women thrive today."
+            };
+            return featuredTexts[topic] || "Discover more insights to support your Second Spring journey.";
+        }
+
+        // Function to get the first image from a blog post file
+        function getFirstImageFromBlogPost(postId) {
+            // Map post IDs to their actual blog post files and first images
+            const blogPostImages = {
+                1: { file: "blog-perimenopause-exercise.html", image: "images/blog/Excercise_1.png" },
+                2: { file: "blog-sleep-perimenopause.html", image: "images/blog/tips for improving sleep.png" },
+                3: { file: "blog-hot-flashes.html", image: "images/blog/Hot Flash Reporting Comparison.png" },
+                4: { file: "blog-nutrition-tips.html", image: "images/blog/Perimenopause Food Guidance Map.png" },
+                5: { file: "blog-hormone-therapy.html", image: "images/blog/hormones.png" },
+                6: { file: "blog-beginning-second-spring.html", image: "images/blog/Spring.png" }
+            };
+            
+            return blogPostImages[postId] || { file: "blog-post.html", image: "images/blog/Spring.png" };
+        }
+
+        // Load latest posts in masonry layout
+        function loadMasonryPosts() {
+            const masonryContainer = document.getElementById('masonryGrid');
+            if (!masonryContainer) return;
+
+            // Get the latest 6 posts
+            const latestPosts = blogPosts.slice(0, 6);
+            
+            masonryContainer.innerHTML = latestPosts.map(post => {
+                const categoryTag = post.topic ? getTopicShortName(post.topic) : 'General';
+                const featuredText = post.excerpt.substring(0, 100) + '...';
+                const blogPostData = getFirstImageFromBlogPost(post.id);
+                
+                return `
+                    <a href="${blogPostData.file}" class="masonry-item" data-post-id="${post.id}">
+                        <div class="masonry-image">
+                            <img src="${blogPostData.image}" alt="${post.title}" loading="lazy">
+                            <div class="masonry-overlay">
+                                <div class="masonry-category">${categoryTag}</div>
+                            </div>
+                        </div>
+                        <div class="masonry-content">
+                            <h3 class="masonry-title">${post.title}</h3>
+                            <p class="masonry-excerpt">${featuredText}</p>
+                            <span class="masonry-read-more">Read More</span>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        }
+
+        // Helper function to get topic short names
+        function getTopicShortName(topic) {
+            const shortNames = {
+                "Nourish – Food & Nutrition": "Nourish",
+                "Flow – Lifestyle Harmony": "Flow", 
+                "Rest – Sleep & Recovery": "Rest",
+                "Move – Movement & Strength": "Move",
+                "Thrive – Healthcare & Support": "Thrive"
+            };
+            return shortNames[topic] || topic;
+        }
+
+
     </script>
 </body>
 </html>

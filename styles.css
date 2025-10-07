@@ -1280,8 +1280,578 @@
   margin-bottom: 1rem;
 }
 
+/* Newsletter Signup Styles */
+.newsletter-signup {
+  background: var(--cream);
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin: 3rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.newsletter-signup h2 {
+  color: var(--plum);
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+}
+
+.newsletter-signup p {
+  color: var(--charcoal);
+  max-width: 640px;
+  margin: 0.5rem auto 1.25rem;
+  line-height: 1.6;
+}
+
+.fd-form {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.form-note {
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Footer Newsletter Styles - Removed extra padding */
+
+/* Newsletter form styling for footer */
+.newsletter-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.newsletter-form input[type="text"] {
+  background: var(--white);
+  border: 1px solid #ddd;
+  color: var(--charcoal);
+  padding: 10px 14px;
+  border-radius: 4px;
+  width: 140px;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.newsletter-form input[type="email"] {
+  background: var(--white);
+  border: 1px solid #ddd;
+  color: var(--charcoal);
+  padding: 10px 14px;
+  border-radius: 4px;
+  width: 220px;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.newsletter-form input[type="text"]::placeholder,
+.newsletter-form input[type="email"]::placeholder {
+  color: #999;
+}
+
+.newsletter-form button[type="submit"] {
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.newsletter-form button[type="submit"]:hover {
+  background: var(--light-gold);
+  color: var(--plum) !important;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .newsletter-form input[type="text"],
+  .newsletter-form input[type="email"] {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 .flodesk-form p {
   color: var(--charcoal);
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
+
+/* =========================
+   Blog Category Sections
+   ========================= */
+
+/* Blog Categories Container */
+.blog-categories {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.category-section {
+  margin-bottom: 4rem;
+}
+
+.category-section:last-child {
+  margin-bottom: 0;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.category-header h2 {
+  color: var(--plum);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.category-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Category Grid */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Category Boxes */
+.category-box {
+  background: var(--white);
+  border: 2px solid #f0e6d2;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: var(--gold);
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  background: var(--plum);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.category-box:hover .category-icon {
+  background: var(--gold);
+  color: var(--plum);
+  transform: scale(1.1);
+}
+
+.category-title {
+  color: var(--charcoal);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  min-height: 2.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.category-featured-text {
+  color: var(--plum);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-style: italic;
+  min-height: 2.7rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.category-meta {
+  margin-bottom: 1.5rem;
+}
+
+.category-count {
+  background: var(--cream);
+  color: var(--charcoal);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.category-link {
+  color: var(--plum);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--plum);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: auto;
+}
+
+.category-link:hover {
+  background: var(--plum);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for Category Sections */
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .category-box {
+    min-height: 300px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-categories {
+    padding: 3rem 0;
+  }
+  
+  .category-section {
+    margin-bottom: 3rem;
+  }
+  
+  .category-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .category-header p {
+    font-size: 1rem;
+  }
+  
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .category-box {
+    min-height: 280px;
+    padding: 1.5rem;
+  }
+  
+  .category-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  .category-title {
+    font-size: 1.1rem;
+    min-height: 2.4rem;
+  }
+  
+  .category-featured-text {
+    font-size: 0.85rem;
+    min-height: 2.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-box {
+    padding: 1rem;
+    min-height: 260px;
+  }
+  
+  .category-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================
+   Latest Blog Posts - Masonry Style
+   ========================= */
+
+/* Latest Blog Posts Container */
+.latest-blog-posts {
+  padding: 4rem 0;
+  background: var(--cream);
+}
+
+.latest-posts-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.latest-posts-header h2 {
+  color: var(--plum);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.latest-posts-header p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Masonry Grid - CSS Columns */
+.masonry-grid {
+  columns: 1;
+  column-gap: 2rem;
+  column-fill: balance;
+}
+
+/* Make masonry items clickable without underline */
+.masonry-item {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.masonry-item:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Masonry Items */
+.masonry-item {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2rem;
+  break-inside: avoid;
+}
+
+.masonry-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Masonry Image */
+.masonry-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.masonry-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.masonry-item:hover .masonry-image img {
+  transform: scale(1.05);
+}
+
+/* Masonry Overlay */
+.masonry-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(85, 70, 99, 0.8) 0%, rgba(203, 160, 82, 0.6) 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.masonry-item:hover .masonry-overlay {
+  opacity: 1;
+}
+
+.masonry-category {
+  background: var(--white);
+  color: var(--plum);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Masonry Content */
+.masonry-content {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.masonry-title {
+  color: var(--charcoal);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.masonry-excerpt {
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.masonry-read-more {
+  color: var(--plum);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--plum);
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.masonry-read-more:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design for Masonry */
+@media (min-width: 768px) {
+  .masonry-grid {
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+  
+  .masonry-item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .masonry-content {
+    padding: 1rem;
+  }
+  
+  .masonry-title {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    columns: 3;
+    column-gap: 2rem;
+  }
+  
+  .masonry-item {
+    margin-bottom: 2rem;
+  }
+  
+  .masonry-content {
+    padding: 1.25rem;
+  }
+  
+  .masonry-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .latest-blog-posts {
+    padding: 3rem 0;
+  }
+  
+  .latest-posts-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .latest-posts-header p {
+    font-size: 1rem;
+  }
+  
+  .masonry-content {
+    padding: 0.875rem;
+  }
+  
+  .masonry-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .masonry-excerpt {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-content {
+    padding: 0.75rem;
+  }
+  
+  .latest-posts-header h2 {
+    font-size: 1.5rem;
+  }
+}
+

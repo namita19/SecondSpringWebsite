@@ -1,306 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Post | Second Spring</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* --- Blog Post Template Styles --- */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Second Spring</title>
 
-    .blog-hero {
-      background: var(--white);
-      text-align: center;
-      padding: 6rem 2rem 3rem;
-    }
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
 
-    .blog-hero h1 {
-      font-size: 2.8rem;
-      color: var(--plum);
-      margin-bottom: 0.5rem;
-    }
+  <!-- Navigation and Dynamic Elements -->
+  <script src="navigation.js" defer></script>
+  <script src="blog-posts.js" defer></script>
 
-    .blog-meta {
-      color: var(--gold);
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .blog-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* Sidebar (Categories) */
-    .blog-sidebar {
-      flex: 1 1 250px;
-      background: var(--cream);
-      border-radius: 12px;
-      padding: 2rem;
-      height: fit-content;
-    }
-
-    .blog-sidebar h3 {
-      color: var(--plum);
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .category-tag {
-      display: inline-block;
-      border: 1px solid var(--gold);
-      color: var(--plum);
-      border-radius: 20px;
-      padding: 0.4rem 1rem;
-      margin: 0.3rem;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
-
-    .category-tag:hover {
-      background: var(--green);
-      color: var(--cream);
-    }
-
-    /* Blog Content */
-    .blog-content {
-      flex: 3 1 700px;
-      color: var(--charcoal);
-      line-height: 1.8;
-    }
-
-    .blog-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin: 2rem 0;
-      object-fit: contain;
-    }
-
-    .blog-content h2 {
-      color: var(--plum);
-      font-size: 1.8rem;
-      margin: 2rem 0 1rem;
-    }
-
-    .blog-content p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* CTA - Join the Movement */
-    .cta-join {
-      background: var(--plum);
-      color: var(--cream);
-      text-align: center;
-      padding: 5rem 2rem;
-      margin-top: 4rem;
-    }
-
-    .cta-join h2 {
-      color: var(--cream);
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-button {
-      background: var(--gold);
-      color: var(--cream);
-      border: none;
-      padding: 1rem 2.5rem;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background: var(--green);
-      color: var(--plum);
-    }
-
-    /* Newsletter Section */
-    .newsletter {
-      background: var(--cream);
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    .newsletter h2 {
-      color: var(--plum);
-      margin-bottom: 1rem;
-    }
-
-    .newsletter p {
-      color: var(--charcoal);
-      margin-bottom: 1.5rem;
-    }
-
-    /* Related Posts */
-    .related-posts {
-      background: var(--white);
-      padding: 5rem 2rem;
-      text-align: center;
-    }
-
-    .related-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .related-card {
-      background: var(--cream);
-      border-radius: 15px;
-      padding: 1.5rem;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .related-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .related-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .related-card h4 {
-      color: var(--plum);
-      margin-bottom: 0.5rem;
-    }
-
-    .related-card p {
-      color: var(--charcoal);
-      font-size: 0.95rem;
-    }
-
-    .back-to-blog {
-      text-align: center;
-      margin: 3rem 0;
-    }
-
-    .back-to-blog a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .back-to-blog a:hover {
-      color: var(--plum);
-    }
-  </style>
+  <!-- FloDesk Script -->
+  <script src="https://assets.flodesk.com/universal.js"></script>
 </head>
 
 <body>
+  <!-- Header Placeholder -->
+  <div id="navigation-placeholder"></div>
 
-  <!-- Navigation -->
-  <script src="navigation.js"></script>
-
-  <!-- Hero -->
-  <section class="blog-hero">
-    <h1>Perimenopause and Exercise: What Really Works</h1>
-    <p class="blog-meta">October 2, 2025</p>
-  </section>
-
-  <!-- Blog Content Layout -->
-  <div class="blog-container">
+  <!-- Blog Layout (Sidebar + Article) -->
+  <main class="blog-layout">
     <!-- Sidebar -->
     <aside class="blog-sidebar">
-      <h3>Explore Topics</h3>
-      <a href="#" class="category-tag">Ayurveda</a>
-      <a href="#" class="category-tag">TCM</a>
-      <a href="#" class="category-tag">Mind-Body</a>
-      <a href="#" class="category-tag">Leadership</a>
-      <a href="#" class="category-tag">Nutrition</a>
+      <section class="search-section">
+        <h3>Search Articles</h3>
+        <div class="search-box">
+          <div class="search-input-container">
+            <input type="text" id="search-input" placeholder="Search by topic, category, or keyword...">
+            <button type="button" id="search-btn" class="search-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+          <div id="search-suggestions" class="search-suggestions"></div>
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </section>
+
+      <!-- Topics & Categories -->
+      <section class="topics">
+        <h3>Browse by Topic</h3>
+        <hr class="topic-divider">
+        <ul id="topics-list">
+          <li><a href="#" data-topic="Nourish – Food & Nutrition">Nourish – Food & Nutrition <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Flow – Lifestyle Harmony">Flow – Lifestyle Harmony <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Rest – Sleep & Recovery">Rest – Sleep & Recovery <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Move – Movement & Strength">Move – Movement & Strength <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Thrive – Healthcare & Support">Thrive – Healthcare & Support <span class="post-count">(0)</span></a></li>
+        </ul>
+
+        <div class="categories-subsection">
+          <h4>Popular Categories</h4>
+          <ul id="categories-list"></ul>
+        </div>
+      </section>
     </aside>
 
-    <!-- Main Blog Content -->
-    <article class="blog-content">
-      <!-- Replace these placeholders with your content -->
-      <img src="images/blog-image-placeholder.jpg" alt="Blog Image Placeholder" />
-      <p>
-        Perimenopause isn’t an ending — it’s a time of profound transformation. Your hormones shift, energy changes, and what worked before may no longer feel aligned. In this post, we’ll explore evidence-based ways to stay active, energized, and connected to your body’s rhythm.
-      </p>
-
-      <h2>Understanding the Shift</h2>
-      <p>
-        As estrogen levels fluctuate, your body’s response to exercise evolves. High-intensity workouts may drain rather than uplift you. Ayurveda and Traditional Chinese Medicine teach us to balance this shift — through mindful movement, breath, and nourishment.
-      </p>
-
-      <img src="images/blog-photo-2.jpg" alt="Perimenopause Wellness" />
-
-      <h2>What Works</h2>
-      <p>
-        Gentle strength training, walking, yoga, and restorative routines keep your metabolism and mood balanced. Remember — it’s not about pushing harder, but aligning deeper.
-      </p>
+    <!-- Blog Article -->
+    <article class="blog-article" id="blog-content">
+      <!-- Content will be dynamically loaded here -->
     </article>
-  </div>
+  </main>
+  <!-- End of Blog Layout -->
 
-  <!-- CTA -->
-  <section class="cta-join">
-    <h2>Ready to Start Your Journey?</h2>
-    <a href="login.html" class="cta-button">Join the Movement</a>
-  </section>
+  <!-- Related Posts Section -->
+  <section class="related-posts" id="related-posts">
+    <div class="related-posts-header">
+      <h3>Related Articles</h3>
+      <p class="related-posts-subtitle">Discover more insights to support your Second Spring journey</p>
+    </div>
 
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <h2>Stay in Flow with Second Spring</h2>
-    <p>Sign up for research-backed insights, holistic tips, and wellness wisdom — delivered straight to your inbox.</p>
-    <!-- FloDesk Form Embed Placeholder -->
-    <!-- FloDesk Form Embed -->
-<div class="flodesk-form">
-    <div id="fd-form-67e1ed35ef9d1ced7c8c3e7d"></div>
-    <script>
-      window.fd('form', {
-        formId: '67e1ed35ef9d1ced7c8c3e7d',
-        containerEl: '#fd-form-67e1ed35ef9d1ced7c8c3e7d'
-      });
-    </script>
-  </div>
-  
-  </section>
-
-  <!-- Related Posts -->
-  <section class="related-posts">
-    <h2>Keep Learning</h2>
-    <div class="related-grid">
-      <div class="related-card">
-        <img src="images/blog-thumb-1.jpg" alt="Ayurveda and Hormones" />
-        <h4>Balancing Hormones Naturally</h4>
-        <p>Discover how ancient wisdom meets modern science in restoring your hormonal health.</p>
+    <div class="related-posts-grid" id="related-posts-grid">
+      <div class="related-post-card">
+        <h4 class="related-post-title">Perimenopause and Exercise: What Really Works</h4>
+        <p class="related-post-featured-text">
+          Gentle activities like walking or yoga are enough on low-energy days. Strength training and cardio build resilience when energy is higher.
+        </p>
+        <a href="#" class="related-post-link">
+          Read More
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
       </div>
-      <div class="related-card">
-        <img src="images/blog-thumb-2.jpg" alt="Mindful Leadership" />
-        <h4>Mindful Leadership in Midlife</h4>
-        <p>Transform stress into clarity and lead with intuition during your Second Spring.</p>
+
+      <div class="related-post-card">
+        <h4 class="related-post-title">Sleep During Perimenopause: Finding Rest When Your Body Won't Let You</h4>
+        <p class="related-post-featured-text">
+          From symptom management to personalized insights, we merge research-backed knowledge with ancient systems to help women thrive today.
+        </p>
+        <a href="#" class="related-post-link">
+          Read More
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
       </div>
-      <div class="related-card">
-        <img src="images/blog-thumb-3.jpg" alt="Nutrition for Energy" />
-        <h4>Nutrition that Nurtures</h4>
-        <p>Foods that fuel balance, beauty, and vitality through every phase.</p>
+
+      <div class="related-post-card">
+        <h4 class="related-post-title">Your Second Spring: Embracing Perimenopause with Nature's Rhythm</h4>
+        <p class="related-post-featured-text">
+          Personalized daily rhythms, nutrition, and practices that restore harmony across mind, body, and hormones.
+        </p>
+        <a href="#" class="related-post-link">
+          Read More
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Back to Blog -->
-  <div class="back-to-blog">
-    <a href="blog.html">← Back to All Articles</a>
-  </div>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <script src="footer.js"></script>
-  </footer>
+  <!-- Blog Post Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeSidebar();
 
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get('id');
+      if (!postId) return console.error('No post ID provided');
+
+      const post = getBlogPostById(postId);
+      if (!post) return console.error('Post not found');
+
+      document.title = `${post.title} | Second Spring`;
+
+      if (post.tags && post.tags.length > 0) {
+        const metaKeywords = document.createElement('meta');
+        metaKeywords.name = 'keywords';
+        metaKeywords.content = generateMetaKeywords(post);
+        document.head.appendChild(metaKeywords);
+      }
+
+      const blogContent = document.getElementById('blog-content');
+      blogContent.innerHTML = `
+        <div class="blog-topic">${post.topic || 'General'}</div>
+        <h1 class="blog-title">${post.title}</h1>
+        <div class="blog-meta">
+          <span class="blog-date">Published on ${post.date}</span>
+          ${post.category ? `<span class="blog-category">${post.category}</span>` : ''}
+        </div>
+        <img src="${post.image}" alt="${post.title}" class="blog-featured-img">
+        <div class="blog-content-text">
+          ${post.content.split('\\n\\n').map(p => `<p>${p}</p>`).join('')}
+        </div>
+      `;
+
+      const relatedPosts = getRelatedPosts(postId, 3);
+      const relatedPostsGrid = document.getElementById('related-posts-grid');
+
+      if (relatedPosts.length > 0) {
+        relatedPostsGrid.innerHTML = relatedPosts.map(relatedPost => {
+          const featuredText = getFeaturedText(relatedPost.topic);
+          return `
+            <div class="related-post-card">
+              <h4 class="related-post-title">${relatedPost.title}</h4>
+              <p class="related-post-featured-text">${featuredText}</p>
+              <a href="blog-post.html?id=${relatedPost.id}" class="related-post-link">
+                Read More
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          `;
+        }).join('');
+      } else {
+        document.getElementById('related-posts').style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>

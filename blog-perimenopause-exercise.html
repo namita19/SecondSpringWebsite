@@ -1,196 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perimenopause and Exercise: What Really Works - Second Spring</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .blog-post-page {
-            padding: 8rem 0 4rem;
-            background: var(--white);
-        }
-        
-        .blog-post-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .blog-post-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .blog-post-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-        }
-        
-        .blog-post-date {
-            color: var(--taupe);
-        }
-        
-        .blog-post-category {
-            color: var(--plum);
-            font-weight: 500;
-        }
-        
-        .blog-post-title {
-            font-size: 2.5rem;
-            color: var(--plum);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-        
-        .blog-post-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-        }
-        
-        .blog-post-content {
-            color: var(--charcoal);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .blog-post-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .blog-post-content h3 {
-            color: var(--plum);
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            font-weight: 600;
-        }
-        
-        .back-to-blog {
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .back-to-blog .btn {
-            background: var(--plum);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-blog .btn:hover {
-            background: var(--gold);
-            transform: translateY(-2px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perimenopause and Exercise: What Really Works | Second Spring</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <!-- Navigation and Dynamic Elements -->
+  <script src="navigation.js" defer></script>
+  <script src="blog-posts.js" defer></script>
+
+  <!-- FloDesk Script -->
+  <script src="https://assets.flodesk.com/universal.js"></script>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html">
-                    <img src="images/logos/secondspring-logo.png" alt="SecondSpring" class="logo">
-                </a>
-            </header>
-            <ul class="nav-menu">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </header>
-        </header>
-    </header>
+  <!-- Header Placeholder -->
+  <div id="navigation-placeholder"></div>
 
-    <!-- Blog Post Content -->
-    <section class="blog-post-page">
-        <div class="blog-post-container">
-            <div class="blog-post-header">
-                <div class="blog-post-meta">
-                    <span class="blog-post-date">December 2024</span>
-                    <span class="blog-post-category">Fitness</span>
-                </header>
-                <h1 class="blog-post-title">Perimenopause and Exercise: What Really Works</h1>
-            </header>
-            
-            <img src="https://via.placeholder.com/800x400/F6F3EF/5A4368?text=Exercise+and+Perimenopause" alt="Exercise and Perimenopause" class="blog-post-image">
-            
-            <div class="blog-post-content">
-                <p>Perimenopause is often painted as a "transition you just survive until menopause", but the way we move during this period can actually transform how you experience it. As hormonal fluctuations begin, many people face symptoms like hot flashes, sleep disruption, mood changes, and shifting body composition.</p>
+  <main class="blog-layout">
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <section class="search-section">
+        <h3>Search Articles</h3>
+        <div class="search-box">
+          <div class="search-input-container">
+            <input type="text" id="search-input" placeholder="Search by topic, category, or keyword...">
+            <button type="button" id="search-btn" class="search-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+          <div id="search-suggestions" class="search-suggestions"></div>
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </section>
 
-                <p>The good news: growing evidence shows that regular physical activity can significantly ease these symptoms and support your overall well-being during this transition.</p>
+      <!-- Topics & Categories -->
+      <section class="topics">
+        <h3>Browse by Topic</h3>
+        <hr class="topic-divider">
+        <ul id="topics-list">
+          <li><a href="#" data-topic="Move – Movement & Strength">Move – Movement & Strength <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Rest – Sleep & Recovery">Rest – Sleep & Recovery <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Flow – Lifestyle Harmony">Flow – Lifestyle Harmony <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Nourish – Food & Nutrition">Nourish – Food & Nutrition <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Thrive – Healthcare & Support">Thrive – Healthcare & Support <span class="post-count">(0)</span></a></li>
+        </ul>
+      </section>
+    </aside>
 
-                <h3>The Research-Backed Benefits</h3>
-                <p>Research shows that regular movement can:</p>
-                <ul>
-                    <li>Reduce hot flashes and improve sleep</li>
-                    <li>Protect bone and muscle strength</li>
-                    <li>Boost mood and energy</li>
-                    <li>Ease stress and anxiety</li>
-                </ul>
+    <!-- Blog Article -->
+    <article class="blog-article">
+      <div class="blog-topic">Move – Movement & Strength</div>
+      <h1 class="blog-title">Perimenopause and Exercise: What Really Works</h1>
+      <div class="blog-meta">
+        <span class="blog-date">Published on October 2025</span>
+      </div>
 
-                <h3>Finding Your Balance</h3>
-                <p>But balance is key. Some women hold back from moving, while others push through intense workouts even when their bodies are asking for rest. Evidence suggests both approaches can miss the mark.</p>
+      <img src="images/blog/Excercise_1.png" alt="Exercise and movement for perimenopause" class="blog-featured-img">
 
-                <p>Gentle activities like walking or yoga are enough on low-energy days. Strength training and cardio build resilience when energy is higher. Together, they create a sustainable rhythm.</p>
+      <div class="blog-content-text">
+        <p>Perimenopause is often painted as a “transition you just survive until menopause”, but the way we move during this period can actually transform how you experience it. As hormonal fluctuations begin, many people face symptoms like hot flashes, sleep disruption, mood changes, and shifting body composition.</p>
 
-                <h3>My Personal Approach</h3>
-                <p>For me, one example of putting this into practice is keeping a weekly mix of cardio, strength, and restorative movement, while listening closely to my body so I don't push past fatigue. That balance between challenge and recovery is where movement becomes medicine.</p>
+        <p>The good news: growing evidence shows that regular physical activity—not just for fitness, but as intentional movement—can ease many of those symptoms and build resilience for the years ahead.</p>
 
-                <p>Exercise is one of the most effective tools we have in perimenopause. But it's not about pushing through or holding back—it's about finding the rhythm that serves your body in this moment.</p>
-            </header>
-            
-            <div class="back-to-blog">
-                <a href="blog.html" class="btn">Back to All Posts</a>
-            </header>
-        </header>
-    </section>
+        <p>In this piece, I’ll walk you through the science, practical strategies, and mindset shifts that make exercise a powerful tool through this chapter of your life.</p>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Second Spring</h3>
-                    <p>Empowering women through perimenopause with personalized wellness solutions.</p>
-                </header>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </header>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </header>
-            </header>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Second Spring. All rights reserved.</p>
-            </header>
-        </header>
-    </footer>
+        <h2>What’s going on in perimenopause, and how movement helps</h2>
+        <p>Before we dive into “what to do,” let’s understand why exercise helps. Here are some of the key mechanisms and benefits grounded in research and clinical guidance:</p>
 
-    <script src="script.js"></script>
+        <h3>Hormones, thermoregulation, and hot flashes</h3>
+        <p>Hot flashes (or “vasomotor symptoms”) are among the most common; up to 80% of people experience them.</p>
+        <p>One proposed mechanism is that hormonal shifts narrow the “thermoneutral zone” (the stable range in which your body doesn’t feel the need to sweat or shiver). Subtle fluctuations in core temperature can more easily trigger a flash.</p>
+        <p>Some exercise trials suggest that training may help stabilize thermoregulatory control—lowering resting core body temperature and improving skin blood flow/sweating responsiveness—leading to fewer hot flashes.</p>
+        <p>That said, not all studies show a robust effect on hot flashes, so movement is not a guaranteed cure—but many women report a meaningful reduction in intensity or frequency.</p>
+
+        <h3>Mood, sleep, cognition</h3>
+        <p>Exercise triggers the release of endorphins, serotonin, dopamine, and brain-derived neurotrophic factor (BDNF)—all of which support mood regulation and cognitive health.</p>
+        <p>A 2024 meta-analysis of mind-body exercise (e.g., yoga, tai chi) found positive effects on sleep quality, anxiety, and bone density in perimenopausal/menopausal women.</p>
+        <p>Randomized trials in sedentary women have shown that 12 weeks of moderate exercise improved sleep, reduced depressive symptoms, and enhanced overall quality of life.</p>
+
+        <h3>Body composition, metabolism & cardiometabolic health</h3>
+        <p>With perimenopause, many notice weight gain (especially around the waist), reduced lean muscle mass, and shifts in fat distribution.</p>
+        <p>Exercise is a cornerstone for preventing or reversing that drift. It helps preserve lean mass, improve insulin sensitivity, regulate blood lipids, and support healthy body composition.</p>
+        <p>Strong evidence shows that regular physical activity lowers risk for chronic diseases (heart disease, type 2 diabetes, etc.) across the lifespan—benefits that become even more critical in midlife.</p>
+
+        <h3>Bone and joint health</h3>
+        <p>Estrogen loss accelerates bone remodeling imbalance, raising the risk of osteoporosis and fractures.</p>
+        <p>Weight-bearing and resistance exercises place mechanical loads on bone, stimulating bone formation and maintenance. In perimenopause, this stress is particularly important.</p>
+        <p>A 2023 review of strength training in menopausal women found improvements in bone mineral density, muscle strength, and hormonal markers versus inactive controls.</p>
+        <p>Resistance training is also beneficial for joint stability, muscle balance, and reducing pain (especially when joints feel achy).</p>
+
+        <img src="images/blog/Excercise_2.png" alt="Strength training and bone health" class="blog-inline-img">
+
+        <h2>What “regular physical activity” looks like in perimenopause</h2>
+        <p>To get the full spectrum of benefits, a balanced approach works best: blend cardiovascular, strength/resistance, flexibility/mobility, and mind-body movement. Here’s a guideline:</p>
+
+        <h3>1. Cardiovascular / aerobic (moderate to vigorous)</h3>
+        <p>Aim for 150 minutes per week of moderate-intensity activity (e.g., brisk walking, cycling, swimming), or 75 minutes of vigorous activity. The key is consistency—sustained movement over weeks and months.</p>
+
+        <h3>2. Strength / resistance training</h3>
+        <p>Two to three sessions per week is a solid goal. Focus on compound movements like squats, lunges, push-ups, and rows. You can use dumbbells, resistance bands, or your own body weight.</p>
+        <p>Benefits: preserves muscle mass, drives bone remodeling, supports metabolism, and improves balance.</p>
+
+        <h3>3. Flexibility, mobility, and functional movement</h3>
+        <p>Incorporate daily gentle stretching, mobility work, and functional movements that help maintain fluidity and posture.</p>
+
+        <h3>4. Mind-body / restorative movement</h3>
+        <p>Yoga, Pilates, tai chi, and qigong can offer overlapping benefits: stress reduction, flexibility, balance, improved sleep, and mood.</p>
+
+        <h2>Honor Your Energy: When to Pull Back</h2>
+        <p>One of the most important and rarely celebrated principles in perimenopause: your body has its own wisdom. On low-energy days, swap HIIT or heavy lifting for lighter activities like walking, stretching, or yoga.</p>
+        <p>Listening to your body prevents fatigue, injury, and burnout—allowing you to stay consistent long-term.</p>
+
+        <h2>Tips to Stay Consistent, Safe, and Sustainable</h2>
+        <p>Exercise is a powerful complement, not a cure-all. Severe symptoms may still require medical or hormonal interventions.</p>
+        <p>Some symptom relief (e.g., hot flashes) has mixed results in the literature; your individual response may vary.</p>
+        <p>Always check with your healthcare provider if you have comorbidities, injuries, or conditions that might complicate certain exercises.</p>
+        <p>Movement must be sustained over time; benefits accrue over months, not weeks.</p>
+
+        <h2>The Big Picture: Movement as Medicine & Empowerment</h2>
+        <p>Perimenopause can feel like a roller-coaster; your body, mood, and energy shift in unpredictable ways. But the act of moving with intention becomes something powerful: a daily reminder that even in transition, you can cultivate strength, resilience, and joy.</p>
+
+        <p>Exercise is not just about “fighting” symptoms. It’s an act of self-care and connection—a way to honor your changing body and build your foundation for the decades ahead.</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Related Posts Section -->
+  <section class="related-posts" id="related-posts">
+    <div class="related-posts-header">
+      <h3>Related Articles</h3>
+      <p class="related-posts-subtitle">Discover more insights to support your Second Spring journey</p>
+    </div>
+
+    <div class="related-posts-grid">
+      <div class="related-post-card">
+        <h4 class="related-post-title">Sleep During Perimenopause: Finding Rest When Your Body Won't Let You</h4>
+        <p class="related-post-featured-text">
+          From symptom management to personalized insights, we merge research-backed knowledge with ancient systems to help women thrive today.
+        </p>
+        <a href="#" class="related-post-link">Read More →</a>
+      </div>
+
+      <div class="related-post-card">
+        <h4 class="related-post-title">Your Second Spring: Embracing Perimenopause with Nature’s Rhythm</h4>
+        <p class="related-post-featured-text">
+          Personalized daily rhythms, nutrition, and practices that restore harmony across mind, body, and hormones.
+        </p>
+        <a href="#" class="related-post-link">Read More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 </body>
 </html>

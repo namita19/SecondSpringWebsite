@@ -1,9 +1,9 @@
 /* =========================
-   Second Spring — Navigation, Footer, Sidebar, FloDesk (Final Stable)
+   Second Spring — Navigation, Footer, Sidebar, FloDesk (safe)
    ========================= */
 
    (function () {
-    // --- MARKUP ---
+    /* -------- Markup -------- */
     const HEADER_HTML = `
       <header class="header">
         <nav class="nav container">
@@ -13,9 +13,11 @@
               <span class="brand-text">Second Spring</span>
             </a>
           </div>
+  
           <button class="hamburger" aria-label="Toggle menu">
             <span class="bar"></span><span class="bar"></span><span class="bar"></span>
           </button>
+  
           <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -33,13 +35,6 @@
           <div class="footer-section">
             <h3>Second Spring</h3>
             <p>A wellness movement where women rediscover balance through modern science and ancient wisdom.</p>
-            
-            <!-- Newsletter Signup Form -->
-            <form class="newsletter-form" action="https://namitamankad.myflodesk.com/monthly" method="post" target="_blank">
-              <input type="text" name="first_name" placeholder="First name" required>
-              <input type="email" name="email" placeholder="Email address" required>
-              <button type="submit">SUBSCRIBE</button>
-            </form>
           </div>
   
           <div class="footer-section">
@@ -62,6 +57,7 @@
             </ul>
           </div>
         </div>
+  
         <div class="footer-bottom">
           <p>&copy; 2025 Namita Mankad LLC. Second Spring. Bloom in Your Pause.</p>
         </div>
@@ -92,11 +88,11 @@
       </section>
     `;
   
-    // --- HELPERS ---
-    function mount(idList, html) {
-      for (const id of idList) {
+    /* -------- Helpers -------- */
+    function mount(targetIds, html) {
+      for (const id of targetIds) {
         const el = document.getElementById(id);
-        if (el && el.children.length === 0) {
+        if (el) {
           el.innerHTML = html;
           return el;
         }
@@ -104,11 +100,12 @@
       return null;
     }
   
-    // --- HEADER/FOOTER ---
+    /* -------- Init Header/Footer -------- */
     function initHeaderFooter() {
       mount(["main-header", "navigation-placeholder"], HEADER_HTML);
       mount(["main-footer", "footer-placeholder"], FOOTER_HTML);
-
+  
+      // mobile toggle (safe if exists)
       const hamburger = document.querySelector(".hamburger");
       const navMenu = document.querySelector(".nav-menu");
       if (hamburger && navMenu) {
@@ -117,103 +114,66 @@
           navMenu.classList.toggle("active");
         });
       }
-
-      // Footer form is now a simple HTML form, no initialization needed
     }
   
-    // --- CTA ---
-    function initCTA() {
-      const el = document.getElementById("cta-placeholder");
-      if (el && el.children.length === 0) el.innerHTML = CTA_HTML;
-    }
-  
-    // --- SIDEBAR ---
+    /* -------- Blog Sidebar -------- */
     function initSidebar() {
       const sidebar = document.getElementById("blog-sidebar");
       if (sidebar && sidebar.children.length === 0) sidebar.innerHTML = SIDEBAR_HTML;
     }
   
-    // --- FLODESK (Final Stable Version) ---
-    function initFloDesk() {
-      const formId = "67e1ed35ef9d1ced7c8c3e7d";
-
-      // Handle main newsletter signup placeholder
-      const el = document.getElementById("fd-placeholder");
-      if (el) {
-        el.innerHTML = `
-          <section class="newsletter-signup">
-            <h2>Stay Connected</h2>
-            <p>Get holistic insights, stories, and guidance on navigating your Second Spring with balance and clarity.</p>
-            <div id="fd-form-${formId}" class="fd-form"></div>
-          </section>
-        `;
-      }
-
-      // If FloDesk script isn't loaded yet, load it
-      if (!document.getElementById("flodesk-sdk")) {
-        const script = document.createElement("script");
-        script.id = "flodesk-sdk";
-        script.src = "https://assets.flodesk.com/universal.js";
-        script.async = true;
-        script.onload = () => {
-          // initialize main form AFTER script is ready
-          if (window.fd) {
-            if (document.getElementById(`fd-form-${formId}`)) {
-              window.fd("form", {
-                formId,
-                containerEl: `#fd-form-${formId}`,
-              });
-            }
-          }
-        };
-        document.body.appendChild(script);
-      } else if (window.fd) {
-        // if already loaded, init immediately
-        if (document.getElementById(`fd-form-${formId}`)) {
-          window.fd("form", {
-            formId,
-            containerEl: `#fd-form-${formId}`,
-          });
-        }
-      }
+    /* -------- CTA -------- */
+    function initCTA() {
+      const cta = document.getElementById("cta-placeholder");
+      if (cta && cta.children.length === 0) cta.innerHTML = CTA_HTML;
     }
-
-    // --- FOOTER FLODESK ---
-    function initFooterFloDesk() {
+  
+    /* -------- FloDesk (no inline scripts; won’t block header/footer) -------- */
+    function initFloDesk() {
+      const fdHost = document.getElementById("fd-placeholder");
+      if (!fdHost) return;
+  
       const formId = "67e1ed35ef9d1ced7c8c3e7d";
-      const footerFormEl = document.getElementById(`fd-form-footer-${formId}`);
-      
-      if (footerFormEl) {
-        // Try multiple times to initialize the form
-        let attempts = 0;
-        const maxAttempts = 10;
-        
-        function tryInit() {
-          attempts++;
+      fdHost.innerHTML = `
+        <section class="newsletter-signup">
+          <h2>Stay Connected</h2>
+          <p>Get holistic insights, stories, and guidance on navigating your Second Spring with balance and clarity.</p>
+          <div id="fd-form-${formId}" class="fd-form"></div>
+        </section>
+      `;
+  
+      const run = () => {
+        try {
           if (window.fd) {
-            console.log("Initializing footer FloDesk form (attempt " + attempts + ")");
             window.fd("form", {
               formId,
-              containerEl: `#fd-form-footer-${formId}`,
+              containerEl: `#fd-form-${formId}`,
             });
-          } else if (attempts < maxAttempts) {
-            console.log("FloDesk not ready, retrying in 500ms (attempt " + attempts + ")");
-            setTimeout(tryInit, 500);
-          } else {
-            console.log("FloDesk failed to load after " + maxAttempts + " attempts");
           }
+        } catch (e) {
+          console.warn("FloDesk init failed:", e);
         }
-        
-        tryInit();
+      };
+  
+      if (!document.getElementById("flodesk-sdk")) {
+        const s = document.createElement("script");
+        s.id = "flodesk-sdk";
+        s.src = "https://assets.flodesk.com/universal.js";
+        s.async = true;
+        s.onload = run;
+        s.onerror = () => console.warn("FloDesk script failed to load");
+        document.body.appendChild(s);
+      } else {
+        run();
       }
     }
   
-    // --- DOM READY ---
-    document.addEventListener("DOMContentLoaded", () => {
-      initHeaderFooter();
+    /* -------- DOM Ready -------- */
+    document.addEventListener("DOMContentLoaded", function () {
+      initHeaderFooter(); // always first (so header/footer never “disappear”)
       initSidebar();
       initCTA();
-      initFloDesk(); // safe, doesn’t block anything
+      initFloDesk();      // runs last; errors won’t stop the rest
     });
   })();
   

@@ -1,222 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perimenopause Nutrition Tips: Eating for Energy, Balance, and Hormone Health - Second Spring</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        .blog-post-page {
-            padding: 8rem 0 4rem;
-            background: var(--white);
-        }
-        
-        .blog-post-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .blog-post-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .blog-post-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-        }
-        
-        .blog-post-date {
-            color: var(--taupe);
-        }
-        
-        .blog-post-category {
-            color: var(--plum);
-            font-weight: 500;
-        }
-        
-        .blog-post-title {
-            font-size: 2.5rem;
-            color: var(--plum);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-        
-        .blog-post-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-        }
-        
-        .blog-post-content {
-            color: var(--charcoal);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .blog-post-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .blog-post-content h3 {
-            color: var(--plum);
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            font-weight: 600;
-        }
-        
-        .blog-post-content ul {
-            margin: 1rem 0 1.5rem 2rem;
-        }
-        
-        .blog-post-content li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .back-to-blog {
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .back-to-blog .btn {
-            background: var(--plum);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .back-to-blog .btn:hover {
-            background: var(--gold);
-            transform: translateY(-2px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perimenopause Nutrition Tips | Second Spring</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <!-- Navigation and Dynamic Elements -->
+  <script src="navigation.js" defer></script>
+  <script src="blog-posts.js" defer></script>
+
+  <!-- FloDesk Script -->
+  <script src="https://assets.flodesk.com/universal.js"></script>
+
+  <style>
+    /* Inline image style */
+    .blog-inline-img {
+      display: block;
+      max-width: 90%;
+      margin: 2.5rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html">
-                    <img src="images/logos/secondspring-logo.png" alt="SecondSpring" class="logo">
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li>
-                    <a href="index.html#features" >Features</a>
-                </li>
-                <li>
-                    <a href="blog.html" >Blog</a>
-                </li>
-                <li>
-                    <a href="index.html#about" >About</a>
-                </li>
-                <li>
-                    <a href="index.html#contact" >Contact</a>
-                </li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+  <!-- Header Placeholder -->
+  <div id="navigation-placeholder"></div>
 
-    <!-- Blog Post Content -->
-    <section class="blog-post-page">
-        <div class="blog-post-container">
-            <div class="blog-post-header">
-                <div class="blog-post-meta">
-                    <span class="blog-post-date">December 2024</span>
-                    <span class="blog-post-category">Nutrition</span>
-                </header>
-                <h1 class="blog-post-title">Perimenopause Nutrition Tips: Eating for Energy, Balance, and Hormone Health</h1>
-            </header>
-            
-            <img src="https://via.placeholder.com/800x400/F6F3EF/5A4368?text=Nutrition+for+Hormones" alt="Nutrition for Hormone Health" class="blog-post-image">
-            
-            <div class="blog-post-content">
-                <p>Perimenopause is a natural transition, yet it often brings symptoms that can feel anything but natural: hot flashes, bloating, fatigue, irregular cycles, mood swings, and disrupted sleep. While these shifts are rooted in hormones, what you eat and how you eat can make a significant difference.</p>
+  <main class="blog-layout">
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      <section class="search-section">
+        <h3>Search Articles</h3>
+        <div class="search-box">
+          <div class="search-input-container">
+            <input type="text" id="search-input" placeholder="Search by topic, category, or keyword...">
+            <button type="button" id="search-btn" class="search-icon-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </button>
+          </div>
+          <div id="search-suggestions" class="search-suggestions"></div>
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </section>
 
-                <h3>The Nutrition Confusion</h3>
-                <p>Nutrition is where most women get stuck in perimenopause. There's too much noise:</p>
-                <ul>
-                    <li>Books that contradict each other</li>
-                    <li>Social media telling you to cut, fast, or restrict</li>
-                    <li>The constant comparison to 20-year-old bodies that simply don't have the same needs</li>
-                </ul>
-                
-                <p>No wonder women feel confused. What should I eat? What should I avoid? Why isn't my body responding the way it used to?</p>
+      <!-- Topics & Categories -->
+      <section class="topics">
+        <h3>Browse by Topic</h3>
+        <hr class="topic-divider">
+        <ul id="topics-list">
+          <li><a href="#" data-topic="Nourish – Food & Nutrition">Nourish – Food & Nutrition <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Flow – Lifestyle Harmony">Flow – Lifestyle Harmony <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Rest – Sleep & Recovery">Rest – Sleep & Recovery <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Move – Movement & Strength">Move – Movement & Strength <span class="post-count">(0)</span></a></li>
+          <li><a href="#" data-topic="Thrive – Healthcare & Support">Thrive – Healthcare & Support <span class="post-count">(0)</span></a></li>
+        </ul>
+      </section>
+    </aside>
 
-                <h3>The Truth About Your Changing Body</h3>
-                <p>The truth is: your body is acting differently because it is different. Perimenopause isn't a problem to fix; it's a transition to nourish. What you eat in your 40s and 50s is not what your body needed in your 20s. The rules change, and that's where food becomes medicine, not math.</p>
+    <!-- Blog Article -->
+    <article class="blog-article">
+      <div class="blog-topic">Nourish – Food & Nutrition</div>
+      <h1 class="blog-title">Perimenopause Nutrition Tips: Eating for Energy, Balance, and Hormone Health</h1>
+      <div class="blog-meta">
+        <span class="blog-date">Published on October 2025</span>
+      </div>
 
-                <h3>My Personal Discovery: The Protein Factor</h3>
-                <p>For me, it wasn't fewer calories—it was enough protein. When I fixed that one thing, the pounds started going down. My energy returned. My body felt like mine again.</p>
+      <div class="blog-content-text">
+        <blockquote>"Let food be thy medicine and medicine be thy food." — Hippocrates</blockquote>
 
-                <p>Here's why protein is a game-changer in perimenopause:</p>
-                <ul>
-                    <li>It protects muscle as estrogen drops</li>
-                    <li>It keeps metabolism working efficiently</li>
-                    <li>It supports bone strength</li>
-                    <li>It helps you feel satisfied instead of deprived</li>
-                </ul>
+        <p>Perimenopause is a natural transition, yet it often brings symptoms that can feel anything but natural: hot flashes, bloating, fatigue, irregular cycles, mood swings, and disrupted sleep. While these shifts are rooted in hormones, what you eat and how you eat can make a powerful difference in how you move through this stage.</p>
 
-                <h3>Beyond Protein: A Holistic Approach</h3>
-                <p>But it's not just about protein. The research is opening new doors: a 2023 Hungarian review highlights the unique benefits of plant-based protein, suggesting that ideally, about half of protein intake should come from plant-based sources.</p>
+        <p>Nutrition in perimenopause isn’t about dieting or restriction. It’s about choosing foods that balance hormones, calm the body, and work in harmony with your digestion, the seasons, and your natural rhythms.</p>
 
-                <p>This is where things get nuanced. It's not only about grams per day. Protein can have side effects. Your body may or may not be ready. And that's exactly why we're building the Second Spring app—because perimenopause is not a box you check off.</p>
+        <img src="images/blog/Perimenopause Food Guidance Map.png" alt="Perimenopause Food Guidance Map" class="blog-inline-img">
 
-                <p>Menopause never ends. The sooner you educate yourself, learn your body, and understand your hormonal shifts, the stronger and more resilient you'll feel—not just now, but for the decades ahead.</p>
-            </header>
-            
-            <div class="back-to-blog">
-                <a href="blog.html" class="btn">Back to All Posts</a>
-            </header>
-        </header>
-    </section>
+        <h2>Food and Hormonal Shifts</h2>
+        <p>During perimenopause, estrogen and progesterone rise and fall unevenly. These fluctuations affect blood sugar regulation, metabolism, and digestion. Symptoms like bloating, mood swings, or hot flashes can often be traced back to food triggers or imbalances.</p>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Second Spring</h3>
-                    <p>Empowering women through perimenopause with personalized wellness solutions.</p>
-                </header>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </header>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    </ul>
-                </header>
-            </header>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Second Spring. All rights reserved.</p>
-            </header>
-        </header>
-    </footer>
+        <ul>
+          <li><strong>Hot flashes/night sweats:</strong> worsened by internal “heat” foods like spicy meals, alcohol, or excess caffeine.</li>
+          <li><strong>Bloating/indigestion:</strong> aggravated by very greasy or overly processed foods.</li>
+          <li><strong>Fatigue & mood swings:</strong> often linked to blood sugar spikes and crashes from refined carbs and sugar.</li>
+        </ul>
 
-    <script src="script.js"></script>
+        <p>The good news: balanced, thoughtful eating can reduce these symptoms and help restore stability.</p>
+
+        <h2>Key Principles Across Traditions</h2>
+        <p>Though modern nutrition, Ayurveda, and TCM come from different lineages, they share core wisdom:</p>
+        <ul>
+          <li>Food should be whole and minimally processed.</li>
+          <li>Balance matters more than extremes.</li>
+          <li>When and how you eat affects how well food nourishes you.</li>
+        </ul>
+
+        <h3>Proteins for Strength & Stability</h3>
+        <p>Protein is essential to preserve muscle, support bone health, and stabilize blood sugar during this stage. Modern nutrition suggests 1–1.2 g/kg of body weight daily.</p>
+
+        <p><strong>Plant-based proteins:</strong> lentils, chickpeas, soy, nuts, seeds. Best combined with complex carbs (like rice, quinoa) and a little healthy fat to create a complete nutritional profile.</p>
+        <p><strong>Animal proteins:</strong> fish, eggs, lean meats naturally provide complete amino acids.</p>
+
+        <p><em>Practical tip:</em> Instead of cutting out bread or rice, balance them. Pair brown rice with beans, or whole-grain bread with hummus and a handful of seeds. This way, you nourish without overloading.</p>
+
+        <h3>Complex Carbohydrates & Spleen Support</h3>
+        <p>Carbs are not the enemy; they’re vital for steady energy, mood, and gut health. Fiber-rich carbs also help eliminate excess estrogen.</p>
+        <p>From a TCM lens, complex carbs like whole grains and root vegetables strengthen the Spleen meridian, which often weakens in perimenopause. A weak Spleen shows up as sugar cravings, bloating, or fatigue.</p>
+
+        <p><strong>What to eat:</strong> quinoa, brown rice, barley, millet, oats, sweet potatoes, carrots, beets.</p>
+        <p><strong>How to eat:</strong> steam or roast for easier digestion; enjoy heavier grains at lunch when digestion is strongest.</p>
+
+        <h3>Healthy Fats & Fiber for Hormones</h3>
+        <p>Healthy fats are the building blocks of hormones and support brain and heart health. Fiber regulates blood sugar and helps the body metabolize hormones smoothly.</p>
+        <p><strong>Fats to include:</strong> olive oil, avocado, walnuts, flax, chia, fatty fish.</p>
+        <p><strong>Fiber sources:</strong> vegetables, legumes, fruits with skins, whole grains, and seeds.</p>
+        <p>Together, fats and fiber keep you full, stabilize energy, and prevent the sugar crashes that trigger irritability.</p>
+
+        <h3>Food, Seasons & Balance</h3>
+        <p>Your body changes with the environment, so eating with the seasons helps restore balance:</p>
+        <ul>
+          <li><strong>Summer & heat:</strong> cooling foods like cucumber, melon, mint, light grains; balance spice with cooling additions (e.g., spicy lentil soup with pumpkin).</li>
+          <li><strong>Winter & cold:</strong> warming stews, soups, root vegetables, ginger, and cinnamon.</li>
+          <li><strong>Spring & fall:</strong> combine — lighter greens in spring, grounding roots in autumn.</li>
+        </ul>
+        <p>Listening to both weather and internal state is key. If you feel overheated, lighten meals. If you feel sluggish, lean on warming, grounding foods.</p>
+
+        <img src="images/blog/Cultural Culinary Diversity.png" alt="Cultural Culinary Diversity" class="blog-inline-img">
+
+        <h2>Nourishment Across Cultures</h2>
+        <p>Food traditions across the world offer comfort and balance for the perimenopausal body. Ayurveda brings <em>kitchari</em>, a soothing blend of rice and mung beans that resets digestion. TCM highlights <em>congee</em>, a gentle rice porridge that supports energy and the Spleen. The Mediterranean plate offers lentil salads rich in fiber, protein, and healthy fats. From Japan, miso soup provides probiotics and fermented goodness to nurture the gut and calm inflammation.</p>
+        <p>Together, these dishes show that healing foods transcend borders, each culture offers wisdom for balance, and when woven together, they create a nourishing path through this stage of life.</p>
+
+        <h2>Foods to Prioritize</h2>
+        <ul>
+          <li>Leafy greens, cruciferous veggies (broccoli, kale, bok choy) for hormone metabolism.</li>
+          <li>Root vegetables (sweet potato, carrots, beets) for grounding and steady energy.</li>
+          <li>Legumes and beans for plant protein and fiber.</li>
+          <li>Whole grains like quinoa, oats, millet, and barley for balance and Spleen support.</li>
+          <li>Seeds and nuts for minerals, fats, and gentle hormone support.</li>
+          <li>Cooling fruits (berries, apples, pears, melons) when heat symptoms arise.</li>
+          <li>Black sesame, black beans, seaweed — kidney-nourishing foods in TCM for vitality.</li>
+        </ul>
+<br>
+        <h2>Foods to Limit</h2>
+        <ul>
+          <li>Packaged snacks (like chips) high in unhealthy fats, salt, and additives.</li>
+          <li>Highly processed foods and refined sugars (worsen energy swings and hot flashes).</li>
+          <li>Excess alcohol (affects sleep, mood, and liver).</li>
+          <li>Too much caffeine (disrupts sleep, increases anxiety).</li>
+          <li>Very greasy or fried foods (strain digestion, increase “dampness” in TCM).</li>
+          <li>Excess spicy foods (fuel hot flashes and night sweats).</li>
+        </ul>
+        <br>
+        <h2>Practical Eating Habits</h2>
+        <ul>
+          <li>Cook simply: steaming, simmering, and light stir-frying make foods easier to digest.</li>
+          <li>Eat calmly: sit, chew slowly, and avoid rushing meals.</li>
+          <li>Time meals: heavier meals at midday; lighter in the evening.</li>
+          <li>Balance plates: each meal should include protein, complex carbs, fiber, and a healthy fat.</li>
+        </ul>
+        <br>
+        <h2>Closing: Food as Your Ally</h2>
+        <p>Perimenopause can feel like a storm, but food offers daily practices of balance. Not by cutting everything out, but by cooking with care, eating in tune with your rhythms, and balancing flavors and energies.</p>
+
+        <p>A bowl of quinoa and lentils drizzled with olive oil. A spicy stew softened by pumpkin. A handful of nuts with fresh fruit. These aren’t just meals, they are medicine.</p>
+
+        <p>This stage isn’t about loss. It’s about renewal. With each meal, you can nourish hormonal balance and step into your Second Spring with strength and ease.</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Related Posts Section -->
+  <section class="related-posts" id="related-posts">
+    <div class="related-posts-header">
+      <h3>Related Articles</h3>
+      <p class="related-posts-subtitle">Discover more insights to support your Second Spring journey</p>
+    </div>
+
+    <div class="related-posts-grid">
+      <div class="related-post-card">
+        <h4 class="related-post-title">Perimenopause and Exercise: What Really Works</h4>
+        <p class="related-post-featured-text">
+          Gentle movement, strength training, and mindful rhythm can restore vitality and balance during hormonal shifts.
+        </p>
+        <a href="#" class="related-post-link">Read More →</a>
+      </div>
+
+      <div class="related-post-card">
+        <h4 class="related-post-title">Rest & Rhythm: Rethinking Sleep in Midlife</h4>
+        <p class="related-post-featured-text">
+          Simple rituals and modern research-backed methods to restore deep, nourishing sleep during perimenopause.
+        </p>
+        <a href="#" class="related-post-link">Read More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 </body>
 </html>

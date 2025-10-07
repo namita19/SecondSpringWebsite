@@ -1,12 +1,168 @@
-// Blog Posts Data - Easy to update for content management
+// Blog Posts Data - Enhanced with Topics, Categories, and Tags
 // To add a new blog post, simply add a new object to the blogPosts array
+//
+// EXAMPLE NEW BLOG POST STRUCTURE:
+// {
+//     id: 12,
+//     title: "Your Blog Post Title",
+//     excerpt: "Brief description of your post...",
+//     topic: "Flow – Lifestyle Harmony", // REQUIRED: Must be one of the 5 fixed options
+//     category: "Emotional Regulation", // OPTIONAL: Must be valid subcategory for the topic
+//     tags: ["anxiety", "perimenopause", "emotional regulation", "wellness"], // OPTIONAL: Hidden from UI, used for SEO
+//     date: "October 4, 2025",
+//     image: "images/blog/your-image.jpg",
+//     slug: "your-blog-post-slug",
+//     content: "Your full blog post content here..."
+// }
+//
+// VALID TOPICS & CATEGORIES:
+// Nourish – Food & Nutrition: Hormone-Friendly Nutrition, Ayurveda & TCM Food Wisdom, Gut Health, Functional Foods & Herbs, Metabolism & Energy
+// Flow – Lifestyle Harmony: Stress & Energy Balance, Morning & Evening Rituals, Emotional Regulation, Work-Life Harmony, Seasonal & Cycle-Based Living
+// Rest – Sleep & Recovery: Sleep Hygiene, Night Sweats & Temperature Regulation, Mindful Wind-Down Practices, Restorative Breathing & Meditation, Sound & Music Therapy
+// Move – Movement & Strength: Strength & Mobility, Mindful Movement (Yoga, Tai Chi, Qigong), Hormone-Safe Workouts, Core & Pelvic Health, Somatic Movement for Emotional Release
+// Thrive – Healthcare & Support: What to Ask Your Doctor, Lab Tests & Biomarkers, Hormone Therapy Options, Emotional Support & Mentorship, Integrative Care Approaches
+
+// Fixed topic options for validation
+const VALID_TOPICS = [
+    "Nourish – Food & Nutrition",
+    "Flow – Lifestyle Harmony", 
+    "Rest – Sleep & Recovery",
+    "Move – Movement & Strength",
+    "Thrive – Healthcare & Support"
+];
+
+// Valid category options organized by topic
+const VALID_CATEGORIES = {
+    "Nourish – Food & Nutrition": [
+        "Hormone-Friendly Nutrition",
+        "Ayurveda & TCM Food Wisdom",
+        "Gut Health",
+        "Functional Foods & Herbs",
+        "Metabolism & Energy"
+    ],
+    "Flow – Lifestyle Harmony": [
+        "Stress & Energy Balance",
+        "Morning & Evening Rituals",
+        "Emotional Regulation",
+        "Work-Life Harmony",
+        "Seasonal & Cycle-Based Living"
+    ],
+    "Rest – Sleep & Recovery": [
+        "Sleep Hygiene",
+        "Night Sweats & Temperature Regulation",
+        "Mindful Wind-Down Practices",
+        "Restorative Breathing & Meditation",
+        "Sound & Music Therapy"
+    ],
+    "Move – Movement & Strength": [
+        "Strength & Mobility",
+        "Mindful Movement (Yoga, Tai Chi, Qigong)",
+        "Hormone-Safe Workouts",
+        "Core & Pelvic Health",
+        "Somatic Movement for Emotional Release"
+    ],
+    "Thrive – Healthcare & Support": [
+        "What to Ask Your Doctor",
+        "Lab Tests & Biomarkers",
+        "Hormone Therapy Options",
+        "Emotional Support & Mentorship",
+        "Integrative Care Approaches"
+    ]
+};
+
+// Function to validate topic
+function validateTopic(topic) {
+    if (!VALID_TOPICS.includes(topic)) {
+        console.warn(`Invalid topic: "${topic}". Must be one of: ${VALID_TOPICS.join(', ')}`);
+        return false;
+    }
+    return true;
+}
+
+// Function to validate category for a given topic
+function validateCategory(topic, category) {
+    if (!category) return true; // Category is optional
+    
+    if (!VALID_CATEGORIES[topic]) {
+        console.warn(`Invalid topic for category validation: "${topic}"`);
+        return false;
+    }
+    
+    if (!VALID_CATEGORIES[topic].includes(category)) {
+        console.warn(`Invalid category: "${category}" for topic "${topic}". Must be one of: ${VALID_CATEGORIES[topic].join(', ')}`);
+        return false;
+    }
+    return true;
+}
+
+// Function to get all categories for a topic
+function getCategoriesForTopic(topic) {
+    return VALID_CATEGORIES[topic] || [];
+}
+
+// Helper function to create a new blog post with validation
+function createBlogPost(postData) {
+    // Validate the post
+    if (!validateBlogPost(postData)) {
+        console.error('Blog post validation failed');
+        return null;
+    }
+    
+    // Auto-generate ID if not provided
+    if (!postData.id) {
+        postData.id = Math.max(...blogPosts.map(p => p.id)) + 1;
+    }
+    
+    // Auto-generate slug if not provided
+    if (!postData.slug && postData.title) {
+        postData.slug = postData.title
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .trim('-');
+    }
+    
+    console.log('✅ Blog post created successfully:', postData.title);
+    return postData;
+}
+
+// Function to get topic and category suggestions for autocomplete
+function getTopicCategorySuggestions() {
+    return Object.entries(VALID_CATEGORIES).map(([topic, categories]) => ({
+        topic,
+        categories
+    }));
+}
+
+// Helper function to get topic short names (for easier reference)
+function getTopicShortNames() {
+    return {
+        "Nourish – Food & Nutrition": "Nourish",
+        "Flow – Lifestyle Harmony": "Flow", 
+        "Rest – Sleep & Recovery": "Rest",
+        "Move – Movement & Strength": "Move",
+        "Thrive – Healthcare & Support": "Thrive"
+    };
+}
+
+// Helper function to validate and suggest topics (for IDE autocomplete)
+function suggestTopics() {
+    console.log("Valid topics for blog posts:");
+    VALID_TOPICS.forEach((topic, index) => {
+        console.log(`${index + 1}. ${topic}`);
+    });
+    return VALID_TOPICS;
+}
 
 const blogPosts = [
     {
         id: 1,
         title: "Perimenopause and Exercise: What Really Works",
         excerpt: "Perimenopause is often painted as a 'transition you just survive until menopause', but the way we move during this period can actually transform how you experience it. As hormonal fluctuations begin, many people face symptoms like hot flashes, sleep disruption, mood changes, and shifting body composition.",
-        category: "Fitness",
+        topic: "Move – Movement & Strength", // Fixed topic from 5 options
+        category: "Hormone-Safe Workouts", // Subcategory from Move topic
+        tags: ["exercise", "perimenopause", "fitness", "hormones", "wellness", "strength training", "cardio", "yoga"], // Hidden from UI, used for SEO
         date: "October 3, 2025",
         image: "images/blog/exercise-perimenopause.jpg",
         slug: "perimenopause-exercise-what-works",
@@ -16,7 +172,9 @@ const blogPosts = [
         id: 2,
         title: "Perimenopause Nutrition Tips: Eating for Energy, Balance, and Hormone Health",
         excerpt: "Perimenopause is a natural transition, yet it often brings symptoms that can feel anything but natural: hot flashes, bloating, fatigue, irregular cycles, mood swings, and disrupted sleep. While these shifts are rooted in hormones, what you eat and how you eat can make a significant difference.",
-        category: "Nutrition",
+        topic: "Nourish – Food & Nutrition",
+        category: "Hormone-Friendly Nutrition",
+        tags: ["nutrition", "perimenopause", "hormones", "diet", "protein", "phytoestrogens", "wellness", "health"],
         date: "October 3, 2025",
         image: "images/blog/nutrition-perimenopause.jpg",
         slug: "perimenopause-nutrition-tips",
@@ -26,7 +184,9 @@ const blogPosts = [
         id: 3,
         title: "Hormone Therapy in Perimenopause: What You Need to Know",
         excerpt: "Perimenopause is the body's long goodbye to reproductive cycles. Unlike menopause, which is a defined endpoint, perimenopause is a turbulent transition that can last for years. Hormones rise and crash unpredictably, leaving many women facing hot flashes, insomnia, mood swings, brain fog, and joint aches.",
-        category: "Treatment",
+        topic: "Thrive – Healthcare & Support",
+        category: "Hormone Therapy Options",
+        tags: ["hormone therapy", "perimenopause", "estrogen", "progesterone", "medical treatment", "symptoms", "health", "wellness"],
         date: "October 3, 2025",
         image: "images/blog/Treatment Options for Perimenopausal Symptoms.png",
         slug: "hormone-therapy-perimenopause",
@@ -36,7 +196,9 @@ const blogPosts = [
         id: 4,
         title: "Sleep During Perimenopause: Finding Rest When Your Body Won't Let You",
         excerpt: "For many women, perimenopause brings a nightly battle with disrupted sleep. Hot flashes, night sweats, and unpredictable hormone shifts can leave you staring at the ceiling at 2 a.m., feeling wired yet exhausted. If you've noticed your sleep quality unraveling during this transition, you're not alone.",
-        category: "Lifestyle",
+        topic: "Rest – Sleep & Recovery",
+        category: "Sleep Hygiene",
+        tags: ["sleep", "perimenopause", "night sweats", "insomnia", "sleep hygiene", "wellness", "recovery"],
         date: "October 3, 2025",
         image: "images/blog/tips for improving sleep.png",
         slug: "sleep-during-perimenopause",
@@ -46,7 +208,9 @@ const blogPosts = [
         id: 5,
         title: "Why Hot Flashes Don't Have to Rule Your Life",
         excerpt: "It begins with a rush. One moment you're fine, and the next your face is flushed, your heart is racing, and heat floods your body as if someone lit a fire under your skin. For many women, this is the unmistakable arrival of hot flashes, a hallmark of perimenopause and menopause.",
-        category: "Symptoms",
+        topic: "Rest – Sleep & Recovery",
+        category: "Night Sweats & Temperature Regulation",
+        tags: ["hot flashes", "perimenopause", "night sweats", "temperature regulation", "symptoms", "wellness"],
         date: "October 3, 2025",
         image: "images/blog/Hot Flash Reporting Comparison.png",
         slug: "hot-flashes-dont-rule-life",
@@ -56,7 +220,9 @@ const blogPosts = [
         id: 6,
         title: "Your Second Spring: Embracing Perimenopause with Nature's Rhythm",
         excerpt: "Rooted in Nature Our bodies are not separate from nature; they are part of it. Just as the earth moves through seasons of blooming, ripening, letting go, and resting, we too move through cycles. Perimenopause is one of those cycles, a powerful shift often misunderstood as decline, when in truth it is another rhythm of transformation.",
-        category: "Wellness",
+        topic: "Flow – Lifestyle Harmony",
+        category: "Seasonal & Cycle-Based Living",
+        tags: ["seasonal living", "perimenopause", "nature", "cycles", "wellness", "mindfulness", "self-care"],
         date: "October 3, 2025",
         image: "images/blog/exercise-perimenopause.jpg",
         slug: "second-spring-nature-rhythm",
@@ -134,8 +300,9 @@ function renderBlogPosts(posts = blogPosts, limit = 3) {
             </div>
             <div class="blog-content">
                 <div class="blog-meta">
+                    <span class="blog-topic">${post.topic || 'General'}</span>
                     <span class="blog-date">${post.date}</span>
-                    <span class="blog-category">${post.category}</span>
+                    ${post.category ? `<span class="blog-category">${post.category}</span>` : ''}
                 </div>
                 <h3>${post.title}</h3>
                 <p>${post.excerpt}</p>
@@ -158,17 +325,96 @@ function getBlogPostsByCategory(category) {
 
 // Function to get all categories
 function getAllCategories() {
-    const categories = [...new Set(blogPosts.map(post => post.category))];
+    const categories = [...new Set(blogPosts.map(post => post.category).filter(Boolean))];
     return categories;
+}
+
+// Function to get all topics
+function getAllTopics() {
+    return VALID_TOPICS;
+}
+
+// Function to get blog posts by topic
+function getBlogPostsByTopic(topic) {
+    return blogPosts.filter(post => post.topic === topic);
+}
+
+// Function to get related posts based on shared tags
+function getRelatedPosts(currentPostId, limit = 3) {
+    const currentPost = getBlogPostById(currentPostId);
+    if (!currentPost || !currentPost.tags) return [];
+    
+    const currentTags = currentPost.tags;
+    
+    // Find posts with shared tags, excluding current post
+    const relatedPosts = blogPosts
+        .filter(post => post.id !== currentPostId && post.tags)
+        .map(post => ({
+            ...post,
+            sharedTags: post.tags.filter(tag => currentTags.includes(tag)).length
+        }))
+        .filter(post => post.sharedTags > 0)
+        .sort((a, b) => b.sharedTags - a.sharedTags)
+        .slice(0, limit);
+    
+    return relatedPosts;
+}
+
+// Function to generate meta keywords from tags
+function generateMetaKeywords(post) {
+    if (!post.tags) return '';
+    return post.tags.join(', ');
+}
+
+// Function to validate blog post structure
+function validateBlogPost(post) {
+    const errors = [];
+    
+    if (!post.topic) {
+        errors.push('Topic is required');
+    } else if (!validateTopic(post.topic)) {
+        errors.push(`Invalid topic: ${post.topic}`);
+    } else if (post.category && !validateCategory(post.topic, post.category)) {
+        errors.push(`Invalid category: ${post.category} for topic: ${post.topic}`);
+    }
+    
+    if (!post.title) {
+        errors.push('Title is required');
+    }
+    
+    if (!post.content) {
+        errors.push('Content is required');
+    }
+    
+    if (errors.length > 0) {
+        console.warn('Blog post validation errors:', errors);
+        return false;
+    }
+    
+    return true;
 }
 
 // Export functions for use in other files
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         blogPosts,
+        VALID_TOPICS,
+        VALID_CATEGORIES,
+        validateTopic,
+        validateCategory,
+        getCategoriesForTopic,
+        createBlogPost,
+        getTopicCategorySuggestions,
+        getTopicShortNames,
+        suggestTopics,
         renderBlogPosts,
         getBlogPostById,
         getBlogPostsByCategory,
-        getAllCategories
+        getAllCategories,
+        getAllTopics,
+        getBlogPostsByTopic,
+        getRelatedPosts,
+        generateMetaKeywords,
+        validateBlogPost
     };
 }
