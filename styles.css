@@ -2084,6 +2084,7 @@
    Blog post page theming
    ========================= */
 .blog-post-page { background-color: var(--white); }
+.blog-post-page .blog-article { background-color: var(--white) !important; }
 .blog-post-page .blog-title { color: var(--blue) !important; }
 .blog-post-page .blog-content-text p { color: var(--charcoal); }
 .blog-post-page .blog-content-text a { color: var(--blue); }
