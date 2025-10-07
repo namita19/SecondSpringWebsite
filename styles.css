@@ -2149,5 +2149,5 @@
 
 /* Related Articles section light green band and header colors */
 .blog-post-page .related-posts { background: rgba(104, 176, 136, 0.08); padding: 2rem 0; }
-.blog-post-page .related-posts .related-posts-header h3 { color: var(--blue); }
+.blog-post-page .related-posts .related-posts-header h3 { color: var(--plum); }
 .blog-post-page .related-posts .related-posts-header .related-posts-subtitle { color: var(--plum); }
