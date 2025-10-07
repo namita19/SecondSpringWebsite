@@ -2083,6 +2083,30 @@
 /* =========================
    Blog post page theming
    ========================= */
+
+/* Blog post spacing rules for better readability */
+.blog-post-page .blog-content-text h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post-page .blog-content-text h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-page .blog-content-text p {
+  margin-bottom: 1.25rem;
+}
+
+.blog-post-page .blog-content-text ul,
+.blog-post-page .blog-content-text ol {
+  margin: 1.25rem 0;
+}
+
+.blog-post-page .blog-content-text li {
+  margin-bottom: 0.5rem;
+}
 .blog-post-page { background-color: var(--white); }
 .blog-post-page .blog-article { background-color: var(--white) !important; }
 .blog-post-page .blog-title { color: var(--blue) !important; }
