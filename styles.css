@@ -286,17 +286,17 @@
     font-size: 1rem;
   }
   
-  .btn-primary {
-    background: var(--gold);
-    color: var(--charcoal);
-    border: 2px solid var(--gold);
+.btn-primary {
+    background: var(--orange);
+    color: var(--white);
+    border: 2px solid var(--orange);
   }
   
-  .btn-primary:hover {
-    background: var(--light-gold);
-    border-color: var(--light-gold);
+.btn-primary:hover {
+    background: #e05400; /* deeper orange */
+    border-color: #e05400;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(203, 160, 82, 0.3);
+    box-shadow: 0 10px 25px rgba(242, 92, 5, 0.25);
   }
   
   .btn-secondary {
@@ -321,6 +321,11 @@
     color: var(--plum);
     text-align: center;
   }
+
+  /* Homepage: force "Bloom in Your Pause" to blue */
+  #product h2 {
+    color: var(--blue) !important;
+  }
   
   section p {
     font-size: 1.2rem;
@@ -332,7 +337,7 @@
   }
   
   /* Hero */
-  .hero {
+.hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -344,8 +349,8 @@
     padding: 6rem 2rem;
   }
 
-  .hero p {
-    color: var(--cream);
+.hero p {
+    color: var(--white);
     font-weight: 400;
   }
   
@@ -358,12 +363,12 @@
   }
   
   .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-  .hero-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; text-align: center; }
+  .hero-title { font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; text-align: center; color: var(--white); }
   
   .hero-subtitle {
     font-size: 1.25rem;
     line-height: 1.8;
-    color: var(--cream);
+    color: var(--white);
     max-width: 750px;
     margin: 1.5rem auto 2.5rem; /* more room before buttons */
     text-align: center;
@@ -384,6 +389,31 @@
   }
 
   .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  /* Hero primary button: gold bg with plum text on plum hero */
+  .hero .btn-primary {
+    background: var(--gold);
+    color: var(--plum);
+    border: 2px solid var(--gold);
+  }
+  .hero .btn-primary:hover {
+    background: var(--light-gold);
+    border-color: var(--light-gold);
+    color: var(--plum);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(203, 160, 82, 0.28);
+  }
+  /* Hero secondary button: white bg with plum text for strong contrast on plum hero */
+  .hero .btn-secondary {
+    background: var(--white);
+    color: var(--plum);
+    border: 2px solid var(--white);
+  }
+  .hero .btn-secondary:hover {
+    background: var(--white);
+    color: var(--plum);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  }
   
   /* Features */
   .features { background: var(--white); }
@@ -402,6 +432,19 @@
     text-align: center;
     transition: transform 0.3s ease;
   }
+
+  /* Homepage: Morning/Midday/Evening cards as blue with white text */
+  #product .feature-card {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+  #product .feature-card p { color: var(--white); }
+  #product .feature-header .feature-icon { color: var(--white); }
+  #product .feature-header h3 { color: var(--white); }
+  #product .feature-card:hover { transform: translateY(-5px); }
+  #product .feature-card:hover { filter: brightness(0.95); }
   
   .feature-card:hover { transform: translateY(-5px); }
   
@@ -434,8 +477,8 @@
   
   /* Impact */
   .impact-section { margin: 4rem 0; }
-  
-  .impact-section h2 { margin-bottom: 2rem; }
+
+  .impact-section h2 { margin-bottom: 2rem; color: var(--blue); }
   
   .impact-stats {
     display: grid;
@@ -464,7 +507,7 @@
   }
   
   .stat-item h4 {
-    color: var(--plum);
+    color: var(--orange);
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -480,15 +523,15 @@
   
   /* Privacy Highlight Section */
 .privacy-highlight {
-    background: var(--cream);
-    border-top: 3px solid var(--gold);
-    border-bottom: 3px solid var(--gold);
+    background: var(--white);
+    border-top: 3px solid var(--blue);
+    border-bottom: 3px solid var(--blue);
     padding: 4rem 2rem;
     text-align: center;
   }
   
-  .privacy-highlight h3 {
-    color: var(--plum);
+.privacy-highlight h3 {
+    color: var(--green);
     font-size: 2rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
@@ -506,10 +549,10 @@
     margin-top: 2rem;
   }
   
-  .privacy-highlight .btn {
-    background: var(--gold);
-    color: var(--charcoal);
-    border: 2px solid var(--gold);
+.privacy-highlight .btn {
+    background: var(--blue);
+    color: var(--white);
+    border: 2px solid var(--blue);
   }
   
   .privacy-highlight .btn:hover {
@@ -1199,9 +1242,9 @@
     padding: 8rem 2rem;
   }
   
-  .product-hero h1 {
+.product-hero h1 {
     font-size: 3rem;
-    color: var(--plum);
+    color: var(--blue) !important;
     margin-bottom: 1.5rem;
   }
   
@@ -1411,7 +1454,7 @@
 
 /* Newsletter Signup Styles */
 .newsletter-signup {
-  background: var(--cream);
+  background: rgba(104, 176, 136, 0.08);
   text-align: center;
   padding: 3rem 2rem;
   border-radius: 12px;
@@ -1423,6 +1466,11 @@
   color: var(--plum);
   margin-bottom: 0.75rem;
   font-size: 2rem;
+}
+
+/* About page: make "Stay Connected" blue */
+.about-page .newsletter-signup h2 {
+  color: var(--blue) !important;
 }
 
 .newsletter-signup p {
@@ -1484,7 +1532,7 @@
 }
 
 .newsletter-form button[type="submit"] {
-  background: var(--gold);
+  background: var(--blue);
   color: var(--white);
   border: none;
   padding: 10px 20px;
@@ -1498,8 +1546,8 @@
 }
 
 .newsletter-form button[type="submit"]:hover {
-  background: var(--light-gold);
-  color: var(--plum) !important;
+  background: var(--plum);
+  color: var(--white) !important;
 }
 
 /* Responsive design for mobile */
