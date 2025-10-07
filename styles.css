@@ -2087,6 +2087,9 @@
 .blog-post-page .blog-article { background-color: var(--white) !important; }
 .blog-post-page .blog-title { color: var(--blue) !important; }
 .blog-post-page .blog-content-text p { color: var(--charcoal); }
+.blog-post-page .blog-content-text p { background: var(--white) !important; }
+.blog-post-page .blog-content-text h2,
+.blog-post-page .blog-content-text h3 { color: var(--blue) !important; }
 .blog-post-page .blog-content-text a { color: var(--blue); }
 .blog-post-page .blog-content-text a:hover { color: #1e6a89; }
 .blog-post-page .blog-meta .blog-date,
