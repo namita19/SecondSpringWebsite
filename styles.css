@@ -10,7 +10,7 @@
     /* Supporting Colors */
     --orange: #F25C05;
     --blue: #247BA0;
-    --green: #68B088;
+    --green: #4a7c59;
     --light-gold: #D4A259;
     --purple: #554663;
   
@@ -149,7 +149,7 @@
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     background: var(--gold);
-    color: var(--white);
+    color: var(--charcoal);
     border-radius: 25px;
     font-weight: 600;
     white-space: nowrap;
@@ -167,7 +167,7 @@
   
   .nav-cta .btn-primary {
     background: var(--gold);
-    color: var(--white);
+    color: var(--charcoal);
     border: none;
     border-radius: 50px;
     padding: 0.6rem 1.8rem; /* smaller padding for balance */
@@ -211,7 +211,7 @@
 
   .nav-menu .btn {
     background: var(--gold);
-    color: var(--white);
+    color: var(--charcoal);
     font-weight: 700;
     padding: 0.7rem 1.6rem;
     border-radius: 40px;
@@ -288,7 +288,7 @@
   
   .btn-primary {
     background: var(--gold);
-    color: var(--white);
+    color: var(--charcoal);
     border: 2px solid var(--gold);
   }
   
@@ -508,7 +508,7 @@
   
   .privacy-highlight .btn {
     background: var(--gold);
-    color: var(--white);
+    color: var(--charcoal);
     border: 2px solid var(--gold);
   }
   
@@ -541,7 +541,7 @@
 .footer-section h3,
 .footer-section h4 {
   margin-bottom: 1rem;
-  color: var(--gold);
+  color: var(--charcoal);
   font-weight: 700;
 }
 
@@ -620,7 +620,7 @@
   
   .footer-cta .btn {
     background: var(--gold);
-    color: var(--white);
+    color: var(--charcoal) !important;
     padding: 0.6rem 1.4rem;
     border-radius: 30px;
     font-weight: 600;
@@ -637,7 +637,7 @@
   .footer-btn {
     display: inline-block;
     background: var(--gold);
-    color: var(--white);
+    color: var(--charcoal);
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     text-decoration: none;
@@ -674,7 +674,7 @@
     margin-top: 2rem;
     border-top: 1px solid var(--taupe);
     padding-top: 1rem;
-    color: var(--taupe);
+    color: var(--charcoal);
     font-size: 0.9rem;
   }
   
@@ -715,7 +715,7 @@
   .vision-block {
     flex: 1;
     min-width: 350px;
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
   }
   
   .mission-block {
@@ -726,6 +726,42 @@
   .vision-block {
     background: var(--gold);
     color: var(--charcoal);
+    padding: 0.5rem 2rem !important;
+  }
+  
+  .section-cream.vision-block {
+    padding: 0.5rem 2rem !important;
+    margin: 0 !important;
+  }
+  
+  .approach {
+    background-color: var(--cream) !important;
+    color: var(--charcoal) !important;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .approach h2 {
+    color: var(--charcoal) !important;
+  }
+  
+  .btn-join-movement {
+    background-color: #4a7c59 !important;
+    color: white !important;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-join-movement:hover {
+    background-color: #68B088 !important;
+    color: var(--plum) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   }
   
   .mission-block h2,
@@ -787,7 +823,7 @@
   }
   
   .about-page .founders h2 {
-    color: var(--gold);
+    color: var(--white);
     font-size: 2.8rem;
     margin-bottom: 3rem;
     font-weight: 700;
@@ -838,7 +874,7 @@
   }
   
   .about-page .founder-title {
-    color: var(--gold);
+    color: var(--charcoal);
     font-style: italic;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -853,8 +889,8 @@
   
   .about-page .linkedin-link {
     display: inline-block;
-    background: var(--gold);
-    color: var(--plum);
+    background: var(--plum);
+    color: var(--white);
     text-decoration: none;
     padding: 0.6rem 1.4rem;
     border-radius: 25px;
@@ -876,7 +912,7 @@
   /* Color rhythm overrides */
   .section-plum {
     background-color: var(--plum) !important;
-    color: var(--cream) !important;
+    color: var(--white) !important;
   }
   
   .section-gold {
@@ -891,7 +927,7 @@
   
   .section-taupe {
     background-color: var(--taupe) !important;
-    color: var(--white) !important;
+    color: var(--charcoal) !important;
   }
   
   .section-taupe .feature-body p {
@@ -899,13 +935,23 @@
   }
   /* Ensure headings and paragraphs inherit correctly */
   .section-plum h2,
+  .our-story h2 {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+  }
+  
+  .section-plum p,
+  .our-story p {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+  }
+  
   .section-gold h2,
   .section-cream h2,
   .section-taupe h2 {
     color: inherit !important;
   }
   
-  .section-plum p,
   .section-gold p,
   .section-cream p,
   .section-taupe p {
@@ -952,11 +998,16 @@
 
   .section-taupe {
     background-color: var(--taupe) !important;
-    color: var(--cream) !important;
+    color: var(--charcoal) !important;
   }
   
   /* Make sure headings inside sections keep rhythm */
   .section-plum h2,
+  .our-story h2 {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+  }
+  
   .section-gold h2,
   .section-cream h2,
   .section-taupe h2 {
@@ -985,7 +1036,7 @@
   }
   
   .about-page .founders h2 {
-    color: var(--gold);
+    color: var(--white);
     font-size: 2.8rem;
     margin-bottom: 3rem;
     font-weight: 700;
@@ -1035,7 +1086,7 @@
   }
   
   .about-page .founder-title {
-    color: var(--gold);
+    color: var(--charcoal);
     font-style: italic;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -1050,8 +1101,8 @@
   
   .about-page .linkedin-link {
     display: inline-block;
-    background: var(--gold);
-    color: var(--plum);
+    background: var(--plum);
+    color: var(--white);
     text-decoration: none;
     padding: 0.6rem 1.4rem;
     border-radius: 25px;
@@ -1064,6 +1115,35 @@
     color: var(--cream);
   }
   
+/* MISSION SECTION STYLES */
+.mission {
+  background-color: var(--cream) !important;
+  color: var(--charcoal) !important;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.mission h2 {
+  color: var(--charcoal) !important;
+  margin-bottom: 1.5rem;
+}
+
+.mission p {
+  color: var(--charcoal) !important;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-separator {
+  border: none;
+  height: 2px;
+  background-color: var(--taupe);
+  margin: 3rem auto 0;
+  width: 200px;
+}
+
 /* PRODUCT PAGE STYLES */
 .product-hero {
     text-align: center;
@@ -1205,8 +1285,8 @@
   }
   
   .btn-green:hover {
-    background: #57a077; /* slightly lighter tone for hover */
-    border-color: #57a077;
+    background: #68B088; /* lighter green for hover */
+    border-color: #68B088;
     color: var(--plum);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(104, 176, 136, 0.3);
@@ -1405,6 +1485,9 @@
 
 .category-section {
   margin-bottom: 4rem;
+  background-color: var(--cream);
+  padding: 3rem 2rem;
+  border-radius: 15px;
 }
 
 .category-section:last-child {
@@ -1424,7 +1507,7 @@
 }
 
 .category-header p {
-  color: #666;
+  color: var(--charcoal);
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
@@ -1616,7 +1699,7 @@
 /* Latest Blog Posts Container */
 .latest-blog-posts {
   padding: 4rem 0;
-  background: var(--cream);
+  background: var(--white);
 }
 
 .latest-posts-header {
@@ -1632,7 +1715,7 @@
 }
 
 .latest-posts-header p {
-  color: #666;
+  color: var(--charcoal);
   font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;

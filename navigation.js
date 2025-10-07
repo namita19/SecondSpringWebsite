@@ -145,6 +145,7 @@
             <h2>Stay Connected</h2>
             <p>Get holistic insights, stories, and guidance on navigating your Second Spring with balance and clarity.</p>
             <div id="fd-form-${formId}" class="fd-form"></div>
+            <a href="#" class="btn btn-join-movement">Join the Movement</a>
           </section>
         `;
       }
