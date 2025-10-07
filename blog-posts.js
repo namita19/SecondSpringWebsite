@@ -251,6 +251,42 @@ const blogPosts = [
     {
         id: 9,
         title: "Perimenopause: The Director's Cut — Mystery, Meltdowns, and Second Spring",
+        excerpt: "If your monthly cycle was the trailer—quick flashes of cravings, tears, and dramatic sighs—then perimenopause is the director's cut. A personal journey through perimenopause, from abuse and stress to healing with acupuncture and Ayurveda.",
+        topic: "Flow – Lifestyle Harmony",
+        category: "Emotional Regulation",
+        tags: ["perimenopause", "personal journey", "healing", "acupuncture", "ayurveda", "transformation"],
+        date: "October 7, 2025",
+        image: "images/blog/Directors_cut.png",
+        slug: "directors-cut",
+        content: "If your monthly cycle was the trailer—quick flashes of cravings, tears, and dramatic sighs—then perimenopause is the director's cut. Every emotion from every month of your life, stitched together into one big feature film. And let me tell you, it's drama, comedy, and mystery all rolled into one."
+    },
+    {
+        id: 10,
+        title: "Second Spring Is Here: Why Peri-Menopause Deserves Better Care",
+        excerpt: "When I first noticed my own peri-menopause symptoms—slightly late cycles, a restless night of sleep with no reason at all—I realized I was entering what many cultures beautifully call The Second Spring. A personal perspective on why peri-menopause deserves better care and the hidden costs of being a woman.",
+        topic: "Thrive – Healthcare & Support",
+        category: "What to Ask Your Doctor",
+        tags: ["perimenopause", "healthcare", "women's health", "advocacy", "second spring", "wellness"],
+        date: "October 7, 2025",
+        image: "images/blog/beginning.png",
+        slug: "beginning-second-spring",
+        content: "When I first noticed my own peri-menopause symptoms—slightly late cycles, a restless night of sleep with no reason at all—I realized I was entering what many cultures beautifully call The Second Spring. It sounds poetic, doesn't it? A second birth. But the reality for most women is anything but poetic."
+    },
+    {
+        id: 11,
+        title: "The Beginning of My Second Spring: How Peri-Menopause Became My Unexpected Rebirth",
+        excerpt: "I always thought 'second birth' sounded a little dramatic. But then again, so does waking up at 3 a.m. wide-eyed and ready to reorganize your closet—for no reason at all. A personal story of transformation and embracing peri-menopause as an unexpected rebirth.",
+        topic: "Flow – Lifestyle Harmony",
+        category: "Emotional Regulation",
+        tags: ["perimenopause", "personal story", "transformation", "rebirth", "second spring", "wellness"],
+        date: "October 7, 2025",
+        image: "images/blog/Phoenix.png",
+        slug: "beginning-rebirth",
+        content: "I always thought 'second birth' sounded a little dramatic. But then again, so does waking up at 3 a.m. wide-eyed and ready to reorganize your closet—for no reason at all. Welcome to peri-menopause, the gray zone no one warned us about, also known in China as The Second Spring."
+    },
+    {
+        id: 9,
+        title: "Perimenopause: The Director's Cut — Mystery, Meltdowns, and Second Spring",
         excerpt: "If your monthly cycle was the trailer—quick flashes of cravings, tears, and dramatic sighs—then perimenopause is the director's cut. Every emotion from every month of your life, stitched together into one big feature film. And let me tell you, it's drama, comedy, and mystery all rolled into one.",
         category: "Mental Health",
         date: "October 3, 2025",
