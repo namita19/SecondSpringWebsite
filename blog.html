@@ -86,8 +86,13 @@
             // Load category sections
             loadCategorySections();
             
-            // Load masonry-style latest posts
-            loadMasonryPosts();
+            // Load masonry-style latest posts with optional filtering
+            if (topicParam) {
+                const decodedTopic = decodeURIComponent(topicParam);
+                loadMasonryPosts(decodedTopic);
+            } else {
+                loadMasonryPosts();
+            }
         });
 
 
@@ -265,14 +270,34 @@
         }
 
         // Load latest posts in masonry layout
-        function loadMasonryPosts() {
+        function loadMasonryPosts(filterTopic = null) {
             const masonryContainer = document.getElementById('masonryGrid');
             if (!masonryContainer) return;
 
-            // Get the latest 6 posts
-            const latestPosts = blogPosts.slice(0, 6);
+            // Filter posts by topic if specified
+            let postsToShow;
+            if (filterTopic) {
+                postsToShow = blogPosts.filter(post => post.topic === filterTopic);
+                // Update the section header
+                const sectionHeader = document.querySelector('.latest-posts-header h2');
+                if (sectionHeader) {
+                    sectionHeader.textContent = `${getTopicShortName(filterTopic)} Articles`;
+                }
+                // Add back button
+                addBackToAllButton();
+            } else {
+                // Get the latest 6 posts
+                postsToShow = blogPosts.slice(0, 6);
+                // Reset the section header
+                const sectionHeader = document.querySelector('.latest-posts-header h2');
+                if (sectionHeader) {
+                    sectionHeader.textContent = 'Latest Articles';
+                }
+                // Remove back button if it exists
+                removeBackToAllButton();
+            }
             
-            masonryContainer.innerHTML = latestPosts.map(post => {
+            masonryContainer.innerHTML = postsToShow.map(post => {
                 const categoryTag = post.topic ? getTopicShortName(post.topic) : 'General';
                 const featuredText = post.excerpt.substring(0, 100) + '...';
                 const blogPostData = getFirstImageFromBlogPost(post.id);
@@ -305,6 +330,43 @@
                 "Thrive – Healthcare & Support": "Thrive"
             };
             return shortNames[topic] || topic;
+        }
+
+        // Add back to all articles button
+        function addBackToAllButton() {
+            const header = document.querySelector('.latest-posts-header');
+            if (header && !document.querySelector('.back-to-all-btn')) {
+                const backButton = document.createElement('a');
+                backButton.href = 'blog.html';
+                backButton.className = 'back-to-all-btn';
+                backButton.textContent = '← Back to All Articles';
+                backButton.style.cssText = `
+                    display: inline-block;
+                    margin-top: 1rem;
+                    padding: 0.5rem 1rem;
+                    background: var(--blue);
+                    color: var(--white);
+                    text-decoration: none;
+                    border-radius: 6px;
+                    font-size: 0.9rem;
+                    transition: background 0.2s ease;
+                `;
+                backButton.addEventListener('mouseenter', () => {
+                    backButton.style.background = '#1e6a89';
+                });
+                backButton.addEventListener('mouseleave', () => {
+                    backButton.style.background = 'var(--blue)';
+                });
+                header.appendChild(backButton);
+            }
+        }
+
+        // Remove back to all articles button
+        function removeBackToAllButton() {
+            const backButton = document.querySelector('.back-to-all-btn');
+            if (backButton) {
+                backButton.remove();
+            }
         }
 
 
