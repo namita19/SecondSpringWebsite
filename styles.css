@@ -2079,3 +2079,17 @@
 
 .blog-page .latest-blog-posts { background: var(--white); }
 .blog-page .blog-categories .category-section { background-color: var(--cream); }
+
+/* =========================
+   Blog post page theming
+   ========================= */
+.blog-post-page .blog-title { color: var(--blue) !important; }
+.blog-post-page .blog-content-text p { color: var(--charcoal); }
+.blog-post-page .blog-content-text a { color: var(--blue); }
+.blog-post-page .blog-content-text a:hover { color: #1e6a89; }
+.blog-post-page .blog-meta .blog-date,
+.blog-post-page .blog-meta .blog-category { color: var(--charcoal); }
+.blog-post-page .blog-category { border: 1px solid var(--green); padding: 2px 8px; border-radius: 12px; }
+.blog-post-page .related-posts .related-post-title a,
+.blog-post-page .related-posts .related-post-link { color: var(--blue); }
+.blog-post-page .related-posts .related-post-link:hover { color: #1e6a89; }
