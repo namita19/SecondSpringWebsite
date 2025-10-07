@@ -229,5 +229,19 @@
 
   <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
+
+  <script>
+    // Highlight the relevant topic chip based on current post
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentTopic = "Nourish – Food & Nutrition";
+      const topicLinks = document.querySelectorAll('#topics-list a[data-topic]');
+      
+      topicLinks.forEach(link => {
+        if (link.getAttribute('data-topic') === currentTopic) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

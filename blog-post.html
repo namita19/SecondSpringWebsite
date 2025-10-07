@@ -205,6 +205,16 @@
       } else {
         document.getElementById('related-posts').style.display = 'none';
       }
+
+      // Highlight the relevant topic chip based on current post
+      if (post.topic) {
+        const topicLinks = document.querySelectorAll('#topics-list a[data-topic]');
+        topicLinks.forEach(link => {
+          if (link.getAttribute('data-topic') === post.topic) {
+            link.classList.add('active');
+          }
+        });
+      }
     });
   </script>
 </body>
