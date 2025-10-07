@@ -1856,6 +1856,25 @@
   }
 }
 
+/* Dynamic column adjustments for filtered content */
+.masonry-grid.few-posts {
+  columns: 2 !important;
+  max-width: 800px;
+}
+
+.masonry-grid.single-post {
+  columns: 1 !important;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid.few-posts,
+  .masonry-grid.single-post {
+    columns: 1 !important;
+    max-width: none;
+  }
+}
+
 /* Make masonry items clickable without underline */
 .masonry-item {
   text-decoration: none;

@@ -277,6 +277,10 @@
             let postsToShow;
             if (filterTopic) {
                 postsToShow = blogPosts.filter(post => post.topic === filterTopic);
+                
+                // Adjust masonry grid columns based on number of posts
+                adjustMasonryColumns(postsToShow.length);
+                
                 // Update the section header
                 const sectionHeader = document.querySelector('.latest-posts-header h2');
                 if (sectionHeader) {
@@ -287,6 +291,8 @@
             } else {
                 // Get the latest 6 posts
                 postsToShow = blogPosts.slice(0, 6);
+                // Reset masonry columns to default
+                resetMasonryColumns();
                 // Reset the section header
                 const sectionHeader = document.querySelector('.latest-posts-header h2');
                 if (sectionHeader) {
@@ -366,6 +372,29 @@
             if (backButton) {
                 backButton.remove();
             }
+        }
+
+        // Adjust masonry columns based on number of posts
+        function adjustMasonryColumns(postCount) {
+            const masonryGrid = document.getElementById('masonryGrid');
+            if (!masonryGrid) return;
+
+            // Remove any existing column classes
+            masonryGrid.classList.remove('few-posts', 'single-post');
+            
+            if (postCount === 1) {
+                masonryGrid.classList.add('single-post');
+            } else if (postCount <= 2) {
+                masonryGrid.classList.add('few-posts');
+            }
+        }
+
+        // Reset masonry columns to default
+        function resetMasonryColumns() {
+            const masonryGrid = document.getElementById('masonryGrid');
+            if (!masonryGrid) return;
+            
+            masonryGrid.classList.remove('few-posts', 'single-post');
         }
 
 
