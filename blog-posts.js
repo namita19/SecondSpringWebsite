@@ -294,6 +294,16 @@ function initializeSearch() {
       searchSuggestions.innerHTML = '';
     }
   });
+
+  // Handle topic button clicks
+  const topicLinks = document.querySelectorAll('#topics-list a[data-topic]');
+  topicLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const topic = link.getAttribute('data-topic');
+      performSearch(topic);
+    });
+  });
 }
 
 function getBlogPostsByTopic(topic) {
