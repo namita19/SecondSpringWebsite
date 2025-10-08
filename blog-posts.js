@@ -81,7 +81,7 @@ const blogPosts = [
     category: "Hormone Therapy Options",
     date: "October 3, 2025",
     image: "images/blog/Stages of Menopause Infographic.png",
-    slug: "hormone-therapy-perimenopause",
+    slug: "hormone-therapy",
     excerpt:
       "Explore the benefits, risks, and alternatives to hormone therapy for managing perimenopausal symptoms.",
   },
@@ -93,7 +93,7 @@ const blogPosts = [
     category: "Sleep Hygiene",
     date: "October 3, 2025",
     image: "images/blog/Sleep and Hormone Changes Flowchart.png",
-    slug: "sleep-during-perimenopause",
+    slug: "sleep-perimenopause",
     excerpt:
       "For many women, perimenopause brings a nightly battle with disrupted sleep. Hot flashes, night sweats, and unpredictable hormone shifts can leave you staring at the ceiling at 2 a.m.",
   },
@@ -104,7 +104,7 @@ const blogPosts = [
     category: "Night Sweats & Temperature Regulation",
     date: "October 3, 2025",
     image: "images/blog/Hot Flash Reporting Comparison.png",
-    slug: "hot-flashes-dont-rule-life",
+    slug: "hot-flashes",
     excerpt:
       "It begins with a rush. One moment you're fine, and the next your face is flushed, your heart is racing, and heat floods your body as if someone lit a fire under your skin.",
   },
@@ -116,7 +116,7 @@ const blogPosts = [
     category: "Seasonal & Cycle-Based Living",
     date: "October 3, 2025",
     image: "images/blog/Spring.png",
-    slug: "second-spring-nature-rhythm",
+    slug: "second-spring-season",
     excerpt:
       "Our bodies are not separate from nature; they are part of it. Just as the earth moves through seasons, we too move through cycles.",
   },
