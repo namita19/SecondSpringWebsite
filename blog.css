@@ -272,6 +272,7 @@
 
 .search-input-container {
   flex: 1;
+  position: relative;
 }
 
 .search-box input {
@@ -283,6 +284,40 @@
   background: var(--white);
   color: var(--charcoal);
   box-sizing: border-box;
+}
+
+/* Support for old structure where button is inside container */
+.search-input-container .search-icon-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--plum);
+  border: 2px solid var(--plum);
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.search-input-container .search-icon-btn:hover {
+  background: #1e6a89;
+  border-color: #1e6a89;
+}
+
+.search-input-container .search-icon-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Adjust input padding when button is inside */
+.search-input-container:has(.search-icon-btn) input {
+  padding-right: 3.5rem;
 }
 
 .search-box input:focus {
