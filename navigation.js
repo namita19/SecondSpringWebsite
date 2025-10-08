@@ -21,7 +21,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="product.html">Product</a></li>
             <li><a href="blog.html">Blog</a></li>
-            <li><a href="login.html" class="btn">Start Your Journey</a></li>
+            <li><a href="login.html" class="btn btn-plum">Start Your Journey</a></li>
           </ul>
         </nav>
       </header>
@@ -51,7 +51,7 @@
           <div class="footer-section">
             <h4>Connect</h4>
             <ul>
-              <li><a href="login.html">Join the Movement</a></li>
+              <li><a href="https://namitamankad.myflodesk.com/monthly" target="_blank">Join the Movement</a></li>
               <li><a href="mailto:namita@namitamankad.com">Email Us</a></li>
               <li><a href="privacy-policy.html">Privacy Policy</a></li>
               <li><a href="terms-of-service.html">Terms of Service</a></li>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start Your Journey – Second Spring</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- FloDesk Script -->
+  <script src="https://assets.flodesk.com/universal.js"></script>
+  <style>
+    .beta-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f8f4f0 0%, #e8d5c4 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .beta-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23d4c4b0" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23d4c4b0" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23d4c4b0" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23d4c4b0" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23d4c4b0" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+    
+    .beta-content {
+      text-align: center;
+      max-width: 600px;
+      padding: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .beta-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .beta-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #2c3e50 0%, #d4a574 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .beta-subtitle {
+      font-size: 1.3rem;
+      color: #5a6c7d;
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+    
+    .beta-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .beta-feature {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .beta-feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .beta-feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .beta-feature h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+    
+    .beta-feature p {
+      color: #5a6c7d;
+      line-height: 1.6;
+    }
+    
+    .beta-signup {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 3rem;
+      border-radius: 25px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      margin-top: 3rem;
+    }
+    
+    .beta-signup h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+    
+    .beta-signup p {
+      color: #5a6c7d;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    
+    .beta-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .beta-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 1rem 1.5rem;
+      border: 2px solid #e8d5c4;
+      border-radius: 50px;
+      font-size: 1rem;
+      background: white;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .beta-form input:focus {
+      outline: none;
+      border-color: #d4a574;
+      box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+    }
+    
+    .beta-form button {
+      padding: 1rem 2rem;
+      background: #4a7c59;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      white-space: nowrap;
+    }
+    
+    .beta-form button:hover {
+      background: #68B088;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(74, 124, 89, 0.4);
+    }
+    
+    .beta-countdown {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #d4a574 0%, #b8956a 100%);
+      border-radius: 15px;
+      color: white;
+    }
+    
+    .beta-countdown h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 1rem;
+      border-radius: 10px;
+      min-width: 60px;
+    }
+    
+    .countdown-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: block;
+    }
+    
+    .countdown-label {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+    
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .floating-element {
+      position: absolute;
+      opacity: 0.1;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .floating-element:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    .floating-element:nth-child(2) {
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+    
+    .floating-element:nth-child(3) {
+      bottom: 30%;
+      left: 20%;
+      animation-delay: 4s;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @media (max-width: 768px) {
+      .beta-title {
+        font-size: 2.5rem;
+      }
+      
+      .beta-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .beta-form {
+        flex-direction: column;
+      }
+      
+      .beta-form input,
+      .beta-form button {
+        width: 100%;
+      }
+      
+      .countdown-timer {
+        gap: 0.5rem;
+      }
+      
+      .countdown-item {
+        min-width: 50px;
+        padding: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<!-- Navigation -->
+<header id="main-header"></header>
+
+<body>
+  <!-- Beta Hero Section -->
+  <section class="beta-hero">
+    <div class="floating-elements">
+      <div class="floating-element">🌸</div>
+      <div class="floating-element">🌿</div>
+      <div class="floating-element">✨</div>
+    </div>
+    
+    <div class="beta-content">
+      <div class="beta-badge">🚀 BETA COMING SOON</div>
+      
+      <h1 class="beta-title">Your Second Spring Awaits</h1>
+      
+      <p class="beta-subtitle">
+        We're crafting something extraordinary for your perimenopause journey. 
+        A personalized wellness experience that blends ancient wisdom with modern science, 
+        designed specifically for your unique needs.
+      </p>
+      
+      <div class="beta-features">
+        <div class="beta-feature">
+          <div class="beta-feature-icon">🎯</div>
+          <h3>Personalized Insights</h3>
+          <p>AI-powered recommendations tailored to your unique hormonal patterns and lifestyle.</p>
+        </div>
+        
+        <div class="beta-feature">
+          <div class="beta-feature-icon">🌱</div>
+          <h3>Holistic Approach</h3>
+          <p>Integrating TCM, Ayurveda, and modern science for complete mind-body wellness.</p>
+        </div>
+      </div>
+      
+      <div class="beta-signup">
+        <h3>Be the First to Experience It</h3>
+        <p>Join our exclusive beta list and get early access to Second Spring when it launches.</p>
+        
+        <form class="beta-form" action="https://namitamankad.myflodesk.com/monthly" method="post" target="_blank">
+          <input type="text" name="first_name" placeholder="Your first name" required>
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit">Get Early Access</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="navigation.js"></script>
+</body>
+</html>
