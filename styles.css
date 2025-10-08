@@ -2699,7 +2699,7 @@ select {
   
   .blog-sidebar .search-box {
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   
   .blog-sidebar .search-box input#search-input {
@@ -2710,6 +2710,9 @@ select {
   }
   
   .blog-sidebar .search-box .search-icon-btn {
+    background: var(--plum);
+    border: 2px solid var(--plum);
+    color: var(--white);
     padding: 0.75rem;
     min-height: 40px;
     font-size: 1rem;
