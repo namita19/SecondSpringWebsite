@@ -2080,20 +2080,20 @@
 .blog-post-page .blog-sidebar #topics-list li { list-style: none; }
 .blog-post-page .blog-sidebar #topics-list li a {
   display: inline-flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   width: 100px;
-  padding: 8px 6px;
-  border-radius: 12px;
+  height: 35px;
+  padding: 4px 6px;
+  border-radius: 8px;
   border: 2px solid var(--blue);
   color: var(--charcoal);
   text-decoration: none;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .blog-post-page .blog-sidebar #topics-list li a .topic-title { font-weight: 700; color: var(--charcoal); }
-.blog-post-page .blog-sidebar #topics-list li a .topic-subtitle { font-size: 0.7rem; color: var(--charcoal); font-weight: 400; line-height: 1.2; }
+.blog-post-page .blog-sidebar #topics-list li a .topic-subtitle { font-size: 0.6rem; color: var(--charcoal); font-weight: 400; line-height: 1.1; }
 .blog-post-page .blog-sidebar #topics-list li a:hover,
 .blog-post-page .blog-sidebar #topics-list li a:focus {
   background: var(--blue);
