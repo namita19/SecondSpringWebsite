@@ -543,30 +543,7 @@
   .blog-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  
-  /* Blog sidebar mobile enhancements */
-  .blog-sidebar {
-    order: 2;
-    margin-top: 0;
-    padding: 1.5rem;
-    background: var(--cream);
-    border-radius: 12px;
-  }
-  
-  /* Blog content mobile optimization */
-  .blog-content {
-    order: 1;
-    margin-bottom: 2rem;
-  }
-  
-  .blog-article {
-    padding: 1.5rem;
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
   }
   
   .related-posts-grid {
