@@ -195,15 +195,6 @@
     document.addEventListener('DOMContentLoaded', function() {
       // This blog post is already loaded in the HTML above
       // The related posts will be populated by blog-posts.js
-      
-      // Highlight the current topic in the sidebar
-      const currentTopic = "Thrive – Healthcare & Support";
-      const topicLinks = document.querySelectorAll('#topics-list a');
-      topicLinks.forEach(link => {
-        if (link.getAttribute('data-topic') === currentTopic) {
-          link.classList.add('active');
-        }
-      });
     });
   </script>
 </body>
