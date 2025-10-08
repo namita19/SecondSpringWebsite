@@ -155,6 +155,7 @@
   padding: 3rem 1.5rem;
   background-color: #faf8f5; /* subtle cream tone */
   text-align: center;
+  max-width: 1200px;
 }
 
 .related-posts-header h3 {
