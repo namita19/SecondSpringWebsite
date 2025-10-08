@@ -2828,7 +2828,9 @@ select {
   }
   
   .related-posts-grid {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     gap: 1.5rem;
   }
   
