@@ -205,11 +205,10 @@ function generateMetaKeywords(post) {
 // =====================================
 function initializeSearch() {
   const searchInput = document.getElementById('search-input');
-  const searchBtn = document.getElementById('search-btn');
   const searchResults = document.getElementById('search-results');
   const searchSuggestions = document.getElementById('search-suggestions');
 
-  if (!searchInput || !searchBtn) return;
+  if (!searchInput) return;
 
   // Search function
   function performSearch(query) {
@@ -251,10 +250,6 @@ function initializeSearch() {
   }
 
   // Event listeners
-  searchBtn.addEventListener('click', () => {
-    performSearch(searchInput.value);
-  });
-
   searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       performSearch(searchInput.value);
