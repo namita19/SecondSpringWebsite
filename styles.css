@@ -2060,7 +2060,7 @@
 .blog-post-page .blog-sidebar .topics h3,
 .blog-post-page .blog-sidebar .topics .categories-subsection h4 { color: var(--blue); }
 
-.blog-post-page .blog-sidebar .topic-divider { border: 0; border-top: 2px solid var(--green); margin: 0.75rem 0 1rem; }
+.blog-post-page .blog-sidebar .topic-divider { border: 0; border-top: 1px solid var(--light-gold); margin: 0.5rem 0 0.75rem; }
 
 .blog-post-page .blog-sidebar .search-input-container input#search-input {
   background: var(--white);
@@ -2074,32 +2074,6 @@
   box-shadow: 0 0 0 4px rgba(36, 123, 160, 0.12);
 }
 
-/* Adjust input padding when button is inside */
-.blog-post-page .blog-sidebar .search-input-container:has(.search-icon-btn) input#search-input {
-  padding-right: 3.5rem;
-}
-.blog-post-page .blog-sidebar .search-input-container .search-icon-btn {
-  position: absolute;
-  right: 0.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--blue);
-  color: var(--white);
-  border: 2px solid var(--blue);
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  min-height: 40px;
-}
-.blog-post-page .blog-sidebar .search-input-container .search-icon-btn:hover {
-  background: #1e6a89;
-  border-color: #1e6a89;
-}
 
 /* Topic chips */
 .blog-post-page .blog-sidebar #topics-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -2555,7 +2529,7 @@
   }
   
   .blog-sidebar h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   .blog-sidebar .search-input-container input#search-input {
@@ -2563,10 +2537,6 @@
     font-size: 0.95rem;
   }
   
-  .blog-sidebar .search-input-container .search-icon-btn {
-    padding: 0.875rem;
-    font-size: 0.95rem;
-  }
   
   .blog-sidebar #topics-list li a {
     min-width: 100px;
@@ -2727,12 +2697,6 @@ select {
     min-height: 44px;
   }
   
-  .blog-sidebar .search-box .search-icon-btn {
-    background: var(--plum);
-    border: 2px solid var(--plum);
-    color: var(--white);
-    padding: 0.75rem;
-    min-height: 40px;
     font-size: 1rem;
   }
   
