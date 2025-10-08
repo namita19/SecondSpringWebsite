@@ -146,8 +146,109 @@
 
   <!-- Blog Post Script -->
   <script>
+    // Search functionality
+    function initializeSearch() {
+      const searchInput = document.getElementById('search-input');
+      const searchBtn = document.getElementById('search-btn');
+      const searchResults = document.getElementById('search-results');
+      const searchSuggestions = document.getElementById('search-suggestions');
+
+      if (!searchInput || !searchBtn) return;
+
+      // Search function
+      function performSearch(query) {
+        if (!query.trim()) {
+          searchResults.innerHTML = '';
+          searchSuggestions.innerHTML = '';
+          return;
+        }
+
+        const results = blogPosts.filter(post => 
+          post.title.toLowerCase().includes(query.toLowerCase()) ||
+          post.excerpt.toLowerCase().includes(query.toLowerCase()) ||
+          post.topic.toLowerCase().includes(query.toLowerCase()) ||
+          (post.category && post.category.toLowerCase().includes(query.toLowerCase()))
+        );
+
+        if (results.length > 0) {
+          searchResults.innerHTML = `
+            <div class="search-results-header">
+              <h4>Search Results (${results.length})</h4>
+            </div>
+            <div class="search-results-list">
+              ${results.map(post => `
+                <div class="search-result-item">
+                  <h5><a href="blog-post.html?id=${post.id}">${post.title}</a></h5>
+                  <p>${post.excerpt}</p>
+                  <span class="search-result-topic">${post.topic}</span>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else {
+          searchResults.innerHTML = `
+            <div class="search-no-results">
+              <p>No articles found for "${query}". Try different keywords.</p>
+            </div>
+          `;
+        }
+      }
+
+      // Event listeners
+      searchBtn.addEventListener('click', () => {
+        performSearch(searchInput.value);
+      });
+
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          performSearch(searchInput.value);
+        }
+      });
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value;
+        if (query.length > 2) {
+          // Show suggestions as user types
+          const suggestions = blogPosts.filter(post => 
+            post.title.toLowerCase().includes(query.toLowerCase()) ||
+            post.topic.toLowerCase().includes(query.toLowerCase())
+          ).slice(0, 5);
+
+          if (suggestions.length > 0) {
+            searchSuggestions.innerHTML = `
+              <div class="search-suggestions-list">
+                ${suggestions.map(post => `
+                  <div class="search-suggestion-item" onclick="searchInput.value='${post.title}'; performSearch('${post.title}')">
+                    ${post.title}
+                  </div>
+                `).join('')}
+              </div>
+            `;
+          } else {
+            searchSuggestions.innerHTML = '';
+          }
+        } else {
+          searchSuggestions.innerHTML = '';
+        }
+      });
+
+      // Hide suggestions when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-section')) {
+          searchSuggestions.innerHTML = '';
+        }
+      });
+    }
+
+    // Initialize sidebar (placeholder function)
+    function initializeSidebar() {
+      // This function can be expanded for other sidebar functionality
+      return true;
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       initializeSidebar();
+      initializeSearch();
 
       const urlParams = new URLSearchParams(window.location.search);
       const postId = urlParams.get('id');
