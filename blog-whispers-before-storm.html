@@ -19,30 +19,60 @@
             <div class="blog-layout">
                 <!-- Sidebar -->
                 <aside class="blog-sidebar">
-                    <div class="search-section">
+                    <section class="search-section">
                         <h3>Search Articles</h3>
-                        <div class="search-input-container">
-                            <input type="text" placeholder="Search blog posts..." id="search-input">
-                            <button class="search-icon-btn" id="search-btn">
+                        <div class="search-box">
+                            <div class="search-input-container">
+                                <input type="text" id="search-input" placeholder="Search by topic, category, or keyword...">
+                            </div>
+                            <button type="button" id="search-btn" class="search-icon-btn">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <circle cx="11" cy="11" r="8"></circle>
-                                    <path d="M21 21l-4.35-4.35"></path>
+                                    <path d="m21 21-4.35-4.35"></path>
                                 </svg>
                             </button>
+                            <div id="search-suggestions" class="search-suggestions"></div>
                         </div>
-                    </div>
+                        <div id="search-results" class="search-results"></div>
+                    </section>
 
-                    <div class="topics-section">
+                    <!-- Topics & Categories -->
+                    <section class="topics">
                         <h3>Browse by Topic</h3>
-                        <div class="topic-divider"></div>
+                        <hr class="topic-divider">
                         <ul id="topics-list">
-                            <li><a href="#" data-topic="Nourish – Food & Nutrition"><strong>Nourish</strong> <span class="post-count">Food & Nutrition (0)</span></a></li>
-                            <li><a href="#" data-topic="Flow – Lifestyle Harmony"><strong>Flow</strong> <span class="post-count">Lifestyle Harmony (0)</span></a></li>
-                            <li><a href="#" data-topic="Rest – Sleep & Recovery"><strong>Rest</strong> <span class="post-count">Sleep & Recovery (0)</span></a></li>
-                            <li><a href="#" data-topic="Move – Movement & Strength"><strong>Move</strong> <span class="post-count">Movement & Strength (0)</span></a></li>
-                            <li><a href="#" data-topic="Thrive – Healthcare & Support"><strong>Thrive</strong> <span class="post-count">Healthcare & Support (0)</span></a></li>
+                            <li>
+                                <a href="#" data-topic="Nourish – Food & Nutrition">
+                                    <span class="topic-title">Nourish</span>
+                                    <span class="topic-subtitle">Food & Nutrition <span class="post-count">(0)</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-topic="Flow – Lifestyle Harmony">
+                                    <span class="topic-title">Flow</span>
+                                    <span class="topic-subtitle">Lifestyle Harmony <span class="post-count">(0)</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-topic="Rest – Sleep & Recovery">
+                                    <span class="topic-title">Rest</span>
+                                    <span class="topic-subtitle">Sleep & Recovery <span class="post-count">(0)</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-topic="Move – Movement & Strength">
+                                    <span class="topic-title">Move</span>
+                                    <span class="topic-subtitle">Movement & Strength <span class="post-count">(0)</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" data-topic="Thrive – Healthcare & Support">
+                                    <span class="topic-title">Thrive</span>
+                                    <span class="topic-subtitle">Healthcare & Support <span class="post-count">(0)</span></span>
+                                </a>
+                            </li>
                         </ul>
-                    </div>
+                    </section>
                 </aside>
 
                 <!-- Main Content -->
