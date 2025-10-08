@@ -2697,25 +2697,20 @@ select {
     margin-bottom: 2rem;
   }
   
-  .blog-sidebar .search-input-container {
+  .blog-sidebar .search-box {
     flex-direction: row;
     gap: 0.75rem;
   }
   
-  .blog-sidebar .search-input-container input#search-input {
+  .blog-sidebar .search-box input#search-input {
     width: 100%;
-    padding: 1rem 3.5rem 1rem 1rem;
+    padding: 1rem;
     font-size: 1rem;
     min-height: 44px;
   }
   
-  .blog-sidebar .search-input-container .search-icon-btn {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 0.5rem;
+  .blog-sidebar .search-box .search-icon-btn {
+    padding: 1rem;
     min-height: 44px;
     font-size: 1rem;
   }
