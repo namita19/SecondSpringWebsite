@@ -234,7 +234,7 @@ function initializeSearch() {
         <div class="search-results-list">
           ${results.map(post => `
             <div class="search-result-item">
-              <h5><a href="blog-post.html?id=${post.id}">${post.title}</a></h5>
+              <h5><a href="blog-${post.slug}.html">${post.title}</a></h5>
               <p>${post.excerpt}</p>
               <span class="search-result-topic">${post.topic}</span>
             </div>
@@ -302,9 +302,9 @@ function initializeSearch() {
       e.preventDefault();
       const topic = link.getAttribute('data-topic');
       
-      // Clear previous search input and suggestions
-      searchInput.value = '';
+      // Clear suggestions but keep the search input with the topic
       searchSuggestions.innerHTML = '';
+      searchInput.value = topic;
       
       // Perform fresh search
       performSearch(topic);
