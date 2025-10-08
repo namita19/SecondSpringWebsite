@@ -301,6 +301,12 @@ function initializeSearch() {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const topic = link.getAttribute('data-topic');
+      
+      // Clear previous search input and suggestions
+      searchInput.value = '';
+      searchSuggestions.innerHTML = '';
+      
+      // Perform fresh search
       performSearch(topic);
     });
   });
