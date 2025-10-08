@@ -2811,13 +2811,6 @@ select {
     margin-bottom: 1.5rem;
   }
   
-  .related-posts-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 1.5rem;
-  }
   
   .related-post-card {
     padding: 1.5rem;
