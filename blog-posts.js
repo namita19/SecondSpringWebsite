@@ -126,7 +126,7 @@ const blogPosts = [
       "The Whispers Before the Storm: Why Recognizing Perimenopause Early Changes Everything",
     topic: "Thrive – Healthcare & Support",
     category: "What to Ask Your Doctor",
-    date: "October 7, 2025",
+    date: "October 8, 2025",
     image: "images/blog/Women_rising.png",
     slug: "whispers-before-storm",
     excerpt:
@@ -137,7 +137,7 @@ const blogPosts = [
     title: "Perimenopause: The Director's Cut — Mystery, Meltdowns, and Second Spring",
     topic: "Flow – Lifestyle Harmony",
     category: "Emotional Regulation",
-    date: "October 7, 2025",
+    date: "October 8, 2025",
     image: "images/blog/Directors_cut.png",
     slug: "directors-cut",
     excerpt:
@@ -148,7 +148,7 @@ const blogPosts = [
     title: "Second Spring Is Here: Why Peri-Menopause Deserves Better Care",
     topic: "Thrive – Healthcare & Support",
     category: "Integrative Care Approaches",
-    date: "October 7, 2025",
+    date: "October 8, 2025",
     image: "images/blog/beginning.png",
     slug: "beginning-second-spring",
     excerpt:
@@ -159,7 +159,7 @@ const blogPosts = [
     title: "The Beginning of My Second Spring: How Peri-Menopause Became My Unexpected Rebirth",
     topic: "Flow – Lifestyle Harmony",
     category: "Emotional Regulation",
-    date: "October 7, 2025",
+    date: "October 8, 2025",
     image: "images/blog/Phoenix.png",
     slug: "beginning-rebirth",
     excerpt:
@@ -170,7 +170,7 @@ const blogPosts = [
     title: "Perimenopause: Embracing the Gift of Your Second Spring",
     topic: "Flow – Lifestyle Harmony",
     category: "Seasonal & Cycle-Based Living",
-    date: "October 7, 2025",
+    date: "October 8, 2025",
     image: "images/blog/Perimenopause_shifts.png",
     slug: "gift-second-spring",
     excerpt:
