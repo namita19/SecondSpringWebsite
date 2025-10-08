@@ -181,6 +181,25 @@ const blogPosts = [
 // =====================================
 // Utility Functions
 // =====================================
+function getBlogPostById(id) {
+  return blogPosts.find(post => post.id == id);
+}
+
+function getRelatedPosts(currentId, limit = 3) {
+  const currentPost = getBlogPostById(currentId);
+  if (!currentPost) return [];
+  
+  return blogPosts
+    .filter(post => post.id != currentId && post.topic === currentPost.topic)
+    .slice(0, limit);
+}
+
+function generateMetaKeywords(post) {
+  const keywords = [post.topic];
+  if (post.category) keywords.push(post.category);
+  return keywords.join(', ');
+}
+
 function getBlogPostsByTopic(topic) {
   if (!topic) return blogPosts;
   return blogPosts.filter(post => post.topic && post.topic.trim() === topic.trim());
