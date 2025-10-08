@@ -2073,10 +2073,28 @@
   outline: 3px solid rgba(36, 123, 160, 0.25);
   box-shadow: 0 0 0 4px rgba(36, 123, 160, 0.12);
 }
+
+/* Adjust input padding when button is inside */
+.blog-post-page .blog-sidebar .search-input-container:has(.search-icon-btn) input#search-input {
+  padding-right: 3.5rem;
+}
 .blog-post-page .blog-sidebar .search-input-container .search-icon-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   background: var(--blue);
   color: var(--white);
   border: 2px solid var(--blue);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
 }
 .blog-post-page .blog-sidebar .search-input-container .search-icon-btn:hover {
   background: #1e6a89;
